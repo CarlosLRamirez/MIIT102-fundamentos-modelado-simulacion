@@ -13,5 +13,4 @@ Material del curso: MIIT102 Fundamentos de Modelado y Simulación, dictado por e
 
 
 ## Material Adicional
-- [[Instalación de Omnet++ en Mac con procesador Apple]]
-
+[[Instalación Omnet en Mac|Instalación de Omnet++ en Mac con procesador Apple]]

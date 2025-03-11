@@ -2,6 +2,8 @@
 modified: 2025-03-11T15:11:43-06:00
 created: 2025-03-11T06:34:43-06:00
 title: Instalación de Omnet++ en Mac con procesador Apple
+aliases:
+  - Instalación de Omnet++ en Mac con procesador Apple
 ---
 Esta guía describe los pasos para instalar OMNeT++ 6.1.0 en una computadora con sistema operativo MacOs (15.3.1 -24D70 )  y procesador M2.
 
