@@ -139,6 +139,3 @@ Seleccionar el directorio del espacio de trabajo por defecto, haciendo click en 
 Y debe abrir la pantalla de inicio del IDE de OMNeT++
 ![[Pasted image 20250311105946.png]]Con esto finaliza el proceso de instalación de OMNeT++
 
-https://carloslramirez.com/DigitalJoungle
-
-git remote set-url origin REMOTE-URL https://github.com/CarlosLRamirez/DigitalJungle.git
