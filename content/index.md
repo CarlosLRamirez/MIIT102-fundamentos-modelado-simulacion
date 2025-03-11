@@ -4,6 +4,7 @@ title: MIIT102 Fundamentos de Modelado y Simulación
 
 Material del curso: MIIT102 Fundamentos de Modelado y Simulación, dictado por el Ing. Msc. Carlos Leonel Ramírez.
 ## Notas de Clase (Lecture Notes)
+[[Notas de Clase - I Unidad - Introducción al modelado y simulación]]
 
 
 ## Presentaciónes
