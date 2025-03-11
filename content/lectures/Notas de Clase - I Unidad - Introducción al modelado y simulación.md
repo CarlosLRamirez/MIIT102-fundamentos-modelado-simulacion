@@ -2,13 +2,6 @@
 modified: 2025-02-08T11:01:24-06:00
 created: '"2025-02-01 05:57", "6tc/G2T+6"'
 ---
-#publicado
-#pdf
-#nota-origen
-
-Nota convertida a PDF y publicada en el Aula Virtual:
-[[Publicacion - I Unidad - Introducción al modelado y simulación]]
-
 # I Unidad: Introducción al modelado y simulación
 
 ## ¿Qué es Simulación?
@@ -362,53 +355,53 @@ Los métodos numéricos emplean procedimientos computacionales para "resolver" m
 
 Banks, Carson, Nelson y Nicol describen 12 etapas en un estudio de simulación:
 
-10. **Formulación del Problema:**  
+1. **Formulación del Problema:**  
    - Definir claramente el problema a resolver. Asegurarse de que los responsables y el analista estén alineados en la comprensión del problema.  
    - **Ejemplo**: Identificar cuellos de botella en una línea de producción.
 
-11. **Establecimiento de Objetivos y Plan del Proyecto:**  
+2. **Establecimiento de Objetivos y Plan del Proyecto:**  
    - Definir las preguntas que la simulación debe responder. Decidir si la simulación es la metodología adecuada.  
    - Planificar los recursos, costos y tiempo necesarios.  
    - **Ejemplo**: Determinar si aumentar el número de cajeros en un banco reduce los tiempos de espera.
 
-12. **Conceptualización del Modelo:**  
+3. **Conceptualización del Modelo:**  
    - Crear un modelo abstracto del sistema, comenzando con una versión simple y aumentando la complejidad según sea necesario.  
    - Involucrar a los usuarios del modelo para mejorar su calidad y aceptación.  
    - **Ejemplo**: Modelar el flujo de clientes en un banco, incluyendo llegadas y tiempos de servicio.
 
-13. **Recopilación de Datos:**  
+4. **Recopilación de Datos:**  
    - Recolectar los datos necesarios para alimentar el modelo. Esto puede incluir distribuciones de tiempos de llegada, servicio, etc.  
    - **Ejemplo**: Registrar los tiempos de llegada de clientes y los tiempos de servicio en un banco.
 
-14. **Traducción del Modelo:**  
+5. **Traducción del Modelo:**  
    - Convertir el modelo en un formato computacional utilizando software de simulación (como Arena, AnyLogic, Omnet++, etc.) o lenguajes de programación.  
    - **Ejemplo**: Programar el modelo de simulación del banco en un software especializado.
 
-15. **Verificación:**  
+6. **Verificación:**  
    - Asegurarse de que el programa informático funcione correctamente y represente fielmente el modelo conceptual.  
    - **Ejemplo**: Depurar el código para garantizar que no haya errores en la lógica del modelo.
 
-16. **Validación:**  
+7. **Validación:**  
    - Comparar los resultados del modelo con el comportamiento del sistema real para asegurar su precisión.  
    - **Ejemplo**: Verificar que el modelo del banco reproduzca correctamente las colas y tiempos de espera observados en la realidad.
 
-17. **Diseño Experimental:**  
+8. **Diseño Experimental:**  
    - Definir los escenarios a simular, la duración de las corridas y el número de repeticiones.  
    - **Ejemplo**: Simular el banco con 3, 4 y 5 cajeros para comparar resultados.
 
-18. **Corridas de Producción y Análisis:**  
+9. **Corridas de Producción y Análisis:**  
 	   - Ejecutar las simulaciones y analizar los resultados para evaluar el desempeño del sistema.  
    - **Ejemplo**: Calcular el tiempo promedio de espera de los clientes en cada escenario.
 
-19. **¿Se necesitan más Corridas?**  
+10. **¿Se necesitan más Corridas?**  
     - Decidir si se necesitan más simulaciones basándose en los resultados obtenidos.  
     - **Ejemplo**: Si los resultados no son concluyentes, simular con más cajeros o bajo diferentes condiciones.
 
-20. **Documentación y Reporte:**  
+11. **Documentación y Reporte:**  
     - Documentar el modelo, los resultados y el proceso seguido. Presentar un informe final claro y conciso.  
     - **Ejemplo**: Incluir gráficos, tablas y recomendaciones basadas en los resultados de la simulación.
 
-21. **Implementación:**  
+12. **Implementación:**  
     - Aplicar las recomendaciones derivadas de la simulación en el sistema real.  
     - **Ejemplo**: Aumentar el número de cajeros en el banco para reducir los tiempos de espera.
 
@@ -416,32 +409,20 @@ Banks, Carson, Nelson y Nicol describen 12 etapas en un estudio de simulación:
 
 Los 12 pasos anteriorse se pueden agrupar en 4 fases:
 
-22. **Descubrimiento y Orientación (Pasos 1 y 2):**  
+1. **Descubrimiento y Orientación (Pasos 1 y 2):**  
    - Definir el problema, objetivos y plan del proyecto.
 
-23. **Construcción del Modelo y Recopilación de Datos (Pasos 3-7):**  
+2. **Construcción del Modelo y Recopilación de Datos (Pasos 3-7):**  
    - Crear el modelo, recolectar datos, traducirlo a un formato computacional, verificarlo y validarlo.
 
-24. **Ejecución del Modelo (Pasos 8-10):**  
+3. **Ejecución del Modelo (Pasos 8-10):**  
    - Diseñar experimentos, ejecutar simulaciones y analizar resultados.
 
-25. **Implementación (Pasos 11 y 12):**  
+4. **Implementación (Pasos 11 y 12):**  
    - Documentar, reportar y aplicar las soluciones en el sistema real.
 
 
 ## Bibliografia
 
 Banks, J., Carson, J. S., Nelson, B. L., & Nicol, D. M. (2010). _Discrete-event system simulation_ (5th ed.). Pearson Education.  _(Capítulo 1, páginas 1-19)_.
-
-
----
-## Enlaces a mis Notas
-[[20250130T1553 Modelado y Simulación|Modelado y Simulación]]
-
-
-## Notas para el profesor
-
-Esto me hizo falta:
-**Parte 3: Aplicaciones en Telecomunicaciones y Metodología del Estudio de Simulación (45 minutos)**
-**Actividad:** Presenta un caso de estudio de simulación en telecomunicaciones (por ejemplo, la simulación de una red celular) y pide a los alumnos que identifiquen las etapas del estudio de simulación que se llevaron a cabo.
 
