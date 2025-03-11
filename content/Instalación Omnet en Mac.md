@@ -80,7 +80,7 @@ python3 -m pip install -r python/requirements.txt
 
 8. Ahora vamos a  Preferences -> Privacy & Security -> Developer Tools, y activamos la Terminal
 
-	![[Pasted image 20250311070059.png|400]]
+	![[Pasted image 20250311070059.png]]
 
 9. Desactivar la protección de Gatekeeper a nivel global en macOS. Ejecutar en la termial:
 	`
@@ -134,7 +134,7 @@ omnetpp
 
 Seleccionar el directorio del espacio de trabajo por defecto, haciendo click en Launch:
 
-![[Pasted image 20250311105641.png#center|400]]
+![[Pasted image 20250311105641.png]]
 
 Y debe abrir la pantalla de inicio del IDE de OMNeT++
 ![[Pasted image 20250311105946.png]]Con esto finaliza el proceso de instalación de OMNeT++
