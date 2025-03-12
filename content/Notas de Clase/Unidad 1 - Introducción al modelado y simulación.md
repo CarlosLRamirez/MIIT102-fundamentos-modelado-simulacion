@@ -1,9 +1,8 @@
 ---
 modified: 2025-02-08T11:01:24-06:00
 created: '"2025-02-01 05:57", "6tc/G2T+6"'
+title: "Unidad 1: Introducción al modelado y simulación"
 ---
-# I Unidad: Introducción al modelado y simulación
-
 ## ¿Qué es Simulación?
 
 Una **simulación** es la **imitación** del funcionamiento de un proceso o un **sistema** del mundo real a lo largo del **tiempo**.
