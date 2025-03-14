@@ -9,6 +9,8 @@ Curso dictado por el Ing. Msc. Carlos Leonel Ramírez, en la Escuela de Postgrad
 - [[Unidad 2 - Simulación de Eventos Discretos (Conceptos Básicos)]]
 - [[Unidad 3 -  Introducción a Sistemas de Colas]]
 - [[Unidad 4 - Generación de Variables Aleatorias]]
+- [[Tutorial Introductorio Primeros pasos en OMNeT++]]
+
 ## Presentaciónes
 
 
@@ -17,4 +19,4 @@ Curso dictado por el Ing. Msc. Carlos Leonel Ramírez, en la Escuela de Postgrad
 
 ## Guías Tecnicas y Material Adicional
 
-[[Instalación Omnet en Mac|Instalación de Omnet++ en Mac con procesador Apple]]
+[[Instalación Omnet++ en Mac|Instalación de Omnet++ en Mac con procesador Apple]]
