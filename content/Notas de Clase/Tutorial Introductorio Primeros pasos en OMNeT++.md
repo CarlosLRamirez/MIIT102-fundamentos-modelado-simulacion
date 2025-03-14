@@ -377,182 +377,47 @@ En la barra de estado de la ventana principal podrás ver indicadores como **eve
 
 • Para salir del simulador, cierra la ventana o selecciona **File -> Exit**.
 
----
+### 2.3 Visualización con Sequence Chart (Gráfica de Secuencia)
 
-**2.3 Depuración (Debugging)**
-
-  
-
-Recuerda: la simulación es simplemente un **programa en C++**, por lo que puede contener errores. Por eso, aprender a **depurar (debuggear)** es muy importante.
-
-  
-
-**¿Cómo ejecutar la simulación en modo Debug?**
-
-  
-
-Haz clic en el botón **Debug** (ícono de insecto) en la barra principal del IDE.
-
-  
-
-Esto iniciará la simulación bajo un **depurador** (normalmente **gdb**) y el IDE cambiará a la vista **Debug Perspective**, un entorno especializado para depuración.
-
-  
-
-Puedes terminar la depuración con el botón **Terminate** (cuadro rojo).
-
----
-
-**🔍 Errores en tiempo de ejecución (Runtime Errors)**
-
-  
-
-A veces es necesario depurar para encontrar errores en tiempo de ejecución.
-
-¡Vamos a probarlo!
-
-  
-
-**Ejemplo de error:**
-
-  
-
-En el archivo txc1.cc, dentro de la función handleMessage(), **duplica la línea send(msg, "out");**, así:
-
-```
-void Txc1::handleMessage(cMessage *msg)
-{
-    send(msg, "out"); // enviar mensaje
-    send(msg, "out"); // ESTO DEBE CAUSAR UN ERROR
-}
-```
-
-Cuando corras la simulación de manera normal (con **Run**), verás un mensaje de error.
-
-  
-
-Ahora, **corre la simulación en modo Debug**.
-
-Gracias a una opción activa por defecto, la simulación se detendrá automáticamente cuando ocurra el error, y podrás ver el problema en la **vista de Debug**, incluyendo:
-
-• El **stack trace** (lista de funciones llamadas antes del error).
-
-• El código donde ocurrió el error.
-
-• El valor de las variables en ese momento.
-
-  
-
-Esto te ayudará a **entender y corregir el error**.
-
----
-
-**💥 Errores de crash (fallos/segmentation fault)**
-
-  
-
-Para practicar esto, puedes provocar un crash de la siguiente forma:
-
-1. Quita la línea duplicada anterior (corrige el error).
-
-2. Ahora, **modifica la función initialize() para no crear el mensaje**:
-
-```
-cMessage *msg; // sin inicializar
-send(msg, "out"); // esto causará un crash
-```
-
-Cuando corras la simulación, verás un error como **“exit code: 139”** (segmentation fault).
-
-Si corres en modo Debug, se detendrá al fallar, y podrás ver el error para corregirlo.
-
----
-
-**⛔ Breakpoints (Puntos de ruptura)**
-
-  
-
-Puedes poner “puntos de ruptura” en el código para detener la ejecución en lugares específicos.
-
-Esto te permite:
-
-• Revisar el estado de las variables.
-
-• Ejecutar línea por línea.
-
-• Reanudar la ejecución hasta el siguiente breakpoint.
-
-  
-
-**¿Cómo poner un breakpoint?**
-
-• Haz doble clic en la parte izquierda del editor, al lado del número de línea.
-
-• O haz clic derecho y selecciona **Toggle Breakpoint**.
-
----
-
-**🏋️‍♂️ Ejercicio:**
-
-• Coloca un breakpoint al inicio de la función handleMessage().
-
-• Corre la simulación y observa cómo se detiene en ese punto.
-
-• Usa las opciones del depurador para avanzar, pausar, o continuar.
-
----
-
-**2.4 El diálogo de Run/Debug**
-
-  
-
-Cada vez que corres o debuggeas, OMNeT++ crea una **configuración de lanzamiento** (Launch Configuration).
-
-Estas configuraciones pueden verse y editarse en **Run/Debug Configurations** (clic en la flechita junto al botón Run/Debug -> “Run Configurations…”).
-
-  
-
-Allí puedes ajustar parámetros y opciones para futuras ejecuciones.
-
----
-
-**2.5 Visualización con Sequence Chart (Gráfica de Secuencia)**
-
-  
-
-OMNeT++ puede guardar un registro (event log) de todos los mensajes intercambiados durante la simulación.
+OMNeT++ puede guardar un registro (*event log*) de todos los mensajes intercambiados durante la simulación.
 
 Para activar este registro:
-
 • Marca la opción **Record eventlog** en la configuración de lanzamiento.
 
-• O agrega esta línea al omnetpp.ini:
+![[Pasted image 20250314165747.png]]
+
+![[Pasted image 20250314170020.png]]
+
+
+• O agrega esta línea al `omnetpp.ini`:
 
 ```
 record-eventlog = true
 ```
 
-También puedes activar el registro desde la GUI de Qtenv.
+![[Pasted image 20250314165901.png]]
 
+También puedes activar el registro desde la GUI de **Qtenv** al inicio de la simulación
+
+![[Pasted image 20250314170136.png]]
+
+
+> [!NOTA] 
+> Los archivos de log pueden volverse muy grandes, así que solo actívalo si es necesario.
   
 
-⚠️ **Nota:** Los archivos de log pueden volverse muy grandes, así que solo actívalo si es necesario.
-
-  
-
-📊 **¿Cómo verlo?**
+📊 **¿Cómo visualizar el log de eventos?**
 
 • Abre el archivo .elog desde el directorio de resultados del proyecto.
 
+![[Pasted image 20250314170436.png]]
+
 • Se abrirá la herramienta **Sequence Chart**, que permite ver cómo se enviaron los mensajes.
 
-  
+  ![[Pasted image 20250314170517.png]]
 
 Este gráfico es muy útil para **entender, depurar y documentar** modelos complejos.
 
----
-
-Si quieres, puedo armar un resumen o tabla final de atajos y funciones, o continuar con ejemplos de omnetpp.ini y NED. ¿Cómo quieres seguir? 🚀💻
 
 ## Fuente
 [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)
