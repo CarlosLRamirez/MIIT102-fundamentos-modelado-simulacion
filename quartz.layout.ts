@@ -1,5 +1,3 @@
-//tomo-da-mente-layout
-//https://github.com/freenandes/topo-da-mente/blob/main/quartz.layout.ts
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
@@ -7,15 +5,13 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  footer: Component.Footer(
-    {
+  afterBody: [],
+  footer: Component.Footer({
     links: {
-      "About": "https://www.pmcf.xyz/topo-da-mente",
-      "Are.na": "https://www.are.na/p-m-c-f",
-      "Mastodon": "https://mastodon.social/@freenandes",
+      GitHub: "https://github.com/jackyzha0/quartz",
+      "Discord Community": "https://discord.gg/cRFFHYye7t",
     },
-  }
-  ),
+  }),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -24,106 +20,38 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    // Component.Divider(),
+    Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.Divider(),
-    Component.DesktopOnly(Component.RecentNotes({
-      title: "Most recent",
-      limit: 5
-    })),
-    Component.DesktopOnly(Component.Explorer({
-      title: "Explore",
-      useSavedState: true,
-      sortFn: (a, b) => {
-        if ((!a.file && !b.file) || (a.file && b.file)) {
-          // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
-          // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
-          return a.displayName.localeCompare(b.displayName, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        }
-        if (a.file && !b.file) {
-          return 1
-        } else {
-          return -1
-        }
-      },
-    })),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer(),
   ],
   right: [
-    Component.TagList(),
-    Component.Graph({
-      localGraph: {
-        linkDistance: 50,
-      },
-      globalGraph: {
-        linkDistance: 50,
-      },
-    }),
+    Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
-    Component.MobileOnly(Component.RecentNotes({
-      title: "Most recent",
-      limit: 5
-    })),
-    Component.MobileOnly(Component.Explorer({
-      title: "Explore",
-      useSavedState: true,
-      sortFn: (a, b) => {
-        if ((!a.file && !b.file) || (a.file && b.file)) {
-          // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
-          // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
-          return a.displayName.localeCompare(b.displayName, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        }
-        if (a.file && !b.file) {
-          return 1
-        } else {
-          return -1
-        }
-      },
-    })),
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.ArticleTitle()],
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Divider(),
-    Component.DesktopOnly(Component.RecentNotes({
-      title: "Most recent",
-      limit: 5
-    })),
-    Component.DesktopOnly(Component.Explorer({
-      title: "Explore",
-      useSavedState: true,
-      sortFn: (a, b) => {
-        if ((!a.file && !b.file) || (a.file && b.file)) {
-          // sensitivity: "base": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A
-          // numeric: true: Whether numeric collation should be used, such that "1" < "2" < "10"
-          return a.displayName.localeCompare(b.displayName, undefined, {
-            numeric: true,
-            sensitivity: "base",
-          })
-        }
-        if (a.file && !b.file) {
-          return 1
-        } else {
-          return -1
-        }
-      },
-    })),
+    Component.Explorer(),
   ],
   right: [],
 }
