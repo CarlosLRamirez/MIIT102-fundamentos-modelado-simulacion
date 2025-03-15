@@ -2,13 +2,13 @@
 draft: false
 title: "Tutorial introductorio: Primeros pasos en OMNeT++"
 ---
-# Tutorial Introductorio de OMNeT++
+## Introducción
 
-Este tutorial le ayudará con los primeros para trabajar con OMNeT++ , comprender los componentes principales y herramientas, y conocer el flujo de trabajo para ejecutar una simulación.
+Este tutorial le ayudará con los primeros pasos para trabajar con OMNeT++ , comprender los componentes principales y herramientas, y conocer el flujo de trabajo para ejecutar una simulación.
 ## Instrucciones
 
-Siga esta guia paso a paso, y al final de la sesión presente los resultados del ejercicio.
-## Parte 1:  Como empezar
+Siga esta guía paso a paso, y al final de la sesión presente los resultados de cada  ejercicio.
+## Parte 1:  Primeros pasos
 ### 1.1 El modelo
 
 El modelo que vamos a simular consta de una **red** formada por dos nodos. Los nodos realizarán una tarea sencilla: **uno de ellos creará un paquete**, y ambos lo enviarán de un lado a otro de forma continua. Llamaremos a estos nodos **tic** y **toc**.
@@ -53,11 +53,8 @@ Más adelante, iremos mejorando este modelo, incorporando nuevas característica
 	- Seleccione la opción **Empty Project**.
 	
 		![[Pasted image 20250312073409.png]]
-	
 	- Finalmente, haga clic en **Finish**.
-
 8. El nuevo proyecto aparecerá en el **Explorador de Proyectos**. 
-
 	- Aquí es donde se deberán guardar todos los archivos relacionados con la simulación.
 		
 		![[Pasted image 20250312073543.png]]
@@ -197,16 +194,16 @@ Además, para que OMNeT++ pueda usar esta clase en la simulación, debemos **reg
 
 Dentro de esta clase, hay **dos funciones importantes** que **redefinimos** (es decir, escribimos de nuevo para que hagan lo que queremos):
 
-1. **`initialize()`**: Esta función se llama **una sola vez**, al **inicio de la simulación**.
+**`initialize()`**: Esta función se llama **una sola vez**, al **inicio de la simulación**.
 	
-	• Aquí, uno de los módulos (el que se llama **“`tic`”**) crea un **mensaje** (objeto `cMessage`) y lo envía por una **puerta de salida** llamada "`out`".
-	• Esa puerta está conectada al otro módulo (llamado “`toc`”), así que el mensaje viajará hacia él.
+- Aquí, uno de los módulos (el que se llama **“`tic`”**) crea un **mensaje** (objeto `cMessage`) y lo envía por una **puerta de salida** llamada "`out`".
+- Esa puerta está conectada al otro módulo (llamado “`toc`”), así que el mensaje viajará hacia él.
 
-2. **`handleMessage(cMessage *msg)`**:
+**`handleMessage(cMessage *msg)`**:
 
-	• Esta función se llama **cada vez que llega un mensaje** al módulo.
-	• Lo que hace es muy simple: **volver a enviar el mensaje por la puerta “`out`”**, de regreso al otro módulo.
-	• Así, los dos módulos se estarán enviando el mismo mensaje de un lado a otro, como un “ping-pong”.
+- Esta función se llama **cada vez que llega un mensaje** al módulo.
+- Lo que hace es muy simple: **volver a enviar el mensaje por la puerta “`out`”**, de regreso al otro módulo.
+- Así, los dos módulos se estarán enviando el mismo mensaje de un lado a otro, como un “ping-pong”.
 
 **¿Qué más debemos saber?**
 
@@ -234,24 +231,21 @@ Además, en este archivo podemos:
 • Especificar **semillas** para los generadores de números aleatorios.
 • Y configurar otras opciones de la simulación.
 
-**¿Cómo crear el archivo omnetpp.ini?**
+**¿Cómo crear el archivo `omnetpp.ini`?**
 
-1. En el menú principal, selecciona:
-
-**File -> New -> Initialization File (INI)**
+En el menú principal, selecciona: **File -> New -> Initialization File (INI)**
 
 ![[Pasted image 20250314061249.png]]
+Asigne el nombre `omnetpp.ini` a este archivo y haga click en **Siguiente**
 
-2. Asigne el nombre `omnetpp.ini` a este archivo y haga click en **Siguiente**
-. 
 ![[Pasted image 20250314061440.png]]
 
-3. Luego seleccione la opción para crear un **archivo vacío** y haga click en **Finalizar**
+Luego seleccione la opción para crear un **archivo vacío** y haga click en **Finalizar**
 
 ![[Pasted image 20250314061524.png]]
 
 
-4. Se abrirá el **Inifile Editor**, que es un editor especial para este tipo de archivos.
+Se abrirá el **Inifile Editor**, que es un editor especial para este tipo de archivos.
 
 Este editor tiene **dos modos de trabajo**:
 - **Form (Formulario):** Más adecuado para configurar opciones generales de la simulación, usando una interfaz gráfica.
@@ -260,9 +254,9 @@ Este editor tiene **dos modos de trabajo**:
 ![[Pasted image 20250314061822.png]]
 
 
-3. Por ahora, cambia al modo **Source** (Código) y escribe el siguiente contenido:
+Por ahora, cambia al modo **Source** (Código) y escribe el siguiente contenido:
 
-```omnet
+```ned
 [General]
 network = Tictoc1
 ```
@@ -277,148 +271,9 @@ El ejemplo con `tictoc2`y los pasos siguientes van a compartir el mismo archivo 
 
 Ha finalizado con la creación del primer modelo, y ahora si esta listo para compilarlo y ejecutarlo.
 
-## Parte 2:  Ejecución de la Simulación
+Continue con la  [[Parte 2  - Tutorial - Introducción a OMNeT++]]
 
-### 2.1 Iniciar la simulación
+---
+**Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)
 
-Una vez completados los pasos anteriores, ya puede **ejecutar la simulación**.
-
-Para hacerlo, simplemente selecciona el archivo `omnetpp.ini` (ya sea desde el área del editor o desde el **Project Explorer**) y haga clic en el botón **Run** (ícono de “play”) como se muestra en la imagen:
-
-![[Pasted image 20250314064345.png|500]]
-
-Aparecerá el siguiente cuadro de dialogo indicando la creación de un archivo de configuración, hacer click en **OK**.
-
-![[Pasted image 20250314065448.png]]
-
-Antes de compilar y ejecutar la simulación debemos guardar los cambios en los archivos: `tictoc.ned`, `txc1.cc`y `omnetpp.ini`, si aparece los siguientes cuadros de dialogo, haga click en  **Save**  y **Save 2 of 2** respectivamente 
-
-  ![[Pasted image 20250314065627.png]]
-
-![[Pasted image 20250314071713.png]]
-
-En el siguiente cuadro de diálogo, haga click en **Save**
-
-![[Pasted image 20250314072041.png]]
-
-
-El IDE de OMNeT++ **compilará automáticamente tu proyecto** antes de iniciar la simulación.
-
-Si hay **errores de compilación**, deberás corregirlos hasta que la compilación y el enlace (linking) se completen sin errores.
-
-Usted puedes forzar la compilación manualmente seleccionando **Project -> Build All** en el menú, o presionando **Ctrl + B**.
- 
-> [!NOTA]
-> 💡 **Opción avanzada:** Si prefiereE compilar desde la terminal (línea de comandos), puedes crear un **Makefile** usando el comando `opp_makemake`, y luego ejecutar `make` para compilar. Esto generará un archivo ejecutable que se puede correr con `./tictoc`.
-
-### 2.2 Ejecutar la simulación
-
-Después de compilar y ejecutar la simulación, se abrirá una **nueva ventana gráfica (GUI)** como la que se muestra en la siguiente imagen.
-
-Esta ventana pertenece a *Qtenv*, que es la interfaz gráfica principal para las simulaciones en OMNeT++.
-
-En esa ventana, podrás ver la **red** que contiene los nodos **tic** y **toc**, representada de manera gráfica.
-
-![[Pasted image 20250314072652.png]]
-Para comenzar la simulación, haz clic en el botón **Run** de la barra de herramientas.
-
-![[Pasted image 20250314073040.png]]
-
-Verás cómo **tic y toc empiezan a enviarse mensajes** uno al otro, como un “ping-pong”.
-
-![[Mar-14-2025 08-51-07.gif]]
-
-  
-En la barra de herramientas de la ventana principal verás el **tiempo actual de simulación** (tiempo virtual, no real).
-
-![[Pasted image 20250314085345.png]]
-
-- Este tiempo **no es el tiempo real** que tarda tu computadora en ejecutar la simulación.
-- Cuánto tiempo de simulación puedes avanzar en un segundo real depende de la **potencia de tu computadora** y de la **complejidad del modelo**.
-  
-Note que el tiempo de simulación **solo avanza debido al retardo de propagación** (*propagation delay*) de los enlaces. El procesamiento del mensaje por parte de los módulos **no consume tiempo de simulación**.
-
-#### Controles útiles durante la simulación:
-
-- Puede **acelerar o ralentizar** la animación con el **slider** (barra deslizante) en la parte superior de la ventana gráfica.
-
-![[Pasted image 20250314085658.png]]
-
-- Para **detener la simulación:** presione **F8** (o el botón **STOP** en la barra de herramientas).
-- 
-![[Pasted image 20250314085854.png]]
-
-- **Paso a paso:** presiona **F4**.
-- 
-![[Pasted image 20250314102210.png]]
-
-- **Ejecutar con animación:** **F5**.
-
-![[Pasted image 20250314102256.png]]
-
- - **Ejecutar sin animación:** **F6**.
-
-![[Pasted image 20250314102359.png]]
-
--  **Modo rápido (sin trazas):** **F7** (para máxima velocidad).
-
-![[Pasted image 20250314102457.png]]4
-  
-
-En la barra de estado de la ventana principal podrás ver indicadores como **eventos por segundo** y **segundos de simulación por segundo real**, útiles al correr en modo rápido.
-
-![[Pasted image 20250314102717.png]]
-
-
->[!TODO] **Ejercicio sugerido**
-> - Ejecuta la simulación varias veces.
-> - Prueba las funciones: **Run**, **Run Until**, **Rebuild Network**, y otras opciones disponibles en la GUI.
-
-
-• Para salir del simulador, cierra la ventana o selecciona **File -> Exit**.
-
-### 2.3 Visualización con Sequence Chart (Gráfica de Secuencia)
-
-OMNeT++ puede guardar un registro (*event log*) de todos los mensajes intercambiados durante la simulación.
-
-Para activar este registro:
-• Marca la opción **Record eventlog** en la configuración de lanzamiento.
-
-![[Pasted image 20250314165747.png]]
-
-![[Pasted image 20250314170020.png]]
-
-
-• O agrega esta línea al `omnetpp.ini`:
-
-```
-record-eventlog = true
-```
-
-![[Pasted image 20250314165901.png]]
-
-También puedes activar el registro desde la GUI de **Qtenv** al inicio de la simulación
-
-![[Pasted image 20250314170136.png]]
-
-
-> [!NOTA] 
-> Los archivos de log pueden volverse muy grandes, así que solo actívalo si es necesario.
-  
-
-📊 **¿Cómo visualizar el log de eventos?**
-
-• Abre el archivo .elog desde el directorio de resultados del proyecto.
-
-![[Pasted image 20250314170436.png]]
-
-• Se abrirá la herramienta **Sequence Chart**, que permite ver cómo se enviaron los mensajes.
-
-  ![[Pasted image 20250314170517.png]]
-
-Este gráfico es muy útil para **entender, depurar y documentar** modelos complejos.
-
-
-## Fuente
-[Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)
 
