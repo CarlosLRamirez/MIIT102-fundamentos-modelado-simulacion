@@ -146,7 +146,7 @@ Ejecute la simulación, si hace click en el icono de `tic`, ventana del inspecto
 
 Al continuar la simulación puede ver que al llegar a cero esta se detendrá.
 
-Código Fuente:  [[txc3.cc]] , [[tictoc2.ned]], [[omnetpp.ini]]
+Código Fuente:  [[txc3.cc]] , [[tictoc3.ned]], [[omnetpp.ini]]
 
 ### 3.4 Agregar parámetros al módulo
 
