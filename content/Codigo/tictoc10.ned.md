@@ -1,4 +1,6 @@
 
+```ned showLineNumbers{1}
+
 //
 // This file is part of an OMNeT++/OMNEST simulation example.
 //
@@ -38,4 +40,6 @@ network Tictoc10
         tic[4].out++ --> {  delay = 100ms; } --> tic[5].in++;
         tic[4].in++ <-- {  delay = 100ms; } <-- tic[5].out++;
 }
+```
+
 

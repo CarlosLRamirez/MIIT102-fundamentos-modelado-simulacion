@@ -160,9 +160,7 @@ seed-0-mt=532569  # or any other 32-bit value
 
 Código Fuente del ejemplo: [[tictoc7.ned]], [[txc7.cc]], [[omnetpp.ini]]
 
-## 4.3 Simulación Stop-and-Wait 
-
-Timeout y Cancelación de temporizadores
+## 4.3 Simulación Stop-and-Wait  (Timeout y Cancelación de temporizadores)
 
 En este paso, vamos a implementar un mecanismo básico de **Stop-and-Wait** que es común en **protocolos de comunicación confiables**.
 
@@ -226,51 +224,99 @@ Esto permite que el mismo mensaje sea reutilizado múltiples veces sin tener que
 
 Esto es especialmente útil en simulaciones complejas donde hay que manejar múltiples eventos de **timeout**.
 
----
-
 **📌 ¿Qué debes observar al correr la simulación?**
 
 1. **Mensajes perdidos:**
-
-• Se visualizarán burbujas con la etiqueta "message lost" cuando toc pierda un mensaje.
-
-• Puedes ajustar la probabilidad de pérdida cambiando la condición (uniform(0, 1) < 0.1) a otro valor.
+	- Se visualizarán burbujas con la etiqueta "message lost" cuando toc pierda un mensaje
+	- Puedes ajustar la probabilidad de pérdida cambiando la condición (`uniform(0, 1) < 0.1`) a otro valor.
 
 2. **Mecanismo de retransmisión:**
+	- `tic` continuará retransmitiendo un mensaje si no recibe una respuesta de `toc` debido a un mensaje perdido.
+	- Si `tic` recibe la respuesta a tiempo, el temporizador se cancela y se envía el siguiente mensaje.
 
-• tic continuará retransmitiendo un mensaje si no recibe una respuesta de toc debido a un mensaje perdido.
+![[message lost.gif|400]]
 
-• Si tic recibe la respuesta a tiempo, el temporizador se cancela y se envía el siguiente mensaje.
-
----
-
-**📊 ¿Por qué es importante este modelo?**
-
-  
-
-Este modelo introduce un concepto esencial en redes de comunicación:
-
-• **Timeouts y retransmisión de mensajes.**
-
-• El uso de cancelEvent() muestra cómo **cancelar y reutilizar temporizadores de manera eficiente**.
-
-• Este mismo principio se utiliza en **protocolo TCP para manejo de retransmisiones (Stop-and-Wait, Go-Back-N, Selective Repeat, etc.)**.
-
----
-
-**💡 Ejercicio adicional:**
-
-1. Cambia la probabilidad de pérdida de mensajes a diferentes valores (0.2, 0.5, etc.) y observa el comportamiento.
-
-2. ¿Qué sucede si agregas un retardo variable al mensaje que toc envía de regreso a tic?
-
-3. Intenta hacer que tic muestre en pantalla cuántos intentos realiza antes de recibir una respuesta de toc.
-
+![[Pasted image 20250321151003.png]]
 
 Código Fuente del ejemplo: [[tictoc8.ned]] , [[txc8.cc]] , [[omnetpp.ini]]
 
 ---
-**Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)
+
+## 4.4 Retransmisión del mismo mensaje
+
+En este paso, vamos a mejorar el modelo anterior (Stop-and-Wait), en el cual cada vez que se necesitaba retransmitir un mensaje, simplemente se creaba uno nuevo.
+
+Aunque eso funcionaba, no es una práctica eficiente en sistemas reales, porque:
+
+1. **Los mensajes pueden contener información compleja o grande** (no es eficiente recrearlos cada vez).
+2. **Perderíamos información útil almacenada en el mensaje original**.
+
+**🔍 ¿Qué cambia en este modelo?**
+
+En lugar de crear un mensaje nuevo cada vez que ocurre un timeout, vamos a:
+1. **Mantener una copia del mensaje original** que se debe retransmitir.
+2. **Enviar copias del mensaje original cuando sea necesario retransmitirlo**.
+3. **Eliminar el mensaje original solo cuando se recibe una confirmación (ACK) de `toc`**.
+
+**🔑 ¿Por qué hacer esto?**
+
+1. **Evita recrear mensajes innecesariamente:**
+	- En lugar de crear un nuevo mensaje cada vez que ocurre un timeout, se envía una copia del mensaje original.
+
+2. **Facilita el seguimiento de mensajes:**
+	- Al mantener el mensaje original, se puede incluir un **número de secuencia (`sequence number`)** para identificarlo.
+	- Esto ayuda a visualizar mejor el comportamiento de la simulación y a depurar el código.
+
+---
+
+**💡 ¿Cómo se implementa esto?**
+Se crean dos funciones nuevas para simplificar `handleMessage()` y manejar la creación y retransmisión de mensajes.
+
+**📌 Generar un nuevo mensaje: (`generateNewMessage()`)**
+
+Esta función crea un nuevo mensaje con un nombre único que incluye un número de secuencia (`seq`).
+
+``` c++ showLineNumbers{}
+cMessage *Tic9::generateNewMessage()
+{
+    // Generate a message with a different name every time.
+    char msgname[20];
+    sprintf(msgname, "tic-%d", ++seq);
+    cMessage *msg = new cMessage(msgname);
+    return msg;
+}turn msg;
+}
+```
+
+**📌 Enviar una copia del mensaje: (`sendCopyOf()`)**
+
+Esta función duplica el mensaje original y envía la copia.
+
+``` c++ showLineNumbers{}
+void Tic9::sendCopyOf(cMessage *msg)
+{
+    // Duplicate message and send the copy.
+    cMessage *copy = (cMessage *)msg->dup();
+    send(copy, "out");
+}
+```
+
+**📌 ¿Por qué separar estas funciones?**
+
+- Al separar el código en funciones, `handleMessage()` se mantiene limpio y fácil de entender.
+- También facilita la reutilización de código y permite que cada función tenga una responsabilidad clara.
+
+**📥 ¿Qué se debe observar al correr la simulación?**
+
+1. En la consola, verás mensajes con nombres únicos (*tic-1*, *tic-2*, etc.) indicando la secuencia de mensajes enviados.
+2. En la gráfica de secuencia (*Sequence Chart*), será fácil identificar cada mensaje por su número de secuencia.
+3. Los mensajes se siguen retransmitiendo en caso de pérdida, pero ahora se envían **copias del mensaje original**.
+
+
+
+
+---
+**Fuente orginal**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)
 
 
 

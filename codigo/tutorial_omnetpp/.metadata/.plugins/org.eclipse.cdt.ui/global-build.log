@@ -31,3 +31,75 @@ make: Nothing to be done for 'all'.
 07:44:02 **** Incremental Build of configuration release for project tictoc ****
 make MODE=release all 
 make: Nothing to be done for 'all'.
+14:51:12 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc10.cc
+txc11.cc
+txc12.cc
+txc13.cc
+txc13.cc:20:10: fatal error: 'tictoc13_m.h' file not found
+   20 | #include "tictoc13_m.h"
+      |          ^~~~~~~~~~~~~~
+1 error generated.
+make: *** [Makefile:126: out/clang-release//txc13.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+14:52:10 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc13.cc
+txc13.cc:20:10: fatal error: 'tictoc13_m.h' file not found
+   20 | #include "tictoc13_m.h"
+      |          ^~~~~~~~~~~~~~
+1 error generated.
+make: *** [Makefile:126: out/clang-release//txc13.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+14:52:20 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc13.cc
+txc13.cc:20:10: fatal error: 'tictoc13_m.h' file not found
+   20 | #include "tictoc13_m.h"
+      |          ^~~~~~~~~~~~~~
+1 error generated.
+make: *** [Makefile:126: out/clang-release//txc13.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+14:54:57 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc13.cc
+txc13.cc:20:10: fatal error: 'tictoc13_m.h' file not found
+   20 | #include "tictoc13_m.h"
+      |          ^~~~~~~~~~~~~~
+1 error generated.
+make: *** [Makefile:126: out/clang-release//txc13.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+15:01:10 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+MSGC: tictoc13.msg
+MSGC: tictoc14.msg
+MSGC: tictoc15.msg
+MSGC: tictoc16.msg
+MSGC: tictoc17.msg
+MSGC: tictoc18.msg
+txc13.cc
+txc14.cc
+txc15.cc
+txc16.cc
+txc17.cc
+txc18.cc
+txc8.cc
+txc9.cc
+tictoc13_m.cc
+tictoc14_m.cc
+tictoc15_m.cc
+tictoc16_m.cc
+tictoc17_m.cc
+tictoc18_m.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+15:01:20 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:01:44 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:03:21 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.

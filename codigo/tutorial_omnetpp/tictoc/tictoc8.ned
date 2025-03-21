@@ -28,14 +28,15 @@ simple Toc8
 
 network Tictoc8
 {
+    @display("bgb=312,220");
     submodules:
         tic: Tic8 {
             parameters:
-                @display("i=,cyan");
+                @display("i=,cyan;p=57,162");
         }
         toc: Toc8 {
             parameters:
-                @display("i=,gold");
+                @display("i=,gold;p=239,45");
         }
     connections:
         tic.out --> {  delay = 100ms; } --> toc.in;
