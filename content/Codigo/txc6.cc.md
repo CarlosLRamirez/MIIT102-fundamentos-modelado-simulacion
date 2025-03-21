@@ -1,3 +1,5 @@
+```c++ showLineNumbers{1}
+
 //
 // This file is part of an OMNeT++/OMNEST simulation example.
 //
@@ -93,4 +95,4 @@ void Txc6::handleMessage(cMessage *msg)
         scheduleAt(simTime()+1.0, event);
     }
 }
-
+```

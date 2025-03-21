@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="TemplateBasedWizard">
+		<item key="project.template" value="bundleentry://405.fwk2105127402/template/emptyproject/"/>
+		<item key="nedfile.template" value="bundleentry://419.fwk2105127402/templates/emptynedfile/"/>
+		<item key="inifile.template" value="bundleentry://413.fwk2105127402/templates/inifile/"/>
+		<section name="OmnetppCCProjectWizard.dialogBounds">
+		</section>
+		<section name="NedFileWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="381"/>
+			<item key="DIALOG_Y_ORIGIN" value="66"/>
+			<item key="DIALOG_WIDTH" value="679"/>
+			<item key="DIALOG_HEIGHT" value="557"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+		<section name="NewInifileWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="381"/>
+			<item key="DIALOG_Y_ORIGIN" value="64"/>
+			<item key="DIALOG_WIDTH" value="679"/>
+			<item key="DIALOG_HEIGHT" value="560"/>
+			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
+		</section>
+	</section>
+	<section name="org.omnetpp.common.image.ImageSelectionDialog">
+		<item key="DIALOG_X_ORIGIN" value="80"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_WIDTH" value="555"/>
+		<item key="DIALOG_HEIGHT" value="584"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+</section>

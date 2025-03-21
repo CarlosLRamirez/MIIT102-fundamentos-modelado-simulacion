@@ -1,3 +1,4 @@
+```ned howLineNumbers{1}
 //
 // This file is part of an OMNeT++/OMNEST simulation example.
 //
@@ -33,4 +34,4 @@ network Tictoc7
         tic.out --> {  delay = 100ms; } --> toc.in;
         tic.in <-- {  delay = 100ms; } <-- toc.out;
 }
-
+```

@@ -16,6 +16,8 @@ Material del curso **Fundamentos de Modelado y Simulación**, dictado por el Ing
 - [[Parte 1 - Tutorial - Introducción a OMNeT++]]
 - [[Parte 2  - Tutorial - Introducción a OMNeT++]]
 - [[Parte 3 - Tutorial - Introducción a OMNeT++]]
+- [[Parte 4 - Tutorial - Introducción a OMNeT++]]
+
 ## Actividades y Tareas
 
 - [[Ejercicio de Comprobación - Extensión del modelo Tic-Toc con Triángulo de 3 Nodos]]

@@ -1,3 +1,5 @@
+```c++ showLineNumbers{1}
+
 //
 // This file is part of an OMNeT++/OMNEST simulation example.
 //
@@ -92,14 +94,16 @@ Define_Module(Toc8);
 
 void Toc8::handleMessage(cMessage *msg)
 {
-    if (uniform(0, 1) < 0.1) {
+    if (uniform(0, 1) < 0.1) { // Probabilidad del 10% de perder el mensaje
         EV << "\"Losing\" message.\n";
-        bubble("message lost");  // making animation more informative...
+        bubble("message lost");  /// Muestra una burbuja de notificación en la GUI
         delete msg;
     }
     else {
+	    // Procesa el mensaje normalmente si no se pierde
         EV << "Sending back same message as acknowledgement.\n";
         send(msg, "out");
     }
 }
+```
 

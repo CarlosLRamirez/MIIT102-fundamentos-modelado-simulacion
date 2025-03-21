@@ -10,3 +10,8 @@ private/
 .replit
 replit.nix
 misapuntes.md
+codigo/**/results/
+
+# Ignorar archivos ejecutables (.exe) y archivos Makefile generados por OMNeT++
+codigo/**/*.exe
+codigo/**/Makefile

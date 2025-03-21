@@ -1,0 +1,9 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=aarch64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=macosx
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:tictoc - Tictoc5,org.eclipse.launchbar.core.descriptorType.default\:tictoc - Checkpoint5,org.eclipse.launchbar.core.descriptorType.default\:tictoc - Tictoc2,org.eclipse.launchbar.core.descriptorType.default\:tictoc - Tictoc3,org.eclipse.launchbar.core.descriptorType.default\:tictoc - Tictoc4,org.eclipse.launchbar.core.descriptorType.default\:tictoc
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:tictoc\ -\ Tictoc5/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:tictoc\ -\ Tictoc5/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:tictoc/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:tictoc/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
