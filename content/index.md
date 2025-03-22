@@ -21,7 +21,7 @@ Material del curso **Fundamentos de Modelado y Simulación**, dictado por el Ing
 - [[Parte 3 - Tutorial - Introducción a OMNeT++|Tutorial TicToc: Introducción a OMNeT++  - Parte 3: Mejorando el TicToc de 2 nodos]]
 - [[Parte 4 - Tutorial - Introducción a OMNeT++|Tutorial TicToc: Introducción a OMNeT++  - Parte 4: Convirtiéndose en una red real]]
 - [[Parte 5 - Tutorial - Introducción a OMNeT++|Tutorial TicToc - Introducción a OMNeT++ - Parte 5: Recolección de Estadísticas]]
-
+- [[Parte 6  - Tutorial - Introducción a OMNeT++|Tutorial TicToc - Introducción a OMNeT++ - Parte 6: Visualización de resultados]]
 
 ## Actividades y Tareas
 
