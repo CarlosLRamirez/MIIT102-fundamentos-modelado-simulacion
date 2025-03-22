@@ -36,6 +36,8 @@ Haga clic con el botón derecho del ratón y seleccione una de las opciones del 
 
 ![[Pasted image 20250322104835.png]]
 
+## 6.1.1 Grafico de Vectores
+
 Nuestro último modelo registra el `hopCount` de un mensaje cada vez que el mensaje llega a su destino. Para representar gráficamente estos vectores para todos los nodos, seleccione las 6 líneas en la pestaña *Browse Data* y, a continuación, haga clic con el botón derecho del ratón y seleccione Representar con gráfico de líneas. (*Line Chat with Matplotlib*)
 
 ![[Pasted image 20250322105747.png]]
@@ -57,6 +59,8 @@ Si aplicamos una operación de media podemos ver como los hopCount en los difere
 
 ![[Pasted image 20250322110324.png]]
 
+
+## 6.1.2 Grafico de escalares
 
 Los datos escalares pueden representarse en gráficos de barras. El siguiente gráfico muestra la **media** y el **máximo** del `hopCount` de los mensajes para cada nodo de destino, basándose en los datos escalares registrados al final de la simulación. En la pestaña Examinar datos, seleccione Escalares y **asegúrese de que el botón Mostrar estadísticas/campos vectoriales como escalares** (*Show Statistics/Vector Fields as Scalars*) está activado en la barra de herramientas superior derecha. Seleccione ahora `hop count:max` y `hop count:mean` para los 6 nodos. Puede utilizar el filtrado y la ordenación para encontrar los escalares más fácilmente, como se muestra a continuación.
 
@@ -80,6 +84,8 @@ Y este es el resultado final del grafico de barras agrupadas por modulo para las
 
 ![[Pasted image 20250322114012.png]]
 
+
+## 6.1.3 Grafico de histograma
 
 Para crear un histograma que muestre la distribución de hopCount, seleccione Histogramas en la pestaña Examinar Datos. Seleccione todas las filas, luego haga clic con el botón derecho y elija Graficar usando Gráfico de Histograma.
 
