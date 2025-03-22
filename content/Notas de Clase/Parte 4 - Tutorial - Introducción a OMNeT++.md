@@ -1,323 +1,365 @@
 ---
-draft: false
-title: "Parte 4: Mejorando el Tic Toc de 2 nodos"
+created: 2025-03-21T23:41:44-06:00
+modified: 2025-03-22T09:23:34-06:00
+title: "Tutorial TicToc: Introducción a OMNeT++  - Parte 4: Convirtiéndose en una red real"
+aliases:
+  - "Tutorial TicToc: Introducción a OMNeT++  - Parte 4: Convirtiéndose en una red real"
+description: Convirtiéndose en una red real
+date: 2025-03-21
 ---
-## 4.1 Modelando el retardo en el proceso
+## 4.1 Más de dos nodos
 
-En el modelo anterior tanto `tic`como `toc`reenviaban el mensaje de vuelta **inmediatamente** después de recibirlo.
+En este paso, vamos a dar un gran salto: **crear varios módulos `tic` y conectarlos en una red.**
 
-En este paso, vamos a **agregar un temporizador** para simular un tiempo de procesamiento:
-- Tanto `tic` como `toc` van a **retener el mensaje durante 1 segundo** antes de enviarlo de regreso.
+Por ahora, vamos a mantener su funcionamiento simple:
+- Uno de los nodos generará un mensaje.
+- Los otros nodos continuarán pasando el mensaje alrededor en **direcciones aleatorias** hasta que llegue a un nodo de destino predefinido (`tic[3]`).
 
-**📌**  **¿Cómo funciona este modelo?**
+### 4.1.1 Cambios en el modelo
 
-En OMNeT++, implementar un temporizador se logra mediante el uso de **mensajes auto-enviados** (_self-messages_).
+**Uso de múltiples módulos tic (seis en total)**:
+- Los módulos están definidos como un **vector de módulos** (`tic[6]`).
+- Esto significa que se crean automáticamente seis módulos con nombres `tic[0]`, `tic[1]`, `tic[2]`, etc.
 
-Estos mensajes se envían por un módulo a sí mismo para que regresen después de cierto tiempo.
+**Uso de vectores de puertas (`in[]` y `out[]`)**:
+- Las puertas (in y out) se definen como vectores para permitir múltiples conexiones por cada módulo.
+- El tamaño del vector se determina automáticamente al conectar los módulos.
 
-📖 Aunque se llaman _self-messages_ por su uso, en realidad son objetos de mensaje ordinarios (cMessage) que simplemente se programan para ser recibidos por el mismo módulo que los envía.
+### 4.1.2 Definición de red (NED)
 
-**🔍 Variables agregadas a la clase**
+En el archivo **NED (`tictoc10.ned`)** se declaran las puertas como vectores con el uso de `[]`.
 
-Añadimos dos variables de tipo `cMessage*` a la definición de la clase para diferenciar entre:
-1. `event`: El mensaje que representa el temporizador o retardo.
-2. `tictocMsg`: El mensaje que se transmite entre los nodos y que estamos simulando que tiene un tiempo de procesamiento.
-
-```c++ showLineNumbers{29}
-class Txc6 : public cSimpleModule
+```ned showLineNumbers{13}
+	simple Txc10
 {
-  private:
-    // Set the pointers to nullptr, so that the destructor won't crash
-    // even if initialize() doesn't get called because of a runtime
-    // error or user cancellation during the startup process.
-    cMessage *event = nullptr;  // pointer to the event object which we'll use for timing
-    cMessage *tictocMsg = nullptr;  // variable to remember the message until we send it back
-
-  public:
+    parameters:
+        @display("i=block/routing");
+    gates:
+        input in[];  // declare in[] and out[] to be vector gates
+        output out[];
+}
 ```
 
-**⏳ ¿Cómo se programa un auto-mensaje?**
+Luego, se define la red con varios nodos conectados entre sí:
 
-Para programar un mensaje a sí mismo (auto-mensaje) se utiliza la función `scheduleAt()`.
+```ned showLineNumbers{22}
+network Tictoc10
+{
+    submodules:
+        tic[6]: Txc10;
+    connections:
+        tic[0].out++ --> {  delay = 100ms; } --> tic[1].in++;
+        tic[0].in++ <-- {  delay = 100ms; } <-- tic[1].out++;
 
-Esta función necesita:
-- El tiempo en que queremos recibir el mensaje (`simTime() + 1.0`).
-- El mensaje que queremos recibir (`event`).
+        tic[1].out++ --> {  delay = 100ms; } --> tic[2].in++;
+        tic[1].in++ <-- {  delay = 100ms; } <-- tic[2].out++;
 
-Ejemplo del uso de scheduleAt() en el código:
+        tic[1].out++ --> {  delay = 100ms; } --> tic[4].in++;
+        tic[1].in++ <-- {  delay = 100ms; } <-- tic[4].out++;
 
-```c++ showLineNumbers{94}
-		scheduleAt(simTime()+1.0, event);
+        tic[3].out++ --> {  delay = 100ms; } --> tic[4].in++;
+        tic[3].in++ <-- {  delay = 100ms; } <-- tic[4].out++;
+
+        tic[4].out++ --> {  delay = 100ms; } --> tic[5].in++;
+        tic[4].in++ <-- {  delay = 100ms; } <-- tic[5].out++;
+}
 ```
 
-**📥 ¿Cómo diferenciamos los mensajes recibidos?**
+La topología resultante queda de esta forma:
 
-En el método `handleMessage()`, necesitamos distinguir si el mensaje que recibimos es un **auto-mensaje (`event`)** o un mensaje enviado desde otro módulo (`tictocMsg`).
-
-Esto se hace comparando si el mensaje recibido (`msg`) es el mismo que el evento programado (`event`):
-
-```c++ showLineNumbers{80}
-		if (msg == event) {
-```
-
-Alternativamente, se puede hacer así:
-
-```c++
-		if (msg->isSelfMessage())
-```
-
-Ambas maneras funcionan, pero la comparación directa (`msg == event`) es más rápida y sencilla para este caso.
-
-En este ejemplo no se dejó por fuera el contador de mensajes para mantener el código pequeño:
-
-**📌 ¿Qué se debe observar al correr la simulación?**
-
-1. En la consola de OMNeT++, deberías ver mensajes como:
-
-![[Pasted image 20250320171850.png]]
-
-2. En la **gráfica de Secuencia de Eventos (Sequence Chart)**, verás cómo el mensaje tictocMsg viaja entre los módulos con un retraso de 1 segundo en cada rebote.
-
-![[Pasted image 20250320171801.png]]
-
-
-Código fuente del ejemplo:  [[tictoc6.ned]], [[txc6.cc]], [[omnetpp.ini]]
-
-## 4.2 Números aleatorios y parámetros
-
-En este ejemplo vamos a introducir el uso de **números aleatorios** en la simulación.
-
-Vamos a cambiar el retardo fijo de 1 segundo por un **valor aleatorio** que puede configurarse desde el archivo **NED** o desde `omnetpp.in`.
-
-**🔍 ¿Cómo se especifica un retardo aleatorio?**
-
-En OMNeT++, los **parámetros del módulo** pueden devolver **valores aleatorios**.
-
-Sin embargo, para utilizar correctamente esta característica, debemos leer el parámetro cada vez que lo necesitemos en `handleMessage()`.
-
-Ejemplo de cómo se lee el parámetro aleatorio:
-
-```c++ showLineNumbers{70}
-            // The "delayTime" module parameter can be set to values like
-            // "exponential(5)" (tictoc7.ned, omnetpp.ini), and then here
-            // we'll get a different delay every time.
-            simtime_t delay = par("delayTime");
- 
-            EV << "Message arrived, starting to wait " << delay << " secs...\n";
-            tictocMsg = msg;
-```
+![[Pasted image 20250322001726.png|350]]
   
-**🔢 ¿Cómo se configuran estos parámetros?**
+### 4.1.3 Explicación del Código
 
-Puedes definir el parámetro `delayTime` en el archivo `omnetpp.ini` para cada módulo.
+- Se crean **6 módulos tic** en un arreglo llamado `tic[]`.
+- Cada módulo tiene múltiples entradas (`in[]`) y salidas (`out[]`).
+- Los módulos están conectados con retardos (`delay = 100ms`).
+- El mensaje se crea en `tic[0]` y se envía al siguiente nodo al azar.
 
-Ejemplo:
-```ini showLineNumbers{31}
-Tictoc7.tic.delayTime = exponential(3s)
-Tictoc7.toc.delayTime = truncnormal(3s,1s)
-```
+#### 4.1.3.1 Generación de mensaje inicial en `tic[0]`
 
-**❌ ¿Cómo se simula la pérdida de mensajes?**
+En este modelo, **solo el módulo `tic[0]` es el encargado de generar el mensaje inicial** que será enviado y retransmitido por los demás nodos.  
 
-En este modelo, se agrega la posibilidad de que un mensaje sea **perdido (eliminado)** con una probabilidad fija.
+En la función `initialize()` del módulo se `TxC10`utiliza la función `getIndex()` para identificar si el módulo actual es `tic[0]`.
 
-Esto se realiza utilizando la función uniform(0, 1) que genera un número aleatorio entre 0 y 1.
+El proceso arranca mediante `tic[0]`programando el envío del mensaje a si mismo, en el tiempo `0.0`, por lo cual se activa el método `handleMessage()`
 
-Si ese número es menor que 0.1 (10%), el mensaje se considera perdido y se elimina.
-
-Ejemplo en código:
-``` c++ showLineNumbers{65}
-		if (uniform(0, 1) < 0.1) {
-			EV << "\"Losing\" message\n";
-			delete msg;
-		}
-```
-
-**🔑 ¿Cómo funciona la generación de números aleatorios en OMNeT++?**
- 
-OMNeT++ utiliza un algoritmo determinista (por defecto, el **Mersenne Twister RNG**) para generar números aleatorios.
-La ventaja de esto es que, si no cambias la semilla (*seed*), obtendrás siempre los mismos resultados al ejecutar la simulación varias veces.
-Esto es importante para garantizar que los experimentos sean **reproducibles**.
-
-**🔧 ¿Cómo se cambia la semilla (seed)?**
-
-Si deseas cambiar la semilla para obtener resultados diferentes, debes especificar un nuevo valor en `omnetpp.ini` así:
-
-``` ini
-[General]
-seed-0-mt=532569  # or any other 32-bit value
-```
-
-💡 **Nota:** OMNeT++ admite múltiples generadores de números aleatorios (RNGs), aunque en este tutorial se usa únicamente el RNG 0.
-
-**📌 ¿Qué debes observar al correr la simulación?**
-1. Verás que cada vez que se genera un retardo (delayTime), el valor será diferente.
-2. Los mensajes pueden ser eliminados con una probabilidad del 10%, al momento de perder un evento, se termina la simulación.
-3. Puedes experimentar utilizando diferentes distribuciones aleatorias en `omnetpp.ini`.
-
-
-![[Pasted image 20250320181209.png]]
-
-Código Fuente del ejemplo: [[tictoc7.ned]], [[txc7.cc]], [[omnetpp.ini]]
-
-## 4.3 Simulación Stop-and-Wait  (Timeout y Cancelación de temporizadores)
-
-En este paso, vamos a implementar un mecanismo básico de **Stop-and-Wait** que es común en **protocolos de comunicación confiables**.
-
-El objetivo es garantizar que un mensaje llegue correctamente al receptor, incluso si se pierde en el camino.
-
-**🔍 ¿Qué cambia en este modelo?**
-
-1. **Implementación de timeout (tiempo de espera):**
-	- Si el receptor (`toc`) pierde un mensaje, el emisor (`tic`) debe **retransmitirlo después de un tiempo límite (`timeout`)**.
-
-2. **Cancelación de temporizadores:**
-	- Si `tic` recibe una respuesta de `toc` antes de que expire el tiempo límite, se cancela el temporizador.
-	- Si el temporizador expira antes de recibir respuesta, se retransmite el mensaje.
-
-**💡 ¿Cómo se simula la pérdida de mensajes? (Código de `toc`)**
-
-El receptor (`toc`) tiene una probabilidad fija del 10% de perder cualquier mensaje que recibe.. Esto se implementa utilizando un número aleatorio generado con `uniform(0, 1)`.
-
-``` c++ showLineNumbers{94}
-void Toc8::handleMessage(cMessage *msg)
+```c++ showLineNumbers{35}
+void Txc10::initialize()
 {
-    if (uniform(0, 1) < 0.1) { // Probabilidad del 10% de perder el mensaje
-        EV << "\"Losing\" message.\n";
-        bubble("message lost");  /// Muestra una burbuja de notificación en la GUI
+    if (getIndex() == 0) {
+        // Boot the process scheduling the initial message as a self-message.
+        char msgname[20];
+        snprintf(msgname, sizeof(msgname), "tic-%d", getIndex());
+        cMessage *msg = new cMessage(msgname);
+        scheduleAt(0.0, msg);
+    }
+}
+```
+
+
+#### 4.1.3.2 Reenvio de  mensajes al azar
+
+El código principal que maneja este comportamiento está en la función `forwardMessage()`.
+
+Se selecciona aleatoriamente una puerta de salida para reenviar el mensaje.
+
+```c++ showLineNumbers{59}
+void Txc10::forwardMessage(cMessage *msg)
+{
+    // Seleccionar aleatoriamente una puerta de salida del vector `out[]`
+    int n = gateSize("out");
+    int k = intuniform(0, n-1);  // Selección aleatoria de un índice de puerta
+
+    EV << "Reenviando mensaje " << msg << " por la puerta out[" << k << "]\n";
+    send(msg, "out", k);  // Enviar el mensaje por la puerta seleccionada
+}
+```
+
+#### 4.1.3.3 Eliminación del mensaje en  `tic[3]`
+
+Cuando un mensaje llega al módulo `tic[3]`, se elimina, lo cual simula que ha llegado a su destino.
+
+```c++ showLineNumbers{48}
+    if (getIndex() == 3) {
+        // Message arrived.
+        EV << "Message " << msg << " arrived.\n";
         delete msg;
     }
+```
+
+### 4.1.4 Resultados de la simulacíon
+
+1. En la consola, verás mensajes indicando el envío de mensajes entre nodos:
+
+![[Pasted image 20250322005413.png]]
+
+2. En la gráfica de secuencia (Sequence Chart), podrás observar cómo el mensaje viaja entre los nodos.
+
+![[Pasted image 20250322005556.png]]
+
+3. Cuando un mensaje llega a `tic[3]`, se elimina y se muestra un mensaje indicando su eliminación.
+
+![[Pasted image 20250322005440.png]]
+
+### 4.1.5 Código Fuente
+
+- [[tictoc10_ned|tictoc10.ned]]
+- [[txc10_cc|txc10.cc]] 
+- [[omnetpp_ini|omnetpp.ini]]
+
+
+## 4.2 Canales y definiciones de tipo interno
+
+Nuestra definición de red se está volviendo bastante compleja y larga, especialmente la sección de conexiones. Vamos a simplificarla.   Lo primero que notamos es que las conexiones siempre usan el mismo parámetro de retardo (`delay`).
+
+Es posible crear tipos personalizados para las conexiones (llamados **canales**) de manera similar a como se crean los módulos simples (`simple modules`).  
+
+Vamos a crear un tipo de canal que especifica el parámetro de retardo y usaremos ese tipo para todas las conexiones en la red.
+
+### 4.2.1 Definición de red (`tictoc11.ned`)
+
+```ned showLineNumbers{26}
+network Tictoc11
+{
+    types:
+        channel Channel extends ned.DelayChannel {
+            delay = 100ms;
+        }
+    submodules:
+        tic[6]: Txc11;
+    connections:
+        tic[0].out++ --> Channel --> tic[1].in++;
+        tic[0].in++ <-- Channel <-- tic[1].out++;
+ 
+        tic[1].out++ --> Channel --> tic[2].in++;
+        tic[1].in++ <-- Channel <-- tic[2].out++;
+ 
+        tic[1].out++ --> Channel --> tic[4].in++;
+        tic[1].in++ <-- Channel <-- tic[4].out++;
+ 
+        tic[3].out++ --> Channel --> tic[4].in++;
+        tic[3].in++ <-- Channel <-- tic[4].out++;
+ 
+        tic[4].out++ --> Channel --> tic[5].in++;
+        tic[4].in++ <-- Channel <-- tic[5].out++;
+}
+```
+
+### 4.2.2 Explicación:
+
+- Hemos definido un nuevo tipo de canal llamado `Channel` dentro de la sección `types`.
+- Este canal se basa en `ned.DelayChannel`, que es un tipo incorporado de OMNeT++.
+- Este tipo personalizado (`Channel`) solo es visible dentro de la red `Tictoc11`.
+- Simplifica las conexiones al permitirnos especificar solo `Channel` en lugar de definir el retardo (`delay`) en cada conexión.
+
+### 4.2.3 Código Fuente
+
+- [[tictoc11_ned|tictoc11.ned]]
+- [[txc11_cc|txc11.cc]]
+- [[omnetpp_ini|omnetpp.ini]]
+
+---
+## 4.3 Uso de conexiones bidireccionales
+
+Si observamos la sección de conexiones, nos damos cuenta de que cada par de nodos está conectado con **dos conexiones**: una para cada dirección.  
+OMNeT++ permite usar conexiones bidireccionales (`inout gates`), así que vamos a implementarlas.
+
+### 4.3.2 Definición del módulo (`Txc12.ned`)
+
+```ned showLineNumbers{}
+simple Txc12
+{
+    parameters:
+        @display("i=block/routing");
+    gates:
+        inout gate[];  // Declarar conexiones bidireccionales
+}
+```
+
+### 4.3.3 Definición de red (`tictoc12.ned`)
+
+```ned showLineNumbers{}
+network Tictoc12
+{
+    types:
+        channel Channel extends ned.DelayChannel {
+            delay = 100ms;
+        }
+    submodules:
+        tic[6]: Txc12;
+    connections:
+        tic[0].gate++ <--> Channel <--> tic[1].gate++;
+        tic[1].gate++ <--> Channel <--> tic[2].gate++;
+        tic[1].gate++ <--> Channel <--> tic[4].gate++;
+        tic[3].gate++ <--> Channel <--> tic[4].gate++;
+        tic[4].gate++ <--> Channel <--> tic[5].gate++;
+}
+```
+
+### 4.3.4 Modificación del código en C++ (`txc12.cc`)
+
+```cpp showLineNumbers{}
+void Txc12::forwardMessage(cMessage *msg)
+{
+    int n = gateSize("gate");
+    int k = intuniform(0, n - 1);
+
+    EV << "Forwarding message " << msg->getName() << " on gate[" << k << "]\n";
+    send(msg, "gate$o", k);
+}
+```
+
+### 4.3.5 Explicación:
+
+- Ahora usamos puertas `inout` en lugar de `input` y `output`.
+- El sufijo `$o` se usa para identificar la parte de salida de una puerta bidireccional.
+- El sufijo `$i` se usa para identificar la parte de entrada de una puerta bidireccional (no utilizado en este ejemplo).
+- OMNeT++ permite definir conexiones bidireccionales con `<-->`, simplificando la topología.
+
+### 4.3.6 Código Fuente
+
+- [[tictoc12_ned|tictoc12.ned]]
+- [[txc12_cc|txc12.cc]]
+- [[omnetpp_ini|omnetpp.ini]]
+
+## 4.4 Definición de nuestra propia clase de mensaje
+
+En este paso, vamos a eliminar la dependencia de que el mensaje siempre llegue a `tic[3]` y permitiremos que **el destino se seleccione al azar**.  
+
+Agregaremos la dirección de destino como un campo dentro del mensaje.
+
+La mejor manera de hacerlo es crear una **subclase de cMessage** y agregar la dirección de destino (`destination`) como un miembro de datos (variable) dentro de esa clase.
+
+Escribir manualmente la clase de mensaje sería un proceso tedioso porque normalmente requiere mucho código repetitivo y estructural (**boilerplate code**).
+
+En lugar de hacerlo a mano, vamos a permitir que OMNeT++ genere la clase por nosotros.
+
+La especificación de la clase de mensaje se escribe en un archivo llamado `tictoc13.msg`.
+
+### 4.4.1 Definición del mensaje (`tictoc13.msg`)
+
+```cpp showLineNumbers{}
+message TicTocMsg13
+{
+    int source;
+    int destination;
+    int hopCount = 0;
+}
+```
+### 4.4.2 Generación del código para la clase **mensaje**
+
+OMNeT++ genera automáticamente las clases necesarias (`tictoc13_m.h` y `tictoc13_m.cc`) al compilar el proyecto con el comando `opp_msgc`.
+
+### 4.4.3 Modificación del código en C++ (`txc13.cc`)
+
+Primero, incluye el archivo generado:
+
+```cpp showLineNumbers{}
+#include "tictoc13_m.h"
+```
+
+Luego, modificamos la función `generateMessage()` para crear el mensaje y configurar sus campos.
+
+```cpp showLineNumbers{}
+TicTocMsg13 *generateMessage(int src)
+{
+    int dest = intuniform(0, 5);  // Generar un destino aleatorio
+    char msgname[20];
+    sprintf(msgname, "tic-%d-to-%d", src, dest);
+
+    TicTocMsg13 *msg = new TicTocMsg13(msgname);
+    msg->setSource(src);
+    msg->setDestination(dest);
+    return msg;
+}
+```
+
+Y actualizamos `handleMessage()` para verificar el destino del mensaje.
+
+```cpp showLineNumbers{}
+void Txc13::handleMessage(cMessage *msg)
+{
+    TicTocMsg13 *ttmsg = check_and_cast<TicTocMsg13 *>(msg);
+
+    if (ttmsg->getDestination() == getIndex()) {
+        EV << "Message " << ttmsg->getName() << " arrived at its destination.\n";
+        delete ttmsg;
+
+        // Generar un nuevo mensaje con destino aleatorio
+        TicTocMsg13 *newMsg = generateMessage(getIndex());
+        forwardMessage(newMsg);
+    }
     else {
-	    // Procesa el mensaje normalmente si no se pierde
-        EV << "Sending back same message as acknowledgement.\n";
-        send(msg, "out");
+        forwardMessage(ttmsg);  // Reenviar el mensaje si no ha llegado al destino
     }
 }
 ```
 
-**🔑 ¿Qué hace la llamada a `bubble()`?**
+### 4.4.4 Explicación:
+- Creamos un nuevo tipo de mensaje `TicTocMsg13` con campos `source`, `destination` y `hopCount`.
+- Usamos la función `generateMessage()` para crear un nuevo mensaje con un destino aleatorio cada vez que llega uno a su destino.
+- La función `check_and_cast<>()` asegura que el mensaje recibido es del tipo correcto (`TicTocMsg13`).
 
-- La función `bubble("message lost")` muestra un **mensaje visual temporal** en la GUI cada vez que se pierde un mensaje.
-- Esto es útil para **visualizar eventos importantes o fallos en la simulación**.
+### 4.4.5 Resultado de la Simulación
 
-**⏳ ¿Cómo se maneja el temporizador en `tic`?**
+Al ejecutar la simulación podemos ver que cuando un mensaje llega a su destino, el nodo destino genera otro mensaje con un destino aleatorio.
 
-Cada vez que `tic` envía un mensaje, programa un temporizador usando `scheduleAt()` para determinar cuándo debe retransmitir el mensaje si no recibe respuesta.
+![[Pasted image 20250322021850.png]]
 
-``` c++ showLineNumbers{67}
-		scheduleAt(simTime() + timeout, timeoutEvent);
-```
+Al hacer click en el mensaje es posible ver el contenido en la ventana de inspección.  Al hacer doble click se abre una nueva ventana, la cual muestra información valiosa; los campos del mensaje se pueden ver en la pagina de contenido:
 
-**❌ ¿Cómo se cancela el temporizador si toc responde?**
+![[Pasted image 20250322022147.png]]
 
-Si `tic` recibe una respuesta válida antes de que el temporizador expire, el temporizador se cancela usando:
+### 4.4.6 Código Fuente
+- [[tictoc13_msg|tictoc13.msg]]
+- [[tictoc13_ned|tictoc13.ned]]
+- [[txc13_cc|txc13.cc]]
+- [[omnetpp_ini|omnetpp.ini]]
 
-``` c++ showLineNumbers{73}
-		cancelEvent(timeoutEvent);
-```
+### 4.5 Ejercicio sugerido
 
-**🔑 Reutilización de mensajes de timeout**
-
-Al cancelar un evento con `cancelEvent()`, el mensaje de timeout (`timeoutEvent`) **no se destruye**.
-
-Esto permite que el mismo mensaje sea reutilizado múltiples veces sin tener que crear uno nuevo cada vez.
-
-Esto es especialmente útil en simulaciones complejas donde hay que manejar múltiples eventos de **timeout**.
-
-**📌 ¿Qué debes observar al correr la simulación?**
-
-1. **Mensajes perdidos:**
-	- Se visualizarán burbujas con la etiqueta "message lost" cuando toc pierda un mensaje
-	- Puedes ajustar la probabilidad de pérdida cambiando la condición (`uniform(0, 1) < 0.1`) a otro valor.
-
-2. **Mecanismo de retransmisión:**
-	- `tic` continuará retransmitiendo un mensaje si no recibe una respuesta de `toc` debido a un mensaje perdido.
-	- Si `tic` recibe la respuesta a tiempo, el temporizador se cancela y se envía el siguiente mensaje.
-
-![[message lost.gif|400]]
-
-![[Pasted image 20250321151003.png]]
-
-Código Fuente del ejemplo: [[tictoc8.ned]] , [[txc8.cc]] , [[omnetpp.ini]]
-
----
-
-## 4.4 Retransmisión del mismo mensaje
-
-En este paso, vamos a mejorar el modelo anterior (Stop-and-Wait), en el cual cada vez que se necesitaba retransmitir un mensaje, simplemente se creaba uno nuevo.
-
-Aunque eso funcionaba, no es una práctica eficiente en sistemas reales, porque:
-
-1. **Los mensajes pueden contener información compleja o grande** (no es eficiente recrearlos cada vez).
-2. **Perderíamos información útil almacenada en el mensaje original**.
-
-**🔍 ¿Qué cambia en este modelo?**
-
-En lugar de crear un mensaje nuevo cada vez que ocurre un timeout, vamos a:
-1. **Mantener una copia del mensaje original** que se debe retransmitir.
-2. **Enviar copias del mensaje original cuando sea necesario retransmitirlo**.
-3. **Eliminar el mensaje original solo cuando se recibe una confirmación (ACK) de `toc`**.
-
-**🔑 ¿Por qué hacer esto?**
-
-1. **Evita recrear mensajes innecesariamente:**
-	- En lugar de crear un nuevo mensaje cada vez que ocurre un timeout, se envía una copia del mensaje original.
-
-2. **Facilita el seguimiento de mensajes:**
-	- Al mantener el mensaje original, se puede incluir un **número de secuencia (`sequence number`)** para identificarlo.
-	- Esto ayuda a visualizar mejor el comportamiento de la simulación y a depurar el código.
-
----
-
-**💡 ¿Cómo se implementa esto?**
-Se crean dos funciones nuevas para simplificar `handleMessage()` y manejar la creación y retransmisión de mensajes.
-
-**📌 Generar un nuevo mensaje: (`generateNewMessage()`)**
-
-Esta función crea un nuevo mensaje con un nombre único que incluye un número de secuencia (`seq`).
-
-``` c++ showLineNumbers{}
-cMessage *Tic9::generateNewMessage()
-{
-    // Generate a message with a different name every time.
-    char msgname[20];
-    sprintf(msgname, "tic-%d", ++seq);
-    cMessage *msg = new cMessage(msgname);
-    return msg;
-}turn msg;
-}
-```
-
-**📌 Enviar una copia del mensaje: (`sendCopyOf()`)**
-
-Esta función duplica el mensaje original y envía la copia.
-
-``` c++ showLineNumbers{}
-void Tic9::sendCopyOf(cMessage *msg)
-{
-    // Duplicate message and send the copy.
-    cMessage *copy = (cMessage *)msg->dup();
-    send(copy, "out");
-}
-```
-
-**📌 ¿Por qué separar estas funciones?**
-
-- Al separar el código en funciones, `handleMessage()` se mantiene limpio y fácil de entender.
-- También facilita la reutilización de código y permite que cada función tenga una responsabilidad clara.
-
-**📥 ¿Qué se debe observar al correr la simulación?**
-
-1. En la consola, verás mensajes con nombres únicos (*tic-1*, *tic-2*, etc.) indicando la secuencia de mensajes enviados.
-2. En la gráfica de secuencia (*Sequence Chart*), será fácil identificar cada mensaje por su número de secuencia.
-3. Los mensajes se siguen retransmitiendo en caso de pérdida, pero ahora se envían **copias del mensaje original**.
-
-
-
-
----
-**Fuente orginal**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)
-
-
-
+- Actualmente, solo hay un mensaje en circulación en cada momento: los nodos solo generan un nuevo mensaje cuando reciben otro.  
+- Modifica la clase para que genere mensajes periódicamente.  
+- El intervalo entre mensajes debe ser un parámetro del módulo, retornando valores distribuidos exponencialmente.  
 

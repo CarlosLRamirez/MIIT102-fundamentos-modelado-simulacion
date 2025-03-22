@@ -1,0 +1,313 @@
+version 3
+run Tictoc16-0-20250322-10:57:18-56253
+attr configname Tictoc16
+attr datetime 20250322-10:57:18
+attr datetimef 20250322-105718
+attr experiment Tictoc16
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc16
+attr processid 56253
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Tictoc16
+config **.tic[1].hopCount.result-recording-modes +histogram
+config **.tic[5].hopCount.result-recording-modes +histogram
+config sim-time-limit 2400s
+config seed-0-mt 536568
+
+par Tictoc16.tic[0].gate$o[0].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[0].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc16.tic[0].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[1].gate$o[0].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[1].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc16.tic[1].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[1].gate$o[1].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[1].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc16.tic[1].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[2].gate$o[0].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[2].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc16.tic[2].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[1].gate$o[2].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[1].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc16.tic[1].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[4].gate$o[0].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[4].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc16.tic[4].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[3].gate$o[0].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[3].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc16.tic[3].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[4].gate$o[1].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[4].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc16.tic[4].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[4].gate$o[2].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[4].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc16.tic[4].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[5].gate$o[0].channel typename "\"Tictoc16.Channel\""
+par Tictoc16.tic[5].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc16.tic[5].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc16.tic[0] typename "\"Txc16\""
+statistic Tictoc16.tic[0] hopCount:stats
+field count 408
+field mean 13.218137254902
+field stddev 14.33587841011
+field min 1
+field max 109
+field sum 5393
+field sqrsum 154931
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc16.tic[1] typename "\"Txc16\""
+statistic Tictoc16.tic[1] hopCount:stats
+field count 399
+field mean 3.9473684210526
+field stddev 4.3778493196354
+field min 1
+field max 31
+field sum 1575
+field sqrsum 13845
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+statistic Tictoc16.tic[1] hopCount:histogram
+field count 399
+field mean 3.9473684210526
+field stddev 4.3778493196354
+field min 1
+field max 31
+field sum 1575
+field sqrsum 13845
+attr interpolationmode none
+attr recordingmode histogram
+attr source arrival
+attr title "hop count"
+bin	-inf	0
+bin	0	0
+bin	1	186
+bin	2	47
+bin	3	14
+bin	4	28
+bin	5	12
+bin	6	36
+bin	7	9
+bin	8	16
+bin	9	4
+bin	10	14
+bin	11	2
+bin	12	13
+bin	13	1
+bin	14	3
+bin	15	1
+bin	16	5
+bin	17	0
+bin	18	2
+bin	19	1
+bin	20	1
+bin	21	2
+bin	22	1
+bin	23	0
+bin	24	0
+bin	25	0
+bin	26	0
+bin	27	0
+bin	28	0
+bin	29	0
+bin	30	0
+bin	31	1
+bin	32	0
+par Tictoc16.tic[2] typename "\"Txc16\""
+statistic Tictoc16.tic[2] hopCount:stats
+field count 383
+field mean 13.146214099217
+field stddev 11.767580366045
+field min 1
+field max 75
+field sum 5035
+field sqrsum 119089
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc16.tic[3] typename "\"Txc16\""
+statistic Tictoc16.tic[3] hopCount:stats
+field count 381
+field mean 13.824146981627
+field stddev 14.178859156075
+field min 1
+field max 111
+field sum 5267
+field sqrsum 149207
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc16.tic[4] typename "\"Txc16\""
+statistic Tictoc16.tic[4] hopCount:stats
+field count 410
+field mean 3.9853658536585
+field stddev 4.5210488957384
+field min 1
+field max 30
+field sum 1634
+field sqrsum 14872
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc16.tic[5] typename "\"Txc16\""
+statistic Tictoc16.tic[5] hopCount:stats
+field count 410
+field mean 12.426829268293
+field stddev 12.164550774498
+field min 1
+field max 72
+field sum 5095
+field sqrsum 123837
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+statistic Tictoc16.tic[5] hopCount:histogram
+field count 410
+field mean 12.426829268293
+field stddev 12.164550774498
+field min 1
+field max 72
+field sum 5095
+field sqrsum 123837
+attr interpolationmode none
+attr recordingmode histogram
+attr source arrival
+attr title "hop count"
+bin	-inf	0
+bin	0	0
+bin	1	33
+bin	2	47
+bin	3	25
+bin	4	21
+bin	5	27
+bin	6	14
+bin	7	23
+bin	8	13
+bin	9	16
+bin	10	9
+bin	11	19
+bin	12	13
+bin	13	11
+bin	14	9
+bin	15	14
+bin	16	4
+bin	17	9
+bin	18	5
+bin	19	12
+bin	20	1
+bin	21	12
+bin	22	5
+bin	23	7
+bin	24	4
+bin	25	6
+bin	26	3
+bin	27	5
+bin	28	3
+bin	29	4
+bin	30	2
+bin	31	6
+bin	32	1
+bin	33	3
+bin	34	2
+bin	35	2
+bin	36	0
+bin	37	1
+bin	38	1
+bin	39	1
+bin	40	0
+bin	41	1
+bin	42	0
+bin	43	2
+bin	44	0
+bin	45	2
+bin	46	1
+bin	47	2
+bin	48	0
+bin	49	0
+bin	50	0
+bin	51	1
+bin	52	1
+bin	53	2
+bin	54	1
+bin	55	0
+bin	56	0
+bin	57	0
+bin	58	0
+bin	59	2
+bin	60	0
+bin	61	0
+bin	62	0
+bin	63	0
+bin	64	0
+bin	65	0
+bin	66	0
+bin	67	0
+bin	68	0
+bin	69	0
+bin	70	0
+bin	71	1
+bin	72	1
+bin	73	0
+bin	74	0
+bin	75	0
+bin	76	0
+bin	77	0
+bin	78	0
+bin	79	0
+bin	80	0
+bin	81	0
+bin	82	0
+bin	83	0
+bin	84	0
+bin	85	0
+bin	86	0
+bin	87	0
+bin	88	0
+bin	89	0
+par Tictoc16 typename "\"Tictoc16\""
+

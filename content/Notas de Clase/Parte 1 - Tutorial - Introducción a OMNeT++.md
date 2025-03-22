@@ -1,20 +1,21 @@
 ---
 draft: false
-title: "Tutorial introductorio: Primeros pasos en OMNeT++"
+title: "Tutorial TicToc: Introducción a OMNeT++  - Parte 1: Primeros Pasos"
+modified: 2025-03-22T07:41:43-06:00
+aliases:
+  - "Tutorial TicToc: Introducción a OMNeT++  - Parte 1: Primeros Pasos"
 ---
+
+
 ## Introducción
 
 Este tutorial le ayudará con los primeros pasos para trabajar con OMNeT++ , comprender los componentes principales y herramientas, y conocer el flujo de trabajo para ejecutar una simulación.
-## Instrucciones
-
-Siga esta guía paso a paso, y al final de la sesión presente los resultados de cada  ejercicio.
-## Parte 1:  Primeros pasos
-### 1.1 El modelo
+## 1.1 El modelo
 
 El modelo que vamos a simular consta de una **red** formada por dos nodos. Los nodos realizarán una tarea sencilla: **uno de ellos creará un paquete**, y ambos lo enviarán de un lado a otro de forma continua. Llamaremos a estos nodos **tic** y **toc**.
 
 Más adelante, iremos mejorando este modelo, incorporando nuevas características de **OMNeT++** en cada paso.
-### 1.2 Configuración del espacio de trabajo y el proyecto
+## 1.2 Configuración del espacio de trabajo y el proyecto
 
 1. **Iniciar el IDE de OMNeT++** ejecutando el comando `omnetpp` desde la terminal del sistema operativo. En Windows, debe usarse la terminal **MINGW64** incluida con OMNeT++, o alternativamente **WSL** si está configurado.
 
@@ -62,7 +63,7 @@ Más adelante, iremos mejorando este modelo, incorporando nuevas característica
 > [!NOTA] 
 > 🔑 En simulaciones más complejas, es posible organizar los archivos en subcarpetas para mantener el proyecto ordenado.
 
-### 1.3 Agregar el achivo NED
+## 1.3 Agregar el achivo NED
 
 OMNeT++ utiliza ficheros NED para definir componentes y ensamblarlos en unidades mayores como redes. Comenzamos a implementar nuestro modelo añadiendo un **archivo NED.** 
 
@@ -88,7 +89,7 @@ El editor NED del IDE OMNeT++ tiene dos modos, **Diseño** *(Design)* y **Fuente
 
 En el modo **Diseño**, la topología puede editarse gráficamente, utilizando el ratón y la paleta de la derecha. En el modo **Fuente**, el código fuente NED puede editarse directamente como texto. Los cambios realizados en un modo se reflejarán inmediatamente en el otro, por lo que puede alternar libremente entre los modos durante la edición, y realizar cada cambio en el modo que le resulte más cómodo. (Dado que los archivos NED son archivos de texto sin formato, puede incluso utilizar un editor de texto externo para editarlos, aunque se perderá el resaltado de sintaxis, el asistente de contenido, las referencias cruzadas y otras características del IDE).
 
-Cambie al modo Fuente e introduzca lo siguiente:
+Cambie al modo `Fuente` e introduzca lo siguiente:
 
 ```ned
 simple Txc1
@@ -125,7 +126,7 @@ El segundo bloque declara `Tictoc1` como una red. `Tictoc1` se ensambla a partir
 
 Habrá un retardo de propagación de 100 ms en ambos sentidos.
 
-### 1.4 Agregar los archivos de C++
+## 1.4 Agregar los archivos de C++
 
 Ahora necesitamos implementar la funcionalidad del módulo simple `Txc1` en C++. Cree un archivo llamado `txc1.cc` seleccionando **New -> Source File** en el menú contextual del proyecto (o **File -> New-> File** en el menú principal del IDE). 
 
@@ -219,7 +220,7 @@ Ese tiempo se define, por ejemplo, en el archivo NED (en este caso, el enlace ti
 	• La paramos manualmente desde la GUI.
 	• O si especificamos un **límite de tiempo de simulación** en un archivo de configuración (aunque en este tutorial no lo hacemos).
 
-### 1.5 Agregar el omnetpp.ini
+## 1.5 Agregar el omnetpp.ini
   
 .Para poder **ejecutar la simulación**, necesitamos crear un archivo llamado `omnetpp.ini`.
 
@@ -271,7 +272,17 @@ El ejemplo con `tictoc2`y los pasos siguientes van a compartir el mismo archivo 
 
 Ha finalizado con la creación del primer modelo, y ahora si esta listo para compilarlo y ejecutarlo.
 
-Continue con la  [[Parte 2  - Tutorial - Introducción a OMNeT++]]
+## Código Fuente
+
+Los archivos que debería tener al final de esta parte son los siguientes:
+- [[tictoc1_ned|tictoc1.ned]]
+- [[txc1_cc|txc1.cc]]
+- [[omnetpp_ini|omnetpp.ini]]
+
+> El archivo `omnet.ini` sera el mismo que se utilizará durante todo el tutorial, por lo que es posible que contenga cosas que no le hagan sentido en este punto.
+
+
+Continue con:  [[Parte 2  - Tutorial - Introducción a OMNeT++|Tutorial TicToc: Introducción a OMNeT++  - Parte 2: Ejecución de la Simulación]]
 
 ---
 **Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)

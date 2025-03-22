@@ -1,0 +1,489 @@
+version 3
+run Tictoc15-0-20250322-09:59:25-50518
+attr configname Tictoc15
+attr datetime 20250322-09:59:25
+attr datetimef 20250322-095925
+attr experiment Tictoc15
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc15
+attr processid 50518
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config record-eventlog true
+config network Tictoc15
+config record-eventlog true
+config seed-0-mt 536568
+
+par Tictoc15.tic[0].gate$o[0].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[0].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc15.tic[0].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[1].gate$o[0].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[1].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc15.tic[1].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[1].gate$o[1].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[1].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc15.tic[1].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[2].gate$o[0].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[2].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc15.tic[2].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[1].gate$o[2].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[1].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc15.tic[1].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[4].gate$o[0].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[4].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc15.tic[4].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[3].gate$o[0].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[3].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc15.tic[3].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[4].gate$o[1].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[4].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc15.tic[4].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[4].gate$o[2].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[4].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc15.tic[4].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[5].gate$o[0].channel typename "\"Tictoc15.Channel\""
+par Tictoc15.tic[5].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc15.tic[5].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc15.tic[0] typename "\"Txc15\""
+scalar Tictoc15.tic[0] #sent 143
+scalar Tictoc15.tic[0] #received 143
+statistic Tictoc15.tic[0] "hop count"
+field count 143
+field mean 13.027972027972
+field stddev 13.986887247435
+field min 1
+field max 81
+field sum 1863
+field sqrsum 52051
+bin	-inf	0
+bin	0	8
+bin	2	31
+bin	4	14
+bin	6	13
+bin	8	14
+bin	10	7
+bin	12	3
+bin	14	8
+bin	16	13
+bin	18	5
+bin	20	4
+bin	22	2
+bin	24	4
+bin	26	2
+bin	28	0
+bin	30	1
+bin	32	0
+bin	34	1
+bin	36	3
+bin	38	2
+bin	40	0
+bin	42	1
+bin	44	2
+bin	46	0
+bin	48	1
+bin	50	1
+bin	52	1
+bin	54	0
+bin	56	0
+bin	58	0
+bin	60	0
+bin	62	0
+bin	64	0
+bin	66	0
+bin	68	0
+bin	70	0
+bin	72	0
+bin	74	0
+bin	76	1
+bin	78	0
+bin	80	1
+bin	82	0
+bin	84	0
+bin	86	0
+bin	88	0
+bin	90	0
+bin	92	0
+bin	94	0
+bin	96	0
+bin	98	0
+bin	100	0
+bin	102	0
+par Tictoc15.tic[1] typename "\"Txc15\""
+scalar Tictoc15.tic[1] #sent 126
+scalar Tictoc15.tic[1] #received 126
+statistic Tictoc15.tic[1] "hop count"
+field count 126
+field mean 4.0555555555556
+field stddev 4.3677097990696
+field min 1
+field max 21
+field sum 511
+field sqrsum 4457
+bin	-inf	0
+bin	0	0
+bin	1	57
+bin	2	13
+bin	3	6
+bin	4	7
+bin	5	6
+bin	6	14
+bin	7	2
+bin	8	5
+bin	9	2
+bin	10	3
+bin	11	1
+bin	12	4
+bin	13	0
+bin	14	1
+bin	15	0
+bin	16	2
+bin	17	0
+bin	18	0
+bin	19	1
+bin	20	0
+bin	21	2
+bin	22	0
+bin	23	0
+bin	24	0
+bin	25	0
+bin	26	0
+par Tictoc15.tic[2] typename "\"Txc15\""
+scalar Tictoc15.tic[2] #sent 137
+scalar Tictoc15.tic[2] #received 137
+statistic Tictoc15.tic[2] "hop count"
+field count 137
+field mean 12.737226277372
+field stddev 10.784840990532
+field min 1
+field max 57
+field sum 1745
+field sqrsum 38045
+bin	-inf	0
+bin	0	0
+bin	1	7
+bin	2	11
+bin	3	12
+bin	4	6
+bin	5	8
+bin	6	8
+bin	7	3
+bin	8	3
+bin	9	3
+bin	10	9
+bin	11	9
+bin	12	2
+bin	13	6
+bin	14	3
+bin	15	4
+bin	16	3
+bin	17	4
+bin	18	3
+bin	19	4
+bin	20	5
+bin	21	0
+bin	22	2
+bin	23	4
+bin	24	1
+bin	25	0
+bin	26	2
+bin	27	0
+bin	28	0
+bin	29	2
+bin	30	2
+bin	31	1
+bin	32	2
+bin	33	0
+bin	34	0
+bin	35	0
+bin	36	1
+bin	37	2
+bin	38	0
+bin	39	1
+bin	40	0
+bin	41	1
+bin	42	1
+bin	43	1
+bin	44	0
+bin	45	0
+bin	46	0
+bin	47	0
+bin	48	0
+bin	49	0
+bin	50	0
+bin	51	0
+bin	52	0
+bin	53	0
+bin	54	0
+bin	55	0
+bin	56	0
+bin	57	1
+bin	58	0
+bin	59	0
+bin	60	0
+bin	61	0
+bin	62	0
+bin	63	0
+bin	64	0
+bin	65	0
+bin	66	0
+bin	67	0
+bin	68	0
+bin	69	0
+bin	70	0
+bin	71	0
+par Tictoc15.tic[3] typename "\"Txc15\""
+scalar Tictoc15.tic[3] #sent 122
+scalar Tictoc15.tic[3] #received 122
+statistic Tictoc15.tic[3] "hop count"
+field count 122
+field mean 14.680327868852
+field stddev 14.382764245083
+field min 1
+field max 64
+field sum 1791
+field sqrsum 51323
+bin	-inf	0
+bin	0	0
+bin	1	10
+bin	2	8
+bin	3	7
+bin	4	3
+bin	5	10
+bin	6	5
+bin	7	11
+bin	8	0
+bin	9	8
+bin	10	1
+bin	11	7
+bin	12	1
+bin	13	5
+bin	14	1
+bin	15	3
+bin	16	1
+bin	17	4
+bin	18	2
+bin	19	1
+bin	20	1
+bin	21	3
+bin	22	2
+bin	23	5
+bin	24	2
+bin	25	4
+bin	26	0
+bin	27	1
+bin	28	0
+bin	29	2
+bin	30	0
+bin	31	0
+bin	32	0
+bin	33	1
+bin	34	0
+bin	35	1
+bin	36	0
+bin	37	0
+bin	38	0
+bin	39	2
+bin	40	1
+bin	41	0
+bin	42	1
+bin	43	0
+bin	44	0
+bin	45	0
+bin	46	0
+bin	47	0
+bin	48	1
+bin	49	1
+bin	50	0
+bin	51	0
+bin	52	1
+bin	53	0
+bin	54	2
+bin	55	1
+bin	56	0
+bin	57	0
+bin	58	0
+bin	59	0
+bin	60	0
+bin	61	0
+bin	62	1
+bin	63	0
+bin	64	1
+bin	65	0
+bin	66	0
+bin	67	0
+bin	68	0
+par Tictoc15.tic[4] typename "\"Txc15\""
+scalar Tictoc15.tic[4] #sent 144
+scalar Tictoc15.tic[4] #received 144
+statistic Tictoc15.tic[4] "hop count"
+field count 144
+field mean 3.8888888888889
+field stddev 4.0815311659837
+field min 1
+field max 20
+field sum 560
+field sqrsum 4560
+bin	-inf	0
+bin	0	0
+bin	1	65
+bin	2	21
+bin	3	4
+bin	4	11
+bin	5	3
+bin	6	7
+bin	7	5
+bin	8	9
+bin	9	2
+bin	10	7
+bin	11	2
+bin	12	2
+bin	13	0
+bin	14	1
+bin	15	2
+bin	16	0
+bin	17	1
+bin	18	1
+bin	19	0
+bin	20	1
+bin	21	0
+par Tictoc15.tic[5] typename "\"Txc15\""
+scalar Tictoc15.tic[5] #sent 127
+scalar Tictoc15.tic[5] #received 127
+statistic Tictoc15.tic[5] "hop count"
+field count 127
+field mean 12.795275590551
+field stddev 12.780403266781
+field min 1
+field max 71
+field sum 1625
+field sqrsum 41373
+bin	-inf	0
+bin	0	0
+bin	1	11
+bin	2	14
+bin	3	6
+bin	4	8
+bin	5	8
+bin	6	5
+bin	7	6
+bin	8	3
+bin	9	6
+bin	10	1
+bin	11	6
+bin	12	3
+bin	13	4
+bin	14	5
+bin	15	6
+bin	16	2
+bin	17	1
+bin	18	2
+bin	19	4
+bin	20	0
+bin	21	3
+bin	22	2
+bin	23	2
+bin	24	1
+bin	25	1
+bin	26	1
+bin	27	1
+bin	28	1
+bin	29	2
+bin	30	0
+bin	31	2
+bin	32	0
+bin	33	0
+bin	34	2
+bin	35	0
+bin	36	0
+bin	37	1
+bin	38	0
+bin	39	1
+bin	40	0
+bin	41	1
+bin	42	0
+bin	43	1
+bin	44	0
+bin	45	0
+bin	46	0
+bin	47	1
+bin	48	0
+bin	49	0
+bin	50	0
+bin	51	0
+bin	52	0
+bin	53	1
+bin	54	0
+bin	55	0
+bin	56	0
+bin	57	0
+bin	58	0
+bin	59	1
+bin	60	0
+bin	61	0
+bin	62	0
+bin	63	0
+bin	64	0
+bin	65	0
+bin	66	0
+bin	67	0
+bin	68	0
+bin	69	0
+bin	70	0
+bin	71	1
+bin	72	0
+bin	73	0
+bin	74	0
+bin	75	0
+bin	76	0
+bin	77	0
+bin	78	0
+bin	79	0
+bin	80	0
+bin	81	0
+bin	82	0
+bin	83	0
+bin	84	0
+bin	85	0
+bin	86	0
+bin	87	0
+bin	88	0
+bin	89	0
+par Tictoc15 typename "\"Tictoc15\""
+

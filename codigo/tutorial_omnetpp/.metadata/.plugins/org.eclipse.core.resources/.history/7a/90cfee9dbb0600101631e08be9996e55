@@ -1,0 +1,75 @@
+version 3
+run Tictoc9-0-20250321-19:17:04-37235
+attr configname Tictoc9
+attr datetime 20250321-19:17:04
+attr datetimef 20250321-191704
+attr experiment Tictoc9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc9
+attr processid 37235
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config record-eventlog true
+config network Tictoc9
+config seed-0-mt 536568
+
+par Tictoc9.tic.out.channel typename "\"ned.DelayChannel\""
+par Tictoc9.tic.out.channel disabled false
+attr mutable ""
+par Tictoc9.tic.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc9.toc.out.channel typename "\"ned.DelayChannel\""
+par Tictoc9.toc.out.channel disabled false
+attr mutable ""
+par Tictoc9.toc.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc9.tic typename "\"Tic9\""
+par Tictoc9.toc typename "\"Toc9\""
+par Tictoc9 typename "\"Tictoc9\""
+
+run Tictoc9-0-20250321-19:16:01-37108
+attr configname Tictoc9
+attr datetime 20250321-19:16:01
+attr datetimef 20250321-191601
+attr experiment Tictoc9
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc9
+attr processid 37108
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config record-eventlog true
+config network Tictoc9
+config seed-0-mt 536568
+
+par Tictoc9.tic.out.channel typename "\"ned.DelayChannel\""
+par Tictoc9.tic.out.channel disabled false
+attr mutable ""
+par Tictoc9.tic.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc9.toc.out.channel typename "\"ned.DelayChannel\""
+par Tictoc9.toc.out.channel disabled false
+attr mutable ""
+par Tictoc9.toc.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc9.tic typename "\"Tic9\""
+par Tictoc9.toc typename "\"Toc9\""
+par Tictoc9 typename "\"Tictoc9\""
+

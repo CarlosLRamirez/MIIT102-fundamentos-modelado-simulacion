@@ -1,0 +1,161 @@
+version 3
+run Tictoc17-0-20250322-10:22:12-52695
+attr configname Tictoc17
+attr datetime 20250322-10:22:12
+attr datetimef 20250322-102212
+attr experiment Tictoc17
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc17
+attr processid 52695
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Tictoc17
+config seed-0-mt 536568
+
+par Tictoc17.tic[0].gate$o[0].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[0].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc17.tic[0].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[1].gate$o[0].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[1].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc17.tic[1].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[1].gate$o[1].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[1].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc17.tic[1].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[2].gate$o[0].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[2].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc17.tic[2].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[1].gate$o[2].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[1].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc17.tic[1].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[4].gate$o[0].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[4].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc17.tic[4].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[3].gate$o[0].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[3].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc17.tic[3].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[4].gate$o[1].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[4].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc17.tic[4].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[4].gate$o[2].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[4].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc17.tic[4].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[5].gate$o[0].channel typename "\"Tictoc17.Channel\""
+par Tictoc17.tic[5].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc17.tic[5].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc17.tic[0] typename "\"Txc17\""
+statistic Tictoc17.tic[0] hopCount:stats
+field count 27
+field mean 12.962962962963
+field stddev 13.325745704294
+field min 1
+field max 51
+field sum 350
+field sqrsum 9154
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc17.tic[1] typename "\"Txc17\""
+statistic Tictoc17.tic[1] hopCount:stats
+field count 30
+field mean 2.4666666666667
+field stddev 2.1452969143162
+field min 1
+field max 9
+field sum 74
+field sqrsum 316
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc17.tic[2] typename "\"Txc17\""
+statistic Tictoc17.tic[2] hopCount:stats
+field count 27
+field mean 10.814814814815
+field stddev 9.739045273999
+field min 1
+field max 36
+field sum 292
+field sqrsum 5624
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc17.tic[3] typename "\"Txc17\""
+statistic Tictoc17.tic[3] hopCount:stats
+field count 19
+field mean 17.157894736842
+field stddev 14.967606347245
+field min 1
+field max 54
+field sum 326
+field sqrsum 9626
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc17.tic[4] typename "\"Txc17\""
+statistic Tictoc17.tic[4] hopCount:stats
+field count 30
+field mean 3.5666666666667
+field stddev 3.3392476267333
+field min 1
+field max 11
+field sum 107
+field sqrsum 705
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc17.tic[5] typename "\"Txc17\""
+statistic Tictoc17.tic[5] hopCount:stats
+field count 24
+field mean 11.875
+field stddev 15.880840247182
+field min 1
+field max 71
+field sum 285
+field sqrsum 9185
+attr interpolationmode none
+attr recordingmode stats
+attr source arrival
+attr title "hop count"
+par Tictoc17 typename "\"Tictoc17\""
+

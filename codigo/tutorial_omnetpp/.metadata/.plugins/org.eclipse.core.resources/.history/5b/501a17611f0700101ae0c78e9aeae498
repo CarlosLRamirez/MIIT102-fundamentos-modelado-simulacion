@@ -1,0 +1,55 @@
+version 3
+run Ejercicio_Triangulo-0-20250322-07:12:34-35488
+attr configname Ejercicio_Triangulo
+attr datetime 20250322-07:12:34
+attr datetimef 20250322-071234
+attr experiment Ejercicio_Triangulo
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TictocTriangulo
+attr processid 35488
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config record-eventlog true
+config network TictocTriangulo
+config record-eventlog true
+config TictocTriangulo.nodo1.limit 8
+config TictocTriangulo.nodo2.limit 3
+config TictocTriangulo.nodo3.limit 7
+config seed-0-mt 536568
+
+par TictocTriangulo.nodo1.out.channel typename "\"ned.DelayChannel\""
+par TictocTriangulo.nodo1.out.channel disabled false
+attr mutable ""
+par TictocTriangulo.nodo1.out.channel delay 0.2s
+attr mutable ""
+attr unit s
+par TictocTriangulo.nodo2.out.channel typename "\"ned.DelayChannel\""
+par TictocTriangulo.nodo2.out.channel disabled false
+attr mutable ""
+par TictocTriangulo.nodo2.out.channel delay 0.1s
+attr mutable ""
+attr unit s
+par TictocTriangulo.nodo3.out.channel typename "\"ned.DelayChannel\""
+par TictocTriangulo.nodo3.out.channel disabled false
+attr mutable ""
+par TictocTriangulo.nodo3.out.channel delay 0.3s
+attr mutable ""
+attr unit s
+par TictocTriangulo.nodo1 typename "\"nodox\""
+par TictocTriangulo.nodo1 sendMsgOnInit true
+par TictocTriangulo.nodo1 limit 8
+par TictocTriangulo.nodo2 typename "\"nodox\""
+par TictocTriangulo.nodo2 sendMsgOnInit true
+par TictocTriangulo.nodo2 limit 3
+par TictocTriangulo.nodo3 typename "\"nodox\""
+par TictocTriangulo.nodo3 sendMsgOnInit true
+par TictocTriangulo.nodo3 limit 7
+par TictocTriangulo typename "\"TictocTriangulo\""
+

@@ -1,0 +1,298 @@
+SB ov 1537 ev 2 rid Tictoc9-0-20250321-19:17:04-37235
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t Tictoc9 n Tictoc9 cm 1
+MDC id 1 d ""
+MC id 2 c Tic9 t Tic9 pid 1 n tic
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MDC id 2 d i=block/routing,cyan
+MC id 3 c Toc9 t Toc9 pid 1 n toc
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MDC id 3 d i=block/process,gold
+CC sm 2 sg 3 dm 3 dg 0
+CDC sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 2 dg 0
+CDC sm 3 sg 3 d ""
+CMB sm 1 tm 2 m initialize(0)
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent pe -1
+- INFO: Sending initial message
+CM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tic-1 pe -1
+CL id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n tic-1 m 2 pe -1 cid 1
+BS id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n tic-1 m 2 pe 0
+SH sm 2 sg 3 pd 0.1
+ES id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n tic-1 sm 2 sg 3 st 0 am 3 ag 0 at 0.1 pe 0
+CL id 3 tid 1 eid 3 etid 1 c omnetpp::cMessage n tic-1 m 2 pe -1 cid 2
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0 am 2 at 1 pe 0
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0 am 2 at 1 pe 0
+CME
+CMB sm 1 tm 3 m initialize(0)
+CME
+
+E # 1 t 0.1 m 3 ce 0 msg 2
+- INFO: (omnetpp::cMessage)tic-1  received, sending back an acknowledgement.
+DM id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n tic-1 m 3 pe 1
+CM id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n ack pe -1
+BS id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n ack m 3 pe 1
+SH sm 3 sg 3 pd 0.1
+ES id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n ack sm 3 sg 3 st 0.1 am 2 ag 0 at 0.2 pe 1
+CL id 4 tid 3 eid 4 etid 3 c omnetpp::cMessage n ack m 3 pe -1 cid 3
+
+E # 2 t 0.2 m 2 ce 1 msg 3
+- INFO: Received: ack
+DM id 3 tid 3 eid 3 etid 3 c omnetpp::cMessage n ack m 2 pe 2
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 0
+DM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tic-1 m 2 pe 0
+CM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n tic-2 pe -1
+CL id 5 tid 4 eid 5 etid 4 c omnetpp::cMessage n tic-2 m 2 pe -1 cid 4
+BS id 5 tid 4 eid 5 etid 4 c omnetpp::cMessage n tic-2 m 2 pe 2
+SH sm 2 sg 3 pd 0.1
+ES id 5 tid 4 eid 5 etid 4 c omnetpp::cMessage n tic-2 sm 2 sg 3 st 0.2 am 3 ag 0 at 0.3 pe 2
+CL id 6 tid 4 eid 6 etid 4 c omnetpp::cMessage n tic-2 m 2 pe -1 cid 5
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.2 am 2 at 1.2 pe 2
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.2 am 2 at 1.2 pe 2
+
+E # 3 t 0.3 m 3 ce 2 msg 5
+- INFO: (omnetpp::cMessage)tic-2  received, sending back an acknowledgement.
+DM id 5 tid 4 eid 5 etid 4 c omnetpp::cMessage n tic-2 m 3 pe 3
+CM id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n ack pe -1
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n ack m 3 pe 3
+SH sm 3 sg 3 pd 0.1
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n ack sm 3 sg 3 st 0.3 am 2 ag 0 at 0.4 pe 3
+CL id 7 tid 6 eid 7 etid 6 c omnetpp::cMessage n ack m 3 pe -1 cid 6
+
+E # 4 t 0.4 m 2 ce 3 msg 6
+- INFO: Received: ack
+DM id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n ack m 2 pe 4
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 2
+DM id 4 tid 4 eid 4 etid 4 c omnetpp::cMessage n tic-2 m 2 pe 2
+CM id 7 tid 7 eid 7 etid 7 c omnetpp::cMessage n tic-3 pe -1
+CL id 8 tid 7 eid 8 etid 7 c omnetpp::cMessage n tic-3 m 2 pe -1 cid 7
+BS id 8 tid 7 eid 8 etid 7 c omnetpp::cMessage n tic-3 m 2 pe 4
+SH sm 2 sg 3 pd 0.1
+ES id 8 tid 7 eid 8 etid 7 c omnetpp::cMessage n tic-3 sm 2 sg 3 st 0.4 am 3 ag 0 at 0.5 pe 4
+CL id 9 tid 7 eid 9 etid 7 c omnetpp::cMessage n tic-3 m 2 pe -1 cid 8
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.4 am 2 at 1.4 pe 4
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.4 am 2 at 1.4 pe 4
+
+E # 5 t 0.5 m 3 ce 4 msg 8
+- INFO: (omnetpp::cMessage)tic-3  received, sending back an acknowledgement.
+DM id 8 tid 7 eid 8 etid 7 c omnetpp::cMessage n tic-3 m 3 pe 5
+CM id 9 tid 9 eid 9 etid 9 c omnetpp::cMessage n ack pe -1
+BS id 9 tid 9 eid 9 etid 9 c omnetpp::cMessage n ack m 3 pe 5
+SH sm 3 sg 3 pd 0.1
+ES id 9 tid 9 eid 9 etid 9 c omnetpp::cMessage n ack sm 3 sg 3 st 0.5 am 2 ag 0 at 0.6 pe 5
+CL id 10 tid 9 eid 10 etid 9 c omnetpp::cMessage n ack m 3 pe -1 cid 9
+
+E # 6 t 0.6 m 2 ce 5 msg 9
+- INFO: Received: ack
+DM id 9 tid 9 eid 9 etid 9 c omnetpp::cMessage n ack m 2 pe 6
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 4
+DM id 7 tid 7 eid 7 etid 7 c omnetpp::cMessage n tic-3 m 2 pe 4
+CM id 10 tid 10 eid 10 etid 10 c omnetpp::cMessage n tic-4 pe -1
+CL id 11 tid 10 eid 11 etid 10 c omnetpp::cMessage n tic-4 m 2 pe -1 cid 10
+BS id 11 tid 10 eid 11 etid 10 c omnetpp::cMessage n tic-4 m 2 pe 6
+SH sm 2 sg 3 pd 0.1
+ES id 11 tid 10 eid 11 etid 10 c omnetpp::cMessage n tic-4 sm 2 sg 3 st 0.6 am 3 ag 0 at 0.7 pe 6
+CL id 12 tid 10 eid 12 etid 10 c omnetpp::cMessage n tic-4 m 2 pe -1 cid 11
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.6 am 2 at 1.6 pe 6
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.6 am 2 at 1.6 pe 6
+
+E # 7 t 0.7 m 3 ce 6 msg 11
+- INFO: (omnetpp::cMessage)tic-4  received, sending back an acknowledgement.
+DM id 11 tid 10 eid 11 etid 10 c omnetpp::cMessage n tic-4 m 3 pe 7
+CM id 12 tid 12 eid 12 etid 12 c omnetpp::cMessage n ack pe -1
+BS id 12 tid 12 eid 12 etid 12 c omnetpp::cMessage n ack m 3 pe 7
+SH sm 3 sg 3 pd 0.1
+ES id 12 tid 12 eid 12 etid 12 c omnetpp::cMessage n ack sm 3 sg 3 st 0.7 am 2 ag 0 at 0.8 pe 7
+CL id 13 tid 12 eid 13 etid 12 c omnetpp::cMessage n ack m 3 pe -1 cid 12
+
+E # 8 t 0.8 m 2 ce 7 msg 12
+- INFO: Received: ack
+DM id 12 tid 12 eid 12 etid 12 c omnetpp::cMessage n ack m 2 pe 8
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 6
+DM id 10 tid 10 eid 10 etid 10 c omnetpp::cMessage n tic-4 m 2 pe 6
+CM id 13 tid 13 eid 13 etid 13 c omnetpp::cMessage n tic-5 pe -1
+CL id 14 tid 13 eid 14 etid 13 c omnetpp::cMessage n tic-5 m 2 pe -1 cid 13
+BS id 14 tid 13 eid 14 etid 13 c omnetpp::cMessage n tic-5 m 2 pe 8
+SH sm 2 sg 3 pd 0.1
+ES id 14 tid 13 eid 14 etid 13 c omnetpp::cMessage n tic-5 sm 2 sg 3 st 0.8 am 3 ag 0 at 0.9 pe 8
+CL id 15 tid 13 eid 15 etid 13 c omnetpp::cMessage n tic-5 m 2 pe -1 cid 14
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.8 am 2 at 1.8 pe 8
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 0.8 am 2 at 1.8 pe 8
+
+E # 9 t 0.9 m 3 ce 8 msg 14
+- INFO: (omnetpp::cMessage)tic-5  received, sending back an acknowledgement.
+DM id 14 tid 13 eid 14 etid 13 c omnetpp::cMessage n tic-5 m 3 pe 9
+CM id 15 tid 15 eid 15 etid 15 c omnetpp::cMessage n ack pe -1
+BS id 15 tid 15 eid 15 etid 15 c omnetpp::cMessage n ack m 3 pe 9
+SH sm 3 sg 3 pd 0.1
+ES id 15 tid 15 eid 15 etid 15 c omnetpp::cMessage n ack sm 3 sg 3 st 0.9 am 2 ag 0 at 1 pe 9
+CL id 16 tid 15 eid 16 etid 15 c omnetpp::cMessage n ack m 3 pe -1 cid 15
+
+E # 10 t 1 m 2 ce 9 msg 15
+- INFO: Received: ack
+DM id 15 tid 15 eid 15 etid 15 c omnetpp::cMessage n ack m 2 pe 10
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 8
+DM id 13 tid 13 eid 13 etid 13 c omnetpp::cMessage n tic-5 m 2 pe 8
+CM id 16 tid 16 eid 16 etid 16 c omnetpp::cMessage n tic-6 pe -1
+CL id 17 tid 16 eid 17 etid 16 c omnetpp::cMessage n tic-6 m 2 pe -1 cid 16
+BS id 17 tid 16 eid 17 etid 16 c omnetpp::cMessage n tic-6 m 2 pe 10
+SH sm 2 sg 3 pd 0.1
+ES id 17 tid 16 eid 17 etid 16 c omnetpp::cMessage n tic-6 sm 2 sg 3 st 1 am 3 ag 0 at 1.1 pe 10
+CL id 18 tid 16 eid 18 etid 16 c omnetpp::cMessage n tic-6 m 2 pe -1 cid 17
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 1 am 2 at 2 pe 10
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 1 am 2 at 2 pe 10
+
+E # 11 t 1.1 m 3 ce 10 msg 17
+- INFO: "Losing" message (omnetpp::cMessage)tic-6 
+BU id 3 txt "message lost"
+DM id 17 tid 16 eid 17 etid 16 c omnetpp::cMessage n tic-6 m 3 pe 11
+
+E # 12 t 2 m 2 ce 10 msg 0
+- INFO: Timeout expired, resending message:tic-6 and restarting timer
+CL id 18 tid 16 eid 18 etid 16 c omnetpp::cMessage n tic-6 m 2 pe -1 cid 16
+BS id 18 tid 16 eid 18 etid 16 c omnetpp::cMessage n tic-6 m 2 pe 12
+SH sm 2 sg 3 pd 0.1
+ES id 18 tid 16 eid 18 etid 16 c omnetpp::cMessage n tic-6 sm 2 sg 3 st 2 am 3 ag 0 at 2.1 pe 12
+CL id 19 tid 16 eid 19 etid 16 c omnetpp::cMessage n tic-6 m 2 pe -1 cid 18
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2 am 2 at 3 pe 12
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2 am 2 at 3 pe 12
+
+E # 13 t 2.1 m 3 ce 12 msg 18
+- INFO: (omnetpp::cMessage)tic-6  received, sending back an acknowledgement.
+DM id 18 tid 16 eid 18 etid 16 c omnetpp::cMessage n tic-6 m 3 pe 13
+CM id 19 tid 19 eid 19 etid 19 c omnetpp::cMessage n ack pe -1
+BS id 19 tid 19 eid 19 etid 19 c omnetpp::cMessage n ack m 3 pe 13
+SH sm 3 sg 3 pd 0.1
+ES id 19 tid 19 eid 19 etid 19 c omnetpp::cMessage n ack sm 3 sg 3 st 2.1 am 2 ag 0 at 2.2 pe 13
+CL id 20 tid 19 eid 20 etid 19 c omnetpp::cMessage n ack m 3 pe -1 cid 19
+
+E # 14 t 2.2 m 2 ce 13 msg 19
+- INFO: Received: ack
+DM id 19 tid 19 eid 19 etid 19 c omnetpp::cMessage n ack m 2 pe 14
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 12
+DM id 16 tid 16 eid 16 etid 16 c omnetpp::cMessage n tic-6 m 2 pe 12
+CM id 20 tid 20 eid 20 etid 20 c omnetpp::cMessage n tic-7 pe -1
+CL id 21 tid 20 eid 21 etid 20 c omnetpp::cMessage n tic-7 m 2 pe -1 cid 20
+BS id 21 tid 20 eid 21 etid 20 c omnetpp::cMessage n tic-7 m 2 pe 14
+SH sm 2 sg 3 pd 0.1
+ES id 21 tid 20 eid 21 etid 20 c omnetpp::cMessage n tic-7 sm 2 sg 3 st 2.2 am 3 ag 0 at 2.3 pe 14
+CL id 22 tid 20 eid 22 etid 20 c omnetpp::cMessage n tic-7 m 2 pe -1 cid 21
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.2 am 2 at 3.2 pe 14
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.2 am 2 at 3.2 pe 14
+
+E # 15 t 2.3 m 3 ce 14 msg 21
+- INFO: (omnetpp::cMessage)tic-7  received, sending back an acknowledgement.
+DM id 21 tid 20 eid 21 etid 20 c omnetpp::cMessage n tic-7 m 3 pe 15
+CM id 22 tid 22 eid 22 etid 22 c omnetpp::cMessage n ack pe -1
+BS id 22 tid 22 eid 22 etid 22 c omnetpp::cMessage n ack m 3 pe 15
+SH sm 3 sg 3 pd 0.1
+ES id 22 tid 22 eid 22 etid 22 c omnetpp::cMessage n ack sm 3 sg 3 st 2.3 am 2 ag 0 at 2.4 pe 15
+CL id 23 tid 22 eid 23 etid 22 c omnetpp::cMessage n ack m 3 pe -1 cid 22
+
+E # 16 t 2.4 m 2 ce 15 msg 22
+- INFO: Received: ack
+DM id 22 tid 22 eid 22 etid 22 c omnetpp::cMessage n ack m 2 pe 16
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 14
+DM id 20 tid 20 eid 20 etid 20 c omnetpp::cMessage n tic-7 m 2 pe 14
+CM id 23 tid 23 eid 23 etid 23 c omnetpp::cMessage n tic-8 pe -1
+CL id 24 tid 23 eid 24 etid 23 c omnetpp::cMessage n tic-8 m 2 pe -1 cid 23
+BS id 24 tid 23 eid 24 etid 23 c omnetpp::cMessage n tic-8 m 2 pe 16
+SH sm 2 sg 3 pd 0.1
+ES id 24 tid 23 eid 24 etid 23 c omnetpp::cMessage n tic-8 sm 2 sg 3 st 2.4 am 3 ag 0 at 2.5 pe 16
+CL id 25 tid 23 eid 25 etid 23 c omnetpp::cMessage n tic-8 m 2 pe -1 cid 24
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.4 am 2 at 3.4 pe 16
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.4 am 2 at 3.4 pe 16
+
+E # 17 t 2.5 m 3 ce 16 msg 24
+- INFO: (omnetpp::cMessage)tic-8  received, sending back an acknowledgement.
+DM id 24 tid 23 eid 24 etid 23 c omnetpp::cMessage n tic-8 m 3 pe 17
+CM id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n ack pe -1
+BS id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n ack m 3 pe 17
+SH sm 3 sg 3 pd 0.1
+ES id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n ack sm 3 sg 3 st 2.5 am 2 ag 0 at 2.6 pe 17
+CL id 26 tid 25 eid 26 etid 25 c omnetpp::cMessage n ack m 3 pe -1 cid 25
+
+E # 18 t 2.6 m 2 ce 17 msg 25
+- INFO: Received: ack
+DM id 25 tid 25 eid 25 etid 25 c omnetpp::cMessage n ack m 2 pe 18
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 16
+DM id 23 tid 23 eid 23 etid 23 c omnetpp::cMessage n tic-8 m 2 pe 16
+CM id 26 tid 26 eid 26 etid 26 c omnetpp::cMessage n tic-9 pe -1
+CL id 27 tid 26 eid 27 etid 26 c omnetpp::cMessage n tic-9 m 2 pe -1 cid 26
+BS id 27 tid 26 eid 27 etid 26 c omnetpp::cMessage n tic-9 m 2 pe 18
+SH sm 2 sg 3 pd 0.1
+ES id 27 tid 26 eid 27 etid 26 c omnetpp::cMessage n tic-9 sm 2 sg 3 st 2.6 am 3 ag 0 at 2.7 pe 18
+CL id 28 tid 26 eid 28 etid 26 c omnetpp::cMessage n tic-9 m 2 pe -1 cid 27
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.6 am 2 at 3.6 pe 18
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.6 am 2 at 3.6 pe 18
+
+E # 1
+SE e 0 c 10 m "The user has finished the simulation -- at t=2.6s, event #18"
+ack an acknowledgement.
+DM id 27 tid 26 eid 27 etid 26 c omnetpp::cMessage n tic-9 m 3 pe 19
+CM id 28 tid 28 eid 28 etid 28 c omnetpp::cMessage n ack pe -1
+BS id 28 tid 28 eid 28 etid 28 c omnetpp::cMessage n ack m 3 pe 19
+SH sm 3 sg 3 pd 0.1
+ES id 28 tid 28 eid 28 etid 28 c omnetpp::cMessage n ack sm 3 sg 3 st 2.7 am 2 ag 0 at 2.8 pe 19
+CL id 29 tid 28 eid 29 etid 28 c omnetpp::cMessage n ack m 3 pe -1 cid 28
+
+E # 20 t 2.8 m 2 ce 19 msg 28
+- INFO: Received: ack
+DM id 28 tid 28 eid 28 etid 28 c omnetpp::cMessage n ack m 2 pe 20
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 18
+DM id 26 tid 26 eid 26 etid 26 c omnetpp::cMessage n tic-9 m 2 pe 18
+CM id 29 tid 29 eid 29 etid 29 c omnetpp::cMessage n tic-10 pe -1
+CL id 30 tid 29 eid 30 etid 29 c omnetpp::cMessage n tic-10 m 2 pe -1 cid 29
+BS id 30 tid 29 eid 30 etid 29 c omnetpp::cMessage n tic-10 m 2 pe 20
+SH sm 2 sg 3 pd 0.1
+ES id 30 tid 29 eid 30 etid 29 c omnetpp::cMessage n tic-10 sm 2 sg 3 st 2.8 am 3 ag 0 at 2.9 pe 20
+CL id 31 tid 29 eid 31 etid 29 c omnetpp::cMessage n tic-10 m 2 pe -1 cid 30
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.8 am 2 at 3.8 pe 20
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 2.8 am 2 at 3.8 pe 20
+
+E # 21 t 2.9 m 3 ce 20 msg 30
+- INFO: (omnetpp::cMessage)tic-10  received, sending back an acknowledgement.
+DM id 30 tid 29 eid 30 etid 29 c omnetpp::cMessage n tic-10 m 3 pe 21
+CM id 31 tid 31 eid 31 etid 31 c omnetpp::cMessage n ack pe -1
+BS id 31 tid 31 eid 31 etid 31 c omnetpp::cMessage n ack m 3 pe 21
+SH sm 3 sg 3 pd 0.1
+ES id 31 tid 31 eid 31 etid 31 c omnetpp::cMessage n ack sm 3 sg 3 st 2.9 am 2 ag 0 at 3 pe 21
+CL id 32 tid 31 eid 32 etid 31 c omnetpp::cMessage n ack m 3 pe -1 cid 31
+
+E # 22 t 3 m 2 ce 21 msg 31
+- INFO: Received: ack
+DM id 31 tid 31 eid 31 etid 31 c omnetpp::cMessage n ack m 2 pe 22
+- INFO: Timer cancelled.
+CE id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent m 2 pe 20
+DM id 29 tid 29 eid 29 etid 29 c omnetpp::cMessage n tic-10 m 2 pe 20
+CM id 32 tid 32 eid 32 etid 32 c omnetpp::cMessage n tic-11 pe -1
+CL id 33 tid 32 eid 33 etid 32 c omnetpp::cMessage n tic-11 m 2 pe -1 cid 32
+BS id 33 tid 32 eid 33 etid 32 c omnetpp::cMessage n tic-11 m 2 pe 22
+SH sm 2 sg 3 pd 0.1
+ES id 33 tid 32 eid 33 etid 32 c omnetpp::cMessage n tic-11 sm 2 sg 3 st 3 am 3 ag 0 at 3.1 pe 22
+CL id 34 tid 32 eid 34 etid 32 c omnetpp::cMessage n tic-11 m 2 pe -1 cid 33
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 3 am 2 at 4 pe 22
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n timeoutEvent sm 2 st 3 am 2 at 4 pe 22
+
+E # 23 t 3.1 m 3 ce 22 msg 33
+- INFO: (omnetpp::cMessage)tic-11  received, sending back an acknowledgement.
+DM id 33 tid 32 eid 33 etid 32 c omnetpp::cMessage n tic-11 m 3 pe 23
+CM id 34 tid 34 eid 34 etid 34 c omnetpp::cMessage n ack pe -1
+BS id 34 tid 34 eid 34 etid 34 c omnetpp::cMessage n ack m 3 pe 23
+SH sm 3 sg 3 pd 0.1
+ES id 34 tid 34 eid 34 etid 34 c omnetpp::cMessage n ack sm 3 sg 3 st 3.1 am 2 ag 0 at 3.2 pe 23
+CL id 35 tid 34 eid 35 etid 34 c omnetpp::cMessage n ack m 3 pe -1 cid 34
+
+SE e 0 c 10 m "The user has finished the simulation -- at t=3.1s, event #23"

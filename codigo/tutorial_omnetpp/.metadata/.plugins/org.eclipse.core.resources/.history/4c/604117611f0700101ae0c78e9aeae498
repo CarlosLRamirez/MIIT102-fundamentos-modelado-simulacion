@@ -1,0 +1,102 @@
+version 3
+run Tictoc13_mejorado-0-20250322-02:40:01-21131
+attr configname Tictoc13_mejorado
+attr datetime 20250322-02:40:01
+attr datetimef 20250322-024001
+attr experiment Tictoc13_mejorado
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc13a
+attr processid 21131
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Tictoc13a
+config **.tic[*].sendInterval exponential(1s)
+config seed-0-mt 536568
+
+par Tictoc13a.tic[0].gate$o[0].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[0].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[0].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[1].gate$o[0].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[1].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[1].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[1].gate$o[1].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[1].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[1].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[2].gate$o[0].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[2].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[2].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[1].gate$o[2].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[1].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[1].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[4].gate$o[0].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[4].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[4].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[3].gate$o[0].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[3].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[3].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[4].gate$o[1].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[4].gate$o[1].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[4].gate$o[1].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[4].gate$o[2].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[4].gate$o[2].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[4].gate$o[2].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[5].gate$o[0].channel typename "\"Tictoc13a.Channel\""
+par Tictoc13a.tic[5].gate$o[0].channel disabled false
+attr mutable ""
+par Tictoc13a.tic[5].gate$o[0].channel delay 0.1s
+attr mutable ""
+attr unit s
+par Tictoc13a.tic[0] typename "\"Txc13a\""
+par Tictoc13a.tic[0] sendInterval exponential(1s)
+attr unit s
+par Tictoc13a.tic[1] typename "\"Txc13a\""
+par Tictoc13a.tic[1] sendInterval exponential(1s)
+attr unit s
+par Tictoc13a.tic[2] typename "\"Txc13a\""
+par Tictoc13a.tic[2] sendInterval exponential(1s)
+attr unit s
+par Tictoc13a.tic[3] typename "\"Txc13a\""
+par Tictoc13a.tic[3] sendInterval exponential(1s)
+attr unit s
+par Tictoc13a.tic[4] typename "\"Txc13a\""
+par Tictoc13a.tic[4] sendInterval exponential(1s)
+attr unit s
+par Tictoc13a.tic[5] typename "\"Txc13a\""
+par Tictoc13a.tic[5] sendInterval exponential(1s)
+attr unit s
+par Tictoc13a typename "\"Tictoc13a\""
+

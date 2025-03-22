@@ -1,3 +1,4 @@
+
 //
 // This file is part of an OMNeT++/OMNEST simulation example.
 //
@@ -64,7 +65,8 @@ void Tic9::handleMessage(cMessage *msg)
     if (msg == timeoutEvent) {
         // If we receive the timeout event, that means the packet hasn't
         // arrived in time and we have to re-send it.
-        EV << "Timeout expired, resending message and restarting timer\n";
+        EV << "Timeout expired, resending message:"  << message->getName();
+        EV << " and restarting timer\n";
         sendCopyOf(message);
         scheduleAt(simTime()+timeout, timeoutEvent);
     }

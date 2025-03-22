@@ -1,0 +1,49 @@
+SB ov 1537 ev 2 rid Ejercicio_Triangulo-0-20250322-09:59:18-50518
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t TictocTriangulo n TictocTriangulo cm 1
+MDC id 1 d bgb=354,287
+MC id 2 c nodox t nodox pid 1 n nodo1
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MDC id 2 d p=162,211;i=block/control,#FF2F92
+MC id 3 c nodox t nodox pid 1 n nodo2
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MDC id 3 d p=266,58;i=block/routing,gold
+MC id 4 c nodox t nodox pid 1 n nodo3
+GC m 4 g 0 n in o 0
+GC m 4 g 3 n out o 1
+MDC id 4 d p=58,58;i=block/user,#00FCFF
+CC sm 2 sg 3 dm 3 dg 0
+CDC sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 4 dg 0
+CDC sm 3 sg 3 d ""
+CC sm 4 sg 3 dm 2 dg 0
+CDC sm 4 sg 3 d ""
+CMB sm 1 tm 2 m initialize(0)
+- INFO: Enviando mensaje inicial
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg pe -1
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe 0
+SH sm 2 sg 3 pd 0.2
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 0 am 3 ag 0 at 0.2 pe 0
+CL id 1 tid 0 eid 1 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 0
+CME
+CMB sm 1 tm 3 m initialize(0)
+- INFO: Enviando mensaje inicial
+CM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg pe -1
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg m 3 pe 0
+SH sm 3 sg 3 pd 0.1
+ES id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 0 am 4 ag 0 at 0.1 pe 0
+CL id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 1
+CME
+CMB sm 1 tm 4 m initialize(0)
+- INFO: Enviando mensaje inicial
+CM id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg pe -1
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe 0
+SH sm 4 sg 3 pd 0.3
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 0 am 2 ag 0 at 0.3 pe 0
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 2
+CME
+
+SE e 0 c -1 m ""

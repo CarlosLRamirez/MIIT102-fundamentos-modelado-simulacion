@@ -1,6 +1,10 @@
-## Parte 2:  Ejecución de la Simulación
-
-### 2.1 Iniciar la simulación
+---
+title: "Tutorial TicToc: Introducción a OMNeT++  - Parte 2: Ejecución de la Simulación"
+modified: 2025-03-22T07:45:42-06:00
+aliases:
+  - "Tutorial TicToc: Introducción a OMNeT++  - Parte 2: Ejecución de la Simulación"
+---
+## 2.1 Lanzar el programa de simulación
 
 Una vez completados los pasos anteriores, ya puede **ejecutar la simulación**.
 
@@ -32,7 +36,7 @@ Usted puedes forzar la compilación manualmente seleccionando **Project -> Build
 > [!NOTA]
 > 💡 **Opción avanzada:** Si prefiereE compilar desde la terminal (línea de comandos), puedes crear un **Makefile** usando el comando `opp_makemake`, y luego ejecutar `make` para compilar. Esto generará un archivo ejecutable que se puede correr con `./tictoc`.
 
-### 2.2 Ejecutar la simulación
+## 2.2 Ejecutar la simulación
 
 Después de compilar y ejecutar la simulación, se abrirá una **nueva ventana gráfica (GUI)** como la que se muestra en la siguiente imagen.
 
@@ -59,7 +63,7 @@ En la barra de herramientas de la ventana principal verás el **tiempo actual de
   
 Note que el tiempo de simulación **solo avanza debido al retardo de propagación** (*propagation delay*) de los enlaces. El procesamiento del mensaje por parte de los módulos **no consume tiempo de simulación**.
 
-#### Controles útiles durante la simulación:
+### 2.2.1 Controles útiles durante la simulación:
 
 - Puede **acelerar o ralentizar** la animación con el **slider** (barra deslizante) en la parte superior de la ventana gráfica.
 
@@ -96,9 +100,11 @@ En la barra de estado de la ventana principal podrás ver indicadores como **eve
 
 Para salir del simulador, cierra la ventana o selecciona **File -> Exit**.
 
-### 2.3 Visualización con Sequence Chart (Gráfica de Secuencia)
+## 2.3 Visualización con Sequence Chart (Gráfica de Secuencia)
 
 OMNeT++ puede guardar un registro (*event log*) de todos los mensajes intercambiados durante la simulación.
+
+### 2.3.1 Activación del Log de Eventos
 
 Para activar este registro:
 
@@ -125,8 +131,7 @@ También puedes activar el registro desde la GUI de **Qtenv** al inicio de la si
 > [!NOTA] 
 > Los archivos de log pueden volverse muy grandes, así que solo actívalo si es necesario.
   
-
-#### 📊 ¿Cómo visualizar el log de eventos?
+### 2.3.2  Visualización del log de eventos
 
 Abre el archivo .elog desde el directorio de resultados del proyecto.
 
@@ -138,7 +143,7 @@ Abre el archivo .elog desde el directorio de resultados del proyecto.
 
 Este gráfico es muy útil para **entender, depurar y documentar** modelos complejos.
 
-Continúe con la  [[Parte 3 - Tutorial - Introducción a OMNeT++]]
+Continúe con  [[Parte 3 - Tutorial - Introducción a OMNeT++|Tutorial TicToc: Introducción a OMNeT++  - Parte 3: Mejorando el TicToc de 2 nodos]]
 
 ---
 **Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)

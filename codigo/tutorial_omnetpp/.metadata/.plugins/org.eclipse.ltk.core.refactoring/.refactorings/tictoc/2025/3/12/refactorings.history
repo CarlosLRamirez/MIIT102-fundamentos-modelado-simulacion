@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;tictoc/txcTriangulo.cpp&apos; to &apos;txcTriangulo.cc&apos;" description="Rename resource &apos;txcTriangulo.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="txcTriangulo.cpp" name="txcTriangulo.cc" stamp="1742634588497" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;tictoc/tictoc_triangulo.ned&apos; to &apos;tictoc4a_ejercicio.ned&apos;" description="Rename resource &apos;tictoc_triangulo.ned&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="tictoc_triangulo.ned" name="tictoc4a_ejercicio.ned" stamp="1742648530908" updateReferences="true"/>
+</session>

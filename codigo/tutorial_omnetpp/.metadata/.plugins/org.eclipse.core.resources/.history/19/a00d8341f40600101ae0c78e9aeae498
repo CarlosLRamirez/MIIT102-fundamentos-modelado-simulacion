@@ -1,0 +1,119 @@
+SB ov 1537 ev 2 rid Tictoc10_mejorado-0-20250322-01:24:26-13628
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t Tictoc10a n Tictoc10a cm 1
+MDC id 1 d ""
+MC id 2 c Txc10a t Txc10a pid 1 n tic[0]
+MDC id 2 d i=block/routing
+MC id 3 c Txc10a t Txc10a pid 1 n tic[1]
+MDC id 3 d i=block/routing
+MC id 4 c Txc10a t Txc10a pid 1 n tic[2]
+MDC id 4 d i=block/routing
+MC id 5 c Txc10a t Txc10a pid 1 n tic[3]
+MDC id 5 d i=block/routing
+MC id 6 c Txc10a t Txc10a pid 1 n tic[4]
+MDC id 6 d i=block/routing
+MC id 7 c Txc10a t Txc10a pid 1 n tic[5]
+MDC id 7 d i=block/routing
+GC m 2 g 2621440 n out i 0 o 1
+GC m 3 g 1048576 n in i 0 o 0
+CC sm 2 sg 2621440 dm 3 dg 1048576
+CDC sm 2 sg 2621440 d ""
+GC m 3 g 2621440 n out i 0 o 1
+GC m 2 g 1048576 n in i 0 o 0
+CC sm 3 sg 2621440 dm 2 dg 1048576
+CDC sm 3 sg 2621440 d ""
+GC m 3 g 2621441 n out i 1 o 1
+GC m 4 g 1048576 n in i 0 o 0
+CC sm 3 sg 2621441 dm 4 dg 1048576
+CDC sm 3 sg 2621441 d ""
+GC m 4 g 2621440 n out i 0 o 1
+GC m 3 g 1048577 n in i 1 o 0
+CC sm 4 sg 2621440 dm 3 dg 1048577
+CDC sm 4 sg 2621440 d ""
+GC m 3 g 2621442 n out i 2 o 1
+GC m 6 g 1048576 n in i 0 o 0
+CC sm 3 sg 2621442 dm 6 dg 1048576
+CDC sm 3 sg 2621442 d ""
+GC m 6 g 2621440 n out i 0 o 1
+GC m 3 g 1048578 n in i 2 o 0
+CC sm 6 sg 2621440 dm 3 dg 1048578
+CDC sm 6 sg 2621440 d ""
+GC m 5 g 2621440 n out i 0 o 1
+GC m 6 g 1048577 n in i 1 o 0
+CC sm 5 sg 2621440 dm 6 dg 1048577
+CDC sm 5 sg 2621440 d ""
+GC m 6 g 2621441 n out i 1 o 1
+GC m 5 g 1048576 n in i 0 o 0
+CC sm 6 sg 2621441 dm 5 dg 1048576
+CDC sm 6 sg 2621441 d ""
+GC m 6 g 2621442 n out i 2 o 1
+GC m 7 g 1048576 n in i 0 o 0
+CC sm 6 sg 2621442 dm 7 dg 1048576
+CDC sm 6 sg 2621442 d ""
+GC m 7 g 2621440 n out i 0 o 1
+GC m 6 g 1048578 n in i 2 o 0
+CC sm 7 sg 2621440 dm 6 dg 1048578
+CDC sm 7 sg 2621440 d ""
+CMB sm 1 tm 2 m initialize(0)
+CM id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 pe -1
+- INFO: Enviando mensaje tic-0 al inicio.
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 2 st 0 am 2 at 0 pe 0
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 2 st 0 am 2 at 0 pe 0
+CME
+CMB sm 1 tm 3 m initialize(0)
+CME
+CMB sm 1 tm 4 m initialize(0)
+CME
+CMB sm 1 tm 5 m initialize(0)
+CME
+CMB sm 1 tm 6 m initialize(0)
+CME
+CMB sm 1 tm 7 m initialize(0)
+CME
+
+E # 1 t 0 m 2 ce 0 msg 6
+- INFO: El mensaje tic-0 es un self-message, reenviando sin restricciones.
+- INFO: Reenviando self-message tic-0 por la puerta out[0]
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 m 2 pe 1
+SH sm 2 sg 2621440 pd 0.1
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 2 sg 2621440 st 0 am 3 ag 1048576 at 0.1 pe 1
+CL id 7 tid 6 eid 7 etid 6 c omnetpp::cMessage n tic-0 m 2 pe -1 cid 6
+
+E # 2 t 0.1 m 3 ce 1 msg 6
+- INFO: El mensaje tic-0 llegó por la puerta 0.
+- INFO: Reenviando mensaje tic-0 por la puerta out[1]
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 m 3 pe 2
+SH sm 3 sg 2621441 pd 0.1
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 3 sg 2621441 st 0.1 am 4 ag 1048576 at 0.2 pe 2
+CL id 7 tid 6 eid 7 etid 6 c omnetpp::cMessage n tic-0 m 3 pe -1 cid 6
+
+E # 3 t 0.2 m 4 ce 2 msg 6
+- INFO: El mensaje tic-0 llegó por la puerta 0.
+- INFO: Enviando mensaje tic-0 por la única puerta disponible.
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 m 4 pe 3
+SH sm 4 sg 2621440 pd 0.1
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 4 sg 2621440 st 0.2 am 3 ag 1048577 at 0.3 pe 3
+CL id 7 tid 6 eid 7 etid 6 c omnetpp::cMessage n tic-0 m 4 pe -1 cid 6
+
+E # 4 t 0.3 m 3 ce 3 msg 6
+- INFO: El mensaje tic-0 llegó por la puerta 1.
+- INFO: Reenviando mensaje tic-0 por la puerta out[2]
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 m 3 pe 4
+SH sm 3 sg 2621442 pd 0.1
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 3 sg 2621442 st 0.3 am 6 ag 1048576 at 0.4 pe 4
+CL id 7 tid 6 eid 7 etid 6 c omnetpp::cMessage n tic-0 m 3 pe -1 cid 6
+
+E # 5 t 0.4 m 6 ce 4 msg 6
+- INFO: El mensaje tic-0 llegó por la puerta 0.
+- INFO: Reenviando mensaje tic-0 por la puerta out[1]
+BS id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 m 6 pe 5
+SH sm 6 sg 2621441 pd 0.1
+ES id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 sm 6 sg 2621441 st 0.4 am 5 ag 1048576 at 0.5 pe 5
+CL id 7 tid 6 eid 7 etid 6 c omnetpp::cMessage n tic-0 m 6 pe -1 cid 6
+
+E # 6 t 0.5 m 5 ce 5 msg 6
+- INFO: El mensaje tic-0 ha llegado finalmente al nodo tic[3].
+DM id 6 tid 6 eid 6 etid 6 c omnetpp::cMessage n tic-0 m 5 pe 6
+
+SE e 0 c 13 m "No more events, simulation completed -- at t=0.5s, event #6"

@@ -1,0 +1,49 @@
+file 6337 1742660145                                            
+version 3
+run Tictoc16-0-20250322-10:14:59-52030
+attr configname Tictoc16
+attr datetime 20250322-10:14:59
+attr datetimef 20250322-101459
+attr experiment Tictoc16
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tictoc16
+attr processid 52030
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network Tictoc16
+config **.tic[1].hopCount.result-recording-modes +histogram
+config **.tic[0..2].hopCount.result-recording-modes -vector
+config seed-0-mt 536568
+
+vector 0 Tictoc16.tic[1] hopCount:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source arrival
+attr title "hop count"
+vector 1 Tictoc16.tic[3] hopCount:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source arrival
+attr title "hop count"
+vector 2 Tictoc16.tic[4] hopCount:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source arrival
+attr title "hop count"
+vector 3 Tictoc16.tic[5] hopCount:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source arrival
+attr title "hop count"
+0	1148 1270 2 5544 0.1 554.3 87 1 21 333 2759
+1	2418 1192 74 5540 7.3 553.9 79 1 62 1111 30427
+2	3610 1517 3 5435 0.2 543.4 107 1 20 427 3435
+3	5127 1209 18 5400 1.7 539.9 80 1 71 1122 31550
+

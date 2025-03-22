@@ -103,3 +103,347 @@ make: Nothing to be done for 'all'.
 15:03:21 **** Incremental Build of configuration release for project tictoc ****
 make MODE=release all 
 make: Nothing to be done for 'all'.
+18:57:20 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+19:08:57 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc9.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+19:13:29 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc9.cc
+txc9.cc:68:71: error: expected ';' after expression
+   68 |         EV << "Timeout expired, resending message:"  << msg->getName() "and restarting timer\n";
+      |                                                                       ^
+      |                                                                       ;
+txc9.cc:68:72: warning: expression result unused [-Wunused-value]
+   68 |         EV << "Timeout expired, resending message:"  << msg->getName() "and restarting timer\n";
+      |                                                                        ^~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+make: *** [Makefile:138: out/clang-release//txc9.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+19:15:55 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc9.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+19:16:00 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+19:17:00 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc9.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+19:17:03 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+19:19:01 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+00:16:06 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+01:03:52 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc10a.cc
+txc10a.cc:48:9: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   48 |         sprintf(msgname, "tic-%d", getIndex());
+      |         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+01:04:05 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+01:21:25 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc10a.cc
+txc10a.cc:22:9: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   22 |         sprintf(msgname, "tic-%d", getIndex());  // Generar nombre del mensaje
+      |         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+01:21:26 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+01:57:01 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc10.cc
+txc10a.cc
+txc10a.cc:22:9: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+   22 |         sprintf(msgname, "tic-%d", getIndex());  // Generar nombre del mensaje
+      |         ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdio.h:274:1: note: 'sprintf' has been explicitly marked deprecated here
+  274 | __deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+      | ^
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+  218 |         #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+      |                                                       ^
+1 warning generated.
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+02:03:23 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:13:50 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:17:23 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc13.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+02:17:26 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:26:45 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc13a.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+02:26:48 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:29:24 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:29:27 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:32:41 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:32:43 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:36:04 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc13a.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+02:39:28 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:40:00 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:49:41 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+02:55:32 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+03:09:14 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: *** No rule to make target 'all'.  Stop.
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+03:09:26 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: *** No rule to make target 'all'.  Stop.
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+03:09:49 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txcTriangulo.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+03:09:52 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+03:10:35 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+03:10:46 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+03:12:28 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+03:14:53 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txcTriangulo.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+03:14:55 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+07:01:13 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+nodox.cc:51:74: error: use of undeclared identifier 'counter'; did you mean 'toupper'?
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                          ^~~~~~~
+      |                                                                          toupper
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h:300:1: note: 'toupper' declared here
+  300 | toupper(int _c)
+      | ^
+nodox.cc:51:74: warning: address of function 'toupper' will always evaluate to 'true' [-Wpointer-bool-conversion]
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                       ~~ ^~~~~~~
+nodox.cc:51:74: note: prefix with the address-of operator to silence this warning
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                          ^
+      |                                                                          &
+1 warning and 1 error generated.
+make: *** [Makefile:141: out/clang-release//nodox.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:01:20 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+nodox.cc:51:74: error: use of undeclared identifier 'counter'; did you mean 'toupper'?
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                          ^~~~~~~
+      |                                                                          toupper
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h:300:1: note: 'toupper' declared here
+  300 | toupper(int _c)
+      | ^
+nodox.cc:51:74: warning: address of function 'toupper' will always evaluate to 'true' [-Wpointer-bool-conversion]
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                       ~~ ^~~~~~~
+nodox.cc:51:74: note: prefix with the address-of operator to silence this warning
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                          ^
+      |                                                                          &
+1 warning and 1 error generated.
+make: *** [Makefile:141: out/clang-release//nodox.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:02:46 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+nodox.cc:51:74: error: use of undeclared identifier 'counter'; did you mean 'toupper'?
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                          ^~~~~~~
+      |                                                                          toupper
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_ctype.h:300:1: note: 'toupper' declared here
+  300 | toupper(int _c)
+      | ^
+nodox.cc:51:74: warning: address of function 'toupper' will always evaluate to 'true' [-Wpointer-bool-conversion]
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                       ~~ ^~~~~~~
+nodox.cc:51:74: note: prefix with the address-of operator to silence this warning
+   51 |         EV <<"El contador de mensajes de " << getName() << "esta en " << counter << ", enviando de vuelta el mensaje\n";
+      |                                                                          ^
+      |                                                                          &
+1 warning and 1 error generated.
+make: *** [Makefile:141: out/clang-release//nodox.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:02:57 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+Undefined symbols for architecture arm64:
+  "nodox::finish()", referenced from:
+      vtable for nodox in nodox.o
+ld: symbol(s) not found for architecture arm64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:130: out/clang-release//tictoc] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:03:12 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+Undefined symbols for architecture arm64:
+  "nodox::finish()", referenced from:
+      vtable for nodox in nodox.o
+ld: symbol(s) not found for architecture arm64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:130: out/clang-release//tictoc] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:03:35 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+Undefined symbols for architecture arm64:
+  "nodox::finish()", referenced from:
+      vtable for nodox in nodox.o
+ld: symbol(s) not found for architecture arm64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:130: out/clang-release//tictoc] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:03:39 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+Undefined symbols for architecture arm64:
+  "nodox::finish()", referenced from:
+      vtable for nodox in nodox.o
+ld: symbol(s) not found for architecture arm64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:130: out/clang-release//tictoc] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+07:04:20 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+07:04:36 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+07:06:47 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+07:10:07 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+07:12:33 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+07:13:02 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+09:27:38 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+nodox.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+09:59:16 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+10:14:53 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+10:18:57 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+10:22:07 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+10:43:52 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+10:55:35 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+10:57:14 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+11:04:48 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+11:44:08 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+11:45:03 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+11:45:30 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.

@@ -1,0 +1,208 @@
+SB ov 1537 ev 2 rid Ejercicio_Triangulo-0-20250322-07:12:34-35488
+
+E # 0 t 0 m 1 ce -1 msg -1
+MC id 1 c omnetpp::cModule t TictocTriangulo n TictocTriangulo cm 1
+MDC id 1 d bgb=354,287
+MC id 2 c nodox t nodox pid 1 n nodo1
+GC m 2 g 0 n in o 0
+GC m 2 g 3 n out o 1
+MDC id 2 d p=162,211;i=block/control,#FF2F92
+MC id 3 c nodox t nodox pid 1 n nodo2
+GC m 3 g 0 n in o 0
+GC m 3 g 3 n out o 1
+MDC id 3 d p=266,58;i=block/routing,gold
+MC id 4 c nodox t nodox pid 1 n nodo3
+GC m 4 g 0 n in o 0
+GC m 4 g 3 n out o 1
+MDC id 4 d p=58,58;i=block/user,#00FCFF
+CC sm 2 sg 3 dm 3 dg 0
+CDC sm 2 sg 3 d ""
+CC sm 3 sg 3 dm 4 dg 0
+CDC sm 3 sg 3 d ""
+CC sm 4 sg 3 dm 2 dg 0
+CDC sm 4 sg 3 d ""
+CMB sm 1 tm 2 m initialize(0)
+- INFO: Enviando mensaje inicial
+CM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg pe -1
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe 0
+SH sm 2 sg 3 pd 0.2
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 0 am 3 ag 0 at 0.2 pe 0
+CL id 1 tid 0 eid 1 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 0
+CME
+CMB sm 1 tm 3 m initialize(0)
+- INFO: Enviando mensaje inicial
+CM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg pe -1
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg m 3 pe 0
+SH sm 3 sg 3 pd 0.1
+ES id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 0 am 4 ag 0 at 0.1 pe 0
+CL id 2 tid 1 eid 2 etid 1 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 1
+CME
+CMB sm 1 tm 4 m initialize(0)
+- INFO: Enviando mensaje inicial
+CM id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg pe -1
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe 0
+SH sm 4 sg 3 pd 0.3
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 0 am 2 ag 0 at 0.3 pe 0
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 2
+CME
+
+E # 1 t 0.1 m 4 ce 0 msg 1
+- INFO: El contador de mensajes de nodo3 esta en 6, enviando de vuelta el mensaje
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg m 4 pe 1
+SH sm 4 sg 3 pd 0.3
+ES id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 0.1 am 2 ag 0 at 0.4 pe 1
+CL id 3 tid 1 eid 3 etid 1 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 1
+
+E # 2 t 0.2 m 3 ce 0 msg 0
+- INFO: El contador de mensajes de nodo2 esta en 2, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe 2
+SH sm 3 sg 3 pd 0.1
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 0.2 am 4 ag 0 at 0.3 pe 2
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 0
+
+E # 3 t 0.3 m 2 ce 0 msg 2
+- INFO: El contador de mensajes de nodo1 esta en 7, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 2 pe 3
+SH sm 2 sg 3 pd 0.2
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 0.3 am 3 ag 0 at 0.5 pe 3
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 2
+
+E # 4 t 0.3 m 4 ce 2 msg 0
+- INFO: El contador de mensajes de nodo3 esta en 5, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe 4
+SH sm 4 sg 3 pd 0.3
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 0.3 am 2 ag 0 at 0.6 pe 4
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 0
+
+E # 5 t 0.4 m 2 ce 1 msg 1
+- INFO: El contador de mensajes de nodo1 esta en 6, enviando de vuelta el mensaje
+BS id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg m 2 pe 5
+SH sm 2 sg 3 pd 0.2
+ES id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 0.4 am 3 ag 0 at 0.6 pe 5
+CL id 3 tid 1 eid 3 etid 1 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 1
+
+E # 6 t 0.5 m 3 ce 3 msg 2
+- INFO: El contador de mensajes de nodo2 esta en 1, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 3 pe 6
+SH sm 3 sg 3 pd 0.1
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 0.5 am 4 ag 0 at 0.6 pe 6
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 2
+
+E # 7 t 0.6 m 2 ce 4 msg 0
+- INFO: El contador de mensajes de nodo1 esta en 5, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe 7
+SH sm 2 sg 3 pd 0.2
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 0.6 am 3 ag 0 at 0.8 pe 7
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 0
+
+E # 8 t 0.6 m 3 ce 5 msg 1
+- INFO: El contador de mensajes de nodo2 llegó a cero, eliminando mensaje
+DM id 1 tid 1 eid 1 etid 1 c omnetpp::cMessage n tictocMsg m 3 pe 8
+
+E # 9 t 0.6 m 4 ce 6 msg 2
+- INFO: El contador de mensajes de nodo3 esta en 4, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe 9
+SH sm 4 sg 3 pd 0.3
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 0.6 am 2 ag 0 at 0.9 pe 9
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 2
+
+E # 10 t 0.8 m 3 ce 7 msg 0
+- INFO: El contador de mensajes de nodo2 esta en -1, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe 10
+SH sm 3 sg 3 pd 0.1
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 0.8 am 4 ag 0 at 0.9 pe 10
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 0
+
+E # 11 t 0.9 m 2 ce 9 msg 2
+- INFO: El contador de mensajes de nodo1 esta en 4, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 2 pe 11
+SH sm 2 sg 3 pd 0.2
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 0.9 am 3 ag 0 at 1.1 pe 11
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 2
+
+E # 12 t 0.9 m 4 ce 10 msg 0
+- INFO: El contador de mensajes de nodo3 esta en 3, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe 12
+SH sm 4 sg 3 pd 0.3
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 0.9 am 2 ag 0 at 1.2 pe 12
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 0
+
+E # 13 t 1.1 m 3 ce 11 msg 2
+- INFO: El contador de mensajes de nodo2 esta en -2, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 3 pe 13
+SH sm 3 sg 3 pd 0.1
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 1.1 am 4 ag 0 at 1.2 pe 13
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 2
+
+E # 14 t 1.2 m 2 ce 12 msg 0
+- INFO: El contador de mensajes de nodo1 esta en 3, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe 14
+SH sm 2 sg 3 pd 0.2
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 1.2 am 3 ag 0 at 1.4 pe 14
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 0
+
+E # 15 t 1.2 m 4 ce 13 msg 2
+- INFO: El contador de mensajes de nodo3 esta en 2, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe 15
+SH sm 4 sg 3 pd 0.3
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 1.2 am 2 ag 0 at 1.5 pe 15
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 2
+
+E # 16 t 1.4 m 3 ce 14 msg 0
+- INFO: El contador de mensajes de nodo2 esta en -3, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe 16
+SH sm 3 sg 3 pd 0.1
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 1.4 am 4 ag 0 at 1.5 pe 16
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 0
+
+E # 17 t 1.5 m 2 ce 15 msg 2
+- INFO: El contador de mensajes de nodo1 esta en 2, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 2 pe 17
+SH sm 2 sg 3 pd 0.2
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 1.5 am 3 ag 0 at 1.7 pe 17
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 2
+
+E # 18 t 1.5 m 4 ce 16 msg 0
+- INFO: El contador de mensajes de nodo3 esta en 1, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe 18
+SH sm 4 sg 3 pd 0.3
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 1.5 am 2 ag 0 at 1.8 pe 18
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 0
+
+E # 19 t 1.7 m 3 ce 17 msg 2
+- INFO: El contador de mensajes de nodo2 esta en -4, enviando de vuelta el mensaje
+BS id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 3 pe 19
+SH sm 3 sg 3 pd 0.1
+ES id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 1.7 am 4 ag 0 at 1.8 pe 19
+CL id 3 tid 2 eid 3 etid 2 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 2
+
+E # 20 t 1.8 m 2 ce 18 msg 0
+- INFO: El contador de mensajes de nodo1 esta en 1, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe 20
+SH sm 2 sg 3 pd 0.2
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 2 sg 3 st 1.8 am 3 ag 0 at 2 pe 20
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe -1 cid 0
+
+E # 21 t 1.8 m 4 ce 19 msg 2
+- INFO: El contador de mensajes de nodo3 llegó a cero, eliminando mensaje
+DM id 2 tid 2 eid 2 etid 2 c omnetpp::cMessage n tictocMsg m 4 pe 21
+
+E # 22 t 2 m 3 ce 20 msg 0
+- INFO: El contador de mensajes de nodo2 esta en -5, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe 22
+SH sm 3 sg 3 pd 0.1
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 3 sg 3 st 2 am 4 ag 0 at 2.1 pe 22
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 3 pe -1 cid 0
+
+E # 23 t 2.1 m 4 ce 22 msg 0
+- INFO: El contador de mensajes de nodo3 esta en -1, enviando de vuelta el mensaje
+BS id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe 23
+SH sm 4 sg 3 pd 0.3
+ES id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg sm 4 sg 3 st 2.1 am 2 ag 0 at 2.4 pe 23
+CL id 3 tid 0 eid 3 etid 0 c omnetpp::cMessage n tictocMsg m 4 pe -1 cid 0
+
+E # 24 t 2.4 m 2 ce 23 msg 0
+- INFO: El contador de mensajes de nodo1 llegó a cero, eliminando mensaje
+DM id 0 tid 0 eid 0 etid 0 c omnetpp::cMessage n tictocMsg m 2 pe 24
+
+SE e 0 c 13 m "No more events, simulation completed -- at t=2.4s, event #24"
