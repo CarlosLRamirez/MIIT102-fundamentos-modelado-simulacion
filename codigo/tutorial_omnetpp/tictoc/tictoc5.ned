@@ -54,7 +54,7 @@ network Tictoc5
         tic: Tic5;  // the limit parameter is still unbound here. We will get it from the ini file
         toc: Toc5;
     connections:
-        tic.out --> {  delay = 100ms; } --> toc.in;
-        tic.in <-- {  delay = 100ms; } <-- toc.out;
+            tic.out --> {  delay = 100ms; } --> toc.in;
+            tic.in <-- {  delay = 100ms; } <-- toc.out;
 }
 

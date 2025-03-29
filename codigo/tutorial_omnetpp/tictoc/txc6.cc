@@ -31,7 +31,7 @@ class Txc6 : public cSimpleModule
     // Set the pointers to nullptr, so that the destructor won't crash
     // even if initialize() doesn't get called because of a runtime
     // error or user cancellation during the startup process.
-    cMessage *event = nullptr;  // pointer to the event object which we'll use for timing
+    cMessage *event = nullptr;  //  Mensaje para simular el retardo (auto-envio)
     cMessage *tictocMsg = nullptr;  // variable to remember the message until we send it back
 
   public:
@@ -54,7 +54,7 @@ Txc6::~Txc6()
 void Txc6::initialize()
 {
     // Create the event object we'll use for timing -- just any ordinary message.
-    event = new cMessage("event");
+    event = new cMessage("retardo");
 
     // No tictoc message yet.
     tictocMsg = nullptr;
@@ -65,7 +65,7 @@ void Txc6::initialize()
         // back to us, at t=5.0s simulated time.
         EV << "Scheduling first send to t=5.0s\n";
         tictocMsg = new cMessage("tictocMsg");
-        scheduleAt(5.0, event);
+        scheduleAt(5.0, event); //tic se programa un autoenvio de mensaje en el t=5.0
     }
 }
 

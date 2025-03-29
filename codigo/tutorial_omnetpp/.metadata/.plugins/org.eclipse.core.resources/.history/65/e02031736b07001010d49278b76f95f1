@@ -1,0 +1,101 @@
+# This file is shared by all tictoc simulations.
+# Lines beginning with `#' are comments
+
+[General]
+seed-0-mt=536568  # or any other 32-bit value
+
+[PrimeraSimulacion]
+network = Tictoc1
+record-eventlog = true
+
+[Tictoc2]
+network = Tictoc2
+
+[Tictoc3]
+network = Tictoc3
+
+[Ejercicio_Triangulo]
+network = TictocTriangulo
+record-eventlog = true
+TictocTriangulo.nodo1.limit = 8
+TictocTriangulo.nodo2.limit = 8
+TictocTriangulo.nodo3.limit = 8
+
+
+
+[Tictoc4]
+network = Tictoc4
+Tictoc4.tic.limit = 12
+Tictoc4.toc.limit = 6
+record-eventlog = true
+
+
+
+[Tictoc5]
+network = Tictoc5
+**.limit = 5
+
+[Tictoc6]
+network = Tictoc6
+record-eventlog = true
+
+[Tictoc7]
+network = Tictoc7
+record-eventlog = true
+# argument to exponential() is the mean; truncnormal() returns values from
+# the normal distribution truncated to nonnegative values
+Tictoc7.tic.delayTime = exponential(3s)
+Tictoc7.toc.delayTime = truncnormal(3s,1s)
+
+[Tictoc8]
+network = Tictoc8
+
+[Tictoc9]
+network = Tictoc9
+
+[Tictoc10]
+network = Tictoc10
+
+[Tictoc10_mejorado]
+network = Tictoc10a
+
+[Tictoc11]
+network = Tictoc11
+
+[Tictoc12]
+network = Tictoc12
+
+[Tictoc13]
+network = Tictoc13
+
+[Tictoc13_mejorado]
+network = Tictoc13a
+**.tic[*].sendInterval = exponential(1s)
+
+[Tictoc14]
+network = Tictoc14
+
+[Tictoc15]
+network = Tictoc15
+record-eventlog = true
+
+[Tictoc16]
+network = Tictoc16
+##**.tic[1].hopCount.result-recording-modes = +histogram
+##**.tic[5].hopCount.result-recording-modes = +histogram
+#**.tic[0..2].hopCount.result-recording-modes = -vector
+**.tic[*].hopCount.result-recording-modes = +histogram, +vector, +stats
+
+
+sim-time-limit = 2400s
+
+[Tictoc17]
+network = Tictoc17
+
+[TicToc18]
+network = TicToc18
+sim-time-limit = 250000s
+**.tic[*].hopCount.result-recording-modes = +vector,+histogram
+*.numCentralNodes = ${N=2..100 step 2}
+repeat = 4
+

@@ -50,7 +50,7 @@ void Tic8::initialize()
 
     // Generate and send initial message.
     EV << "Sending initial message\n";
-    cMessage *msg = new cMessage("tictocMsg");
+    cMessage *msg = new cMessage("Mensaje nuevito");
     send(msg, "out");
     scheduleAt(simTime()+timeout, timeoutEvent);
 }
@@ -61,7 +61,7 @@ void Tic8::handleMessage(cMessage *msg)
         // If we receive the timeout event, that means the packet hasn't
         // arrived in time and we have to re-send it.
         EV << "Timeout expired, resending message and restarting timer\n";
-        cMessage *newMsg = new cMessage("tictocMsg");
+        cMessage *newMsg = new cMessage("Mensaje regenerado");
         send(newMsg, "out");
         scheduleAt(simTime()+timeout, timeoutEvent);
     }

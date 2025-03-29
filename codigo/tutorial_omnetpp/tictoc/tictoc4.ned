@@ -24,19 +24,20 @@ simple Txc4
 //
 network Tictoc4
 {
+    @display("bgb=468,269");
     submodules:
         tic: Txc4 {
             parameters:
                 sendMsgOnInit = true;
-                @display("i=,cyan");
+                @display("i=,cyan;p=48,124");
         }
         toc: Txc4 {
             parameters:
-                sendMsgOnInit = false;
-                @display("i=,gold");
+                sendMsgOnInit = true;
+                @display("i=,gold;p=357,61");
         }
     connections:
-        tic.out --> {  delay = 100ms; } --> toc.in;
-        tic.in <-- {  delay = 100ms; } <-- toc.out;
+        tic.out --> {  delay = 150ms; } --> toc.in;
+        tic.in <-- {  delay = 225ms; } <-- toc.out;
 }
 

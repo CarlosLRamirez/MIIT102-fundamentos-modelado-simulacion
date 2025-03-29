@@ -24,13 +24,36 @@ p {
     margin-bottom: 0.5rem;
 }
 
-/* Espacio entre items de lista */
-ul li, ol li {
-    margin-bottom: .75rem; /* Espacio entre bullets */
-}
-  
-/* Espacio antes de la lista */
+
+/* esto lo agrege el 27/03/2025 */
+
+
+/* Estilo consistente para listas y bullets */
+
+/* Estilo general para todos los bullets */
 ul, ol {
-    margin-top: 1rem;
-    margin-bottom: 1rem; /* Espacio después de la lista */
-}
+    margin-top: 1rem;          /* Espaciado antes de la lista */
+    margin-bottom: 1rem;       /* Espaciado después de la lista */
+  }
+  
+  /* Espaciado uniforme entre elementos de lista */
+  ul li, ol li {
+    margin-bottom: 0.5rem;     /* Controla el interlineado entre items */
+    line-height: 1.6;          /* Hace el texto más legible */
+  }
+  
+  /* Espaciado específico para listas anidadas */
+  ul ul, ol ol {
+    margin-top: 0.5rem;        /* Espacio antes de una lista anidada */
+    margin-bottom: 0.5rem;     /* Espacio después de una lista anidada */
+  }
+  
+  /* Mejoras visuales para bullets (opcional) */
+  ul ul li::marker, ol ol li::marker {
+    color: #8B8B8B;            /* Cambiar el color del bullet o número */
+  }
+  
+  /* Ajuste para mejor visibilidad en modo oscuro */
+  body.dark-mode ul li, body.dark-mode ol li {
+    color: #DADADA;             /* Mejora el contraste en modo oscuro */
+  }

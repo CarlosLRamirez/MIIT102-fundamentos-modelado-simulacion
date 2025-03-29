@@ -32,7 +32,7 @@ void Txc3::initialize()
 {
     // Initialize counter to ten. We'll decrement it every time and delete
     // the message when it reaches zero.
-    counter = 10;
+    counter = 12;
 
     // The WATCH() statement below will let you examine the variable under
     // Qtenv. After doing a few steps in the simulation, click either
@@ -55,11 +55,12 @@ void Txc3::handleMessage(cMessage *msg)
         // If counter is zero, delete message. If you run the model, you'll
         // find that the simulation will stop at this point with the message
         // "no more events".
-        EV << getName() << "'s counter reached zero, deleting message\n";
+        EV << getName() << " mi contador a  llegado a zero, boorando el mensaje\n";
         delete msg;
     }
     else {
-        EV << getName() << "'s counter is " << counter << ", sending back message\n";
+        EV << getName() << " mi contador es " << counter << ", enviando el mensaje de regreso\n";
+
         send(msg, "out");
     }
 }

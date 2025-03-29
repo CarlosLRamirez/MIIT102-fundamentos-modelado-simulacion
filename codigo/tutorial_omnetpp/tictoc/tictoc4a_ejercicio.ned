@@ -32,7 +32,7 @@ network TictocTriangulo
                 sendMsgOnInit = true;
         }
     connections:
-        nodo1.out --> {  delay = 200ms; } --> nodo2.in;
+        nodo1.out --> {  delay = 100ms; } --> nodo2.in;
         nodo2.out --> {  delay = 100ms; } --> nodo3.in;
-        nodo3.out --> {  delay = 300ms; } --> nodo1.in;
+        nodo3.out --> {  delay = 100ms; } --> nodo1.in;
 }

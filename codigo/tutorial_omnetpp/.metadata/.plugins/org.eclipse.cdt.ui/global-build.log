@@ -447,3 +447,155 @@ make: Nothing to be done for 'all'.
 11:45:30 **** Incremental Build of configuration release for project tictoc ****
 make MODE=release all 
 make: Nothing to be done for 'all'.
+14:32:27 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc1.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+14:38:43 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+14:52:12 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc2.cc
+txc2.cc:46:107: error: expected ';' after expression
+   46 |     EV << "Mensaje recibido `" << msg->getName() << "', enviandolo de nuevo, soy " << self.getName() << ""\n";
+      |                                                                                                           ^
+      |                                                                                                           ;
+txc2.cc:46:87: error: use of undeclared identifier 'self'
+   46 |     EV << "Mensaje recibido `" << msg->getName() << "', enviandolo de nuevo, soy " << self.getName() << ""\n";
+      |                                                                                       ^
+txc2.cc:46:107: error: expected expression
+   46 |     EV << "Mensaje recibido `" << msg->getName() << "', enviandolo de nuevo, soy " << self.getName() << ""\n";
+      |                                                                                                           ^
+txc2.cc:46:109: warning: missing terminating '"' character [-Winvalid-pp-token]
+   46 |     EV << "Mensaje recibido `" << msg->getName() << "', enviandolo de nuevo, soy " << self.getName() << ""\n";
+      |                                                                                                             ^
+1 warning and 3 errors generated.
+make: *** [Makefile:141: out/clang-release//txc2.o] Error 1
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+14:53:32 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc2.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+14:53:42 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+14:53:46 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+14:57:21 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc2.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+14:57:27 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:01:52 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:05:00 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc3.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+15:05:02 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:07:57 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc3.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+15:08:14 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:15:39 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc1.cc
+txc4.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+15:17:33 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:19:37 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:27:52 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:28:34 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:29:44 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+15:30:20 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:04:30 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc6.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+16:04:41 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:04:58 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:14:21 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc7.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+16:14:26 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:16:06 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:17:34 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:19:53 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:20:09 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:20:29 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:20:32 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:22:31 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:25:42 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:29:44 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+txc8.cc
+Creating executable: out/clang-release//tictoc
+ld: warning: ignoring duplicate libraries: '-lc++', '-loppenvir'
+16:31:42 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:34:03 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:43:18 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:47:34 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.
+16:51:05 **** Incremental Build of configuration release for project tictoc ****
+make MODE=release all 
+make: Nothing to be done for 'all'.

@@ -60,7 +60,7 @@ void Txc7::handleMessage(cMessage *msg)
         tictocMsg = nullptr;
     }
     else {
-        // "Lose" the message with 0.1 probability:
+        // "Lose" the message with 0.1 probability (10%)
         if (uniform(0, 1) < 0.1) {
             EV << "\"Losing\" message\n";
             delete msg;
