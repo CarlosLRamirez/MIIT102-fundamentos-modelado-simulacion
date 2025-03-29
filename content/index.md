@@ -1,6 +1,6 @@
 ---
 title: MIIT102 Fundamentos de Modelado y Simulación
-modified: 2025-03-29T07:53:33-06:00
+modified: 2025-03-29T08:06:43-06:00
 ---
 
 Material del curso **Fundamentos de Modelado y Simulación**, dictado por el Ing. Msc. Carlos Leonel Ramírez, en la Escuela de Postgrado de la Facultad de Ingeniería, de la Universidad de San Carlos de Guatemala.
