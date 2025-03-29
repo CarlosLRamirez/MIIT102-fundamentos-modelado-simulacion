@@ -64,15 +64,18 @@ Hay varias maneras de instalar el INET Framework:
 - El proyecto debe estar en el mismo espacio de trabajo donde se encuentra el `inet4.5
 
 
-![picture 6](content/Notas%20de%20Clase/attachments/fd692b26c943f41da45ad107c05dd555238492ad056c09a75faa769c0867bd1b.png)
+
+
+
+![[fd692b26c943f41da45ad107c05dd555238492ad056c09a75faa769c0867bd1b.png]]
 
 - Haz clic derecho sobre el proyecto `lab1Ping` en el explorador de proyectos y selecciona *Properties*.
 
-![](content/Notas%20de%20Clase/attachments/2024-03-12-22-46-11.png)
+![[2024-03-12-22-46-11.png]]
 
 - En la sección *Project References*, marca la casilla correspondiente a `inet4.5`. Luego, selecciona *Apply and Close* para cerrar la ventana.  
 
-![](content/Notas%20de%20Clase/attachments/2024-03-12-22-47-24.png)
+![[2024-03-12-22-47-24.png]]
 
 ---
 ## Definición de la topología de red
@@ -97,14 +100,14 @@ Hay varias maneras de instalar el INET Framework:
 
 - Añade dos hosts al diseño de la red, utilizando el módulo `StandardHost`.
 
-![](content/Notas%20de%20Clase/attachments/2024-03-12-23-05-44.png)
+![[2024-03-12-23-05-44.png]]
 
 ---
 ### Adición del Configurador de Red  
 
 - Inserta un elemento `ipv4NetworkConfigurator` en la red.
 
-![](content/Notas%20de%20Clase/attachments/2024-03-12-23-08-43.png)
+![[2024-03-12-23-08-43.png]]
 
 - Renombra este módulo a `configurator` para simplificar su identificación.
 
@@ -116,11 +119,11 @@ Hay varias maneras de instalar el INET Framework:
 
 - Utilizando la herramienta `Connection`, selecciona `Eth100M`.  
 
-![Eth100M](content/Notas%20de%20Clase/attachments/Eth100M.jpg)
+![[Eth100M.jpg]]
 
 - Conecta los dos host haciendo click en el primero y luego en el segundo, seleccionando la interfaz `ethg[0]`. 
 
-![picture 9](content/Notas%20de%20Clase/attachments/d3ca65c835e79adf40e4071d434cdb0609de43ae535f8c82be974bedacb1c505.png)
+![[d3ca65c835e79adf40e4071d434cdb0609de43ae535f8c82be974bedacb1c505.png]]
 
 - Renombra el nombre de los host por `HostA`y `HostB`respectivamente
 
