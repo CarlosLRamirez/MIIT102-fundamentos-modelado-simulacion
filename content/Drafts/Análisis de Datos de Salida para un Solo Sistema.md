@@ -51,15 +51,6 @@ La distribución en estado estable $F(y)$ no depende de las condiciones iniciale
 La convergencia hacia el estado estacionario en una simulación no se limita solo a la media o valor esperado de una variable de salida ($E(Y_i)$). La distribución de probabilidad completa de esa variable de salida ($Y_i$) también evoluciona y se acerca a una distribución límite, conocida como la **distribución de estado estacionario ($Y$)**, a medida que transcurre el tiempo (a medida que $i$ se hace grande) 
 
 ---
-
-## Tipos de Simulación y análisis de datos de salida.
-
-Dependiendo de el tipo de simulación asi son las opciones que tenemos con respecto al análisis.
-
-Claro, aquí tienes una **síntesis de la sección 9.3 "Types of Simulations with Regard to Output Analysis"** del libro *Simulation Modeling and Analysis* de Averill Law, páginas 493 a 497:
-
----
-
 ## Tipos de simulación en cuanto al análisis de salida (Output Analysis)
 
 La forma en que se debe diseñar y analizar una simulación depende del tipo de simulación en cuestión. Existen **dos tipos principales**:
