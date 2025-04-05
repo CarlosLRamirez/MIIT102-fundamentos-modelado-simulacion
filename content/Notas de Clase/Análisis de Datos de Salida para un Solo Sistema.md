@@ -2,11 +2,11 @@
 modified: 2025-04-05T10:41:38-06:00
 created: 2025-04-02T07:17:04-06:00
 draft: false
-title: Análisis de Datos de Salida de la Simulación
+title: Análisis de Datos de Salida de la Simulación para un Solo Sistema
 aliases:
-  - Análisis de Datos de Salida de la Simulación
+  - Análisis de Datos de Salida de la Simulación para un Solo Sistema
 ---
-#  Análisis de Datos de Salida de la Simulación
+#  Análisis de Datos de Salida de la Simulación para un Solo Sistema
 
 ---
 ##  ¿Por qué es importante el análisis de resultados en simulación?
