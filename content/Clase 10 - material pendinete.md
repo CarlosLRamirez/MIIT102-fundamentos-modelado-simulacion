@@ -1,6 +1,6 @@
 ---
 created: 2025-04-04T19:17:33-06:00
-modified: 2025-04-05T07:15:56-06:00
+modified: 2025-04-05T10:27:33-06:00
 draft: true
 ---
 
@@ -20,41 +20,41 @@ X_j = \frac{1}{N_j} \sum_{i=1}^{N_j} I_i(0,5)
 $$
 
 donde:
-- \( N_j \) es el número de clientes atendidos en la réplica \( j \),
-- \( I_i(0,5) \) es una variable indicadora que vale 1 si el tiempo de espera del cliente \( i \) está entre 0 y 5 minutos, y 0 si no.
+- $N_j$ es el número de clientes atendidos en la réplica $j$,
+- $I_i(0,5)$  es una variable indicadora que vale 1 si el tiempo de espera del cliente $i$ está entre 0 y 5 minutos, y 0 si no.
 
-A partir de los valores de \( X_j \) en las 10 réplicas, se obtiene:
+A partir de los valores de $X_j$ en las 10 réplicas, se obtiene:
 
 - Media muestral:  
-  $$\[
-  \bar{X}(10) = 0.853
-  \]$$
 - 
+  $$\bar{X}(10) = 0.853$$
+
+
 - Varianza muestral:  
-  \[
-  S^2(10) = 0.004
-  \]
 
-Usando un valor \( t_{9, 0.95} = 1.833 \) (para un intervalo del 90% con 9 grados de libertad), el error estándar es:
+  $$S^2(10) = 0.004$$
 
-\[
+Usando un valor $t_{9, 0.95} = 1.833$ (para un intervalo del 90% con 9 grados de libertad), el error estándar es:
+
+$$
 \sqrt{\frac{0.004}{10}} = 0.063
-\]
+$$
 
 y el margen de error:
 
-\[
+$$
 1.833 \cdot 0.063 \approx 0.12
-\]
-#### ✅ Intervalo de confianza del 90% para la proporción:
+$$
 
-\[
+**Intervalo de confianza del 90% para la proporción:**
+
+$$
 0.853 \pm 0.12 = [0.733,\ 0.973]
-\]
+$$
 
 ---
 
-#### 📌 Interpretación
+**Interpretación**
 
 Con un 90% de confianza, se estima que **entre el 73.3% y el 97.3% de los clientes esperaron menos de 5 minutos** en ser atendidos. Este tipo de análisis permite evaluar el servicio desde una perspectiva más enfocada en la **experiencia del cliente**, y complementa el uso de la media al capturar la distribución del desempeño.
 
@@ -91,9 +91,6 @@ Al realizar una simulación de ambas políticas, se observa que **el tiempo de e
 
 ---
 
-
-
-
 Por ejemplo, bajo la política de múltiples colas, **una mayor proporción de clientes experimenta tiempos de espera elevados**, lo cual no se refleja en la media. En contraste, la política de una sola cola produce un sistema más balanceado, con menos variabilidad en la experiencia de los clientes.
 
 Este ejemplo demuestra que **en muchas situaciones no basta con comparar únicamente las medias** de desempeño, ya que pueden ocultar información relevante sobre la distribución de los resultados. Para una evaluación más completa, es útil estimar otras métricas como:
@@ -103,24 +100,10 @@ Este ejemplo demuestra que **en muchas situaciones no basta con comparar únicam
 - **Varianza o desviación estándar** de los resultados,
 - O integrales como el número promedio de clientes en cola durante el día.
 
-Estas métricas pueden estimarse mediante **variables indicadoras**. Por ejemplo, si queremos conocer la proporción de clientes cuyo tiempo de espera \( Y_i \) estuvo en un rango \( B \), definimos:
-
-$$\[
-Z_i = 
-\begin{cases}
-1 & \text{si } Y_i \in B \\
-0 & \text{si no}
-\end{cases}
-\quad \Rightarrow \quad E(Z) = P(Y \in B)
-\]$$
-
-Luego, se aplica el mismo marco de análisis de salida (como en la estimación de medias), calculando promedios e intervalos de confianza para estas proporciones.
-
 Así, el análisis de salida se vuelve más robusto y útil para tomar decisiones informadas, considerando no solo los promedios, sino también **la variabilidad y las experiencias extremas** dentro del sistema simulado.
 
 
 
----
 
 ## Bibliografia
 Libro de Law, Capitulo 9

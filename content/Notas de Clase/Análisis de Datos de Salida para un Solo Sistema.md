@@ -1,8 +1,10 @@
 ---
-modified: 2025-04-05T07:15:25-06:00
+modified: 2025-04-05T10:41:38-06:00
 created: 2025-04-02T07:17:04-06:00
 draft: false
-title: Análisis de Datos de Salida para un Solo Sistema
+title: Análisis de Datos de Salida de la Simulación
+aliases:
+  - Análisis de Datos de Salida de la Simulación
 ---
 #  Análisis de Datos de Salida de la Simulación
 
@@ -470,56 +472,200 @@ Si no sabemos cuántas réplicas se necesitan desde el inicio, podemos usar un *
 📉 Desventaja: Puede requerir muchas réplicas si la varianza es alta.
 
 ---
+### Estimación de proporciones 
 
-### 🎓 Ejercicio práctico: Simulación de una sala de espera con CloudES
+(**Ejemplo 9.16**) Este ejemplo extiende el análisis de desempeño más allá de la media, al estimar una **proporción**: la fracción de clientes que esperan **menos de 5 minutos** en ser atendidos.
 
-#### 📘 Objetivo:
-Simular un sistema sencillo con CloudES y aplicar sobre los resultados:
-- Estimación de la media,
-- Cálculo de un intervalo de confianza,
-- Evaluación de la precisión relativa,
-- Estimación del número de réplicas necesarias.
+Tomando los datos de las mismas 10 réplicas utilizadas en el ejemplo anterior (ver Tabla 9.1), se desea calcular la proporción promedio de clientes que cumplieron con ese criterio en cada réplica, y construir un intervalo de confianza del 90%.
+
+![[Pasted image 20250402173145.png|600]]
 
 ---
 
-#### 🏢 Sistema a simular: “Sala de espera del tren”
 
-##### 🔧 Parámetros:
+En cada réplica, se calcula la proporción de clientes cuyo tiempo de espera $Y_i$ se encuentra en el intervalo $[0,\ 5)$ minutos, es decir:
 
-- Llegadas: Distribución **exponencial**, media = 2 minutos (tasa \( \lambda = 0.5 \))
-- Servidor: representa la llegada de un **tren cada 30 minutos**, que **atiende en batch** a todos los pasajeros en espera.
-- Tiempo de simulación por réplica: **4 horas** (240 minutos).
-- Condición de terminación: la simulación termina a las 10:00 a.m. (terminante).
-- Métrica de interés: **tiempo promedio de espera por pasajero en cada jornada**.
+$$
+X_j = \frac{1}{N_j} \sum_{i=1}^{N_j} I_i(0,5)
+$$
 
----
-
-##### 🧪 **Tareas para el estudiante:**
-
-1. Simular el sistema en CloudES con **al menos 10 réplicas independientes**.
-2. Para cada réplica, registrar el **tiempo promedio de espera por pasajero**.
-3. Calcular:
-	- La **media muestral $\bar{X}(n)$**,
-	- La **varianza muestral $S^2(n)$**,
-	- Un **intervalo de confianza del 90%** para $\mu$,
-	- La **precisión relativa** lograda.
-4. Determinar el número de réplicas necesarias $n^*_r$ para alcanzar una precisión relativa del 10%.
-5. Concluir si el número de réplicas realizadas fue suficiente o si deben continuar simulando.
+donde:
+- $N_j$ es el número de clientes atendidos en la réplica $j$,
+- $I_i(0,5)$  es una variable indicadora que vale 1 si el tiempo de espera del cliente $i$ está entre 0 y 5 minutos, y 0 si no.
 
 ---
 
-##### ✏️ **Preguntas guía para entrega:**
+A partir de los valores de $X_j$ en las 10 réplicas, se obtiene:
 
-1. ¿Cuál fue el valor de $\bar{X}(n)$ y el intervalo de confianza obtenido?
-2. ¿Cuál fue el valor calculado de $n^*_r$? ¿Hiciste suficientes réplicas?
-3. ¿Qué representa la precisión relativa obtenida?
-4. ¿Cómo afecta la varianza observada el número de réplicas necesarias?
+- Media muestral:  
+
+  $$\bar{X}(10) = 0.853$$
+
+
+
+- Varianza muestral:  
+
+  $$S^2(10) = 0.004$$
 
 ---
-##### 💡 **Opcional: Extensión del experimento**
-- Repetir la simulación con el tren llegando cada **15 minutos**.
-- Comparar resultados: ¿qué pasa con el tiempo de espera promedio? ¿y con la varianza?
+
+Usando un valor $t_{9, 0.95} = 1.833$ (para un intervalo del 90% con 9 grados de libertad), el error estándar es:
+
+$$
+\sqrt{\frac{0.004}{10}} = 0.063
+$$
+
+y el margen de error:
+
+$$
+1.833 \cdot 0.063 \approx 0.12
+$$
+
+**Intervalo de confianza del 90% para la proporción:**
+
+$$
+0.853 \pm 0.12 = [0.733,\ 0.973]
+$$
 
 ---
+
+**Interpretación**
+
+Con un 90% de confianza, se estima que **entre el 73.3% y el 97.3% de los clientes esperaron menos de 5 minutos** en ser atendidos. Este tipo de análisis permite evaluar el servicio desde una perspectiva más enfocada en la **experiencia del cliente**, y complementa el uso de la media al capturar la distribución del desempeño.
+
+---
+
+### Estimación de otras medidas de desempeño
+
+(**Ejemplo 9.20**)  Considere nuevamente el **Ejemplo 9.1** :
+
+- **Tasa de llegada:** $\lambda = 1$ cliente por minuto y
+- **Tasa de servicio:** $\mu = 0.25$ clientes por minuto por servidor. 
+- **Numero de cajeros:** $c = 5$
+
+La **capacidad total del sistema** es de:
+
+$$5 \cdot \mu = 5 \cdot 0.25 = 1.25 \text{ clientes por minuto}$$
+Esto implica un **factor de utilización del sistema** de:
+
+$$\rho = \frac{\lambda}{5 \cdot \mu} = \frac{1}{5 \cdot 0.25} = 0.8$$
+---
+
+Bajo este escenario se comparan dos políticas de atención a clientes:
+- En la **Política A**, los clientes se forman en colas separadas, una por cada servidor.
+- En la **Política B**, todos los clientes hacen una sola cola común y el primero en la fila es atendido por el siguiente servidor disponible.
+
+Al realizar una simulación de ambas políticas, se observa que **el tiempo de espera promedio diario de los clientes (es decir, la media)** es muy similar en ambos casos. Sin embargo, al analizar con más detalle los resultados, se descubre que en la **Política A** hay una mayor proporción de clientes que experimentan **tiempos de espera excesivos**, lo cual no se refleja en la media.
+
+---
+
+![[Pasted image 20250403174936.png]]
+
+---
+
+![[Pasted image 20250403175839.png]]
+
+---
+
+Por ejemplo, bajo la política de múltiples colas, **una mayor proporción de clientes experimenta tiempos de espera elevados**, lo cual no se refleja en la media. En contraste, la política de una sola cola produce un sistema más balanceado, con menos variabilidad en la experiencia de los clientes.
+
+--- 
+Este ejemplo demuestra que **en muchas situaciones no basta con comparar únicamente las medias** de desempeño, ya que pueden ocultar información relevante sobre la distribución de los resultados. Para una evaluación más completa, es útil estimar otras métricas como:
+
+- **Proporciones**, por ejemplo: clientes que esperaron más de 5 minutos,
+- **Cuantiles**, como el percentil 90 del tiempo de espera,
+- **Varianza o desviación estándar** de los resultados,
+- O integrales como el número promedio de clientes en cola durante el día.
+
+----
+
+Así, el análisis de salida se vuelve más robusto y útil para tomar decisiones informadas, considerando no solo los promedios, sino también **la variabilidad y las experiencias extremas** dentro del sistema simulado.
+
+
+---
+## Bibliografia
+
+> Law, A. M. (2015). _Simulation Modeling and Analysis_ (5th ed.). McGraw-Hill. Capítulo 9, pp. 429–509.
+
+---
+
+## 🎓 Ejercicio de simulación: Comparación de políticas de atención en una clínica
+
+### 🎯 Objetivo del ejercicio:
+Simular un sistema de colas con **dos políticas de atención diferentes**, y comparar los siguientes indicadores mediante **10 réplicas por política**:
+
+- Tiempo promedio de espera por paciente  
+- Tamaño promedio de la cola  
+- Proporción de pacientes que esperaron más de 10 minutos
+
+---
+
+## 🏥 **Descripción del sistema: Clínica de consultas médicas**
+
+Una clínica atiende pacientes que llegan aleatoriamente y son atendidos por doctores. El sistema puede operar bajo dos políticas:
+
+### 🔁 **Política A: Un doctor por fila (múltiples colas)**
+
+- Hay 3 doctores.
+- Cada uno tiene **su propia cola independiente**.
+- El paciente elige una cola al azar al llegar.
+
+
+### 🔁 **Política B: Una sola cola común (FIFO global)**
+
+- Hay 3 doctores.
+- Todos los pacientes hacen **una sola cola compartida**.
+- El primer paciente en la cola es atendido por el siguiente doctor libre.
+
+---
+
+## ⚙️ **Parámetros comunes para ambas políticas:**
+
+- **Llegadas**: Distribución exponencial, media = 3 minutos.  
+- **Tiempos de servicio**: Exponencial, media = 8 minutos.  
+- **Horario de atención**: 6 horas (360 minutos).  
+- **Condición de terminación:**  
+
+  > La clínica **cierra la entrada de nuevos pacientes** después de los 360 minutos,  
+  > **pero todos los pacientes que hayan llegado antes del cierre deben ser atendidos**.  
+  > La simulación termina cuando se atiende al **último paciente que llegó antes del cierre**.  
+
+- Condición inicial: sistema vacío al inicio.
+
+---
+
+## 📋 **Tareas del estudiante:**
+
+1. Simular cada política por separado usando **CloudES o simulador equivalente**.
+2. Hacer **10 réplicas independientes para cada política**.
+3. En cada réplica, registrar:
+   - Tiempo promedio de espera,
+   - Longitud promedio de la cola,
+   - Proporción de pacientes que esperaron **más de 10 minutos**.
+
+4. Para cada métrica:
+   - Calcular la media muestral y su intervalo de confianza del 90%,
+   - Calcular la proporción muestral y su intervalo de confianza,
+   - Comparar entre políticas.
+
+---
+
+## 📊 **Análisis esperado:**
+
+- ¿Cuál política genera menor tiempo de espera promedio?
+- ¿Cuál tiene menor tamaño de cola promedio?
+- ¿Cuál es más justa en cuanto a distribución de tiempos de espera?
+- ¿Hay una política claramente superior, o depende de la métrica?
+
+---
+
+## 📌 **Formato sugerido para presentación de resultados:**
+
+| Política | Réplica | Espera promedio | Cola promedio | % espera > 10 min |
+|---------|---------|------------------|----------------|-------------------|
+| A       | 1       | 14.2 min          | 4.1            | 58%               |
+| B       | 1       | 10.5 min          | 2.9            | 40%               |
+| …       | …       | …                | …              | …                 |
+
 
 
