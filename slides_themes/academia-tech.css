@@ -1,0 +1,82 @@
+/ * === Estilo general === */
+.reveal {
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+    padding: 2em;
+}
+
+/* === Títulos === */
+.reveal h1 {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #f92aad;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-size: 2.8em;
+}
+
+.reveal h2 {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #f92aad;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-size: 2.2em;
+}
+
+.reveal h3 {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #f92aad;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    font-size: 1.8em;
+}
+
+/* === Citas o notas importantes === */
+.reveal blockquote {
+    border-left: 5px solid #007acc;
+    padding-left: 1em;
+    font-style: italic;
+    color: #333;
+    background-color: #eef6fc;
+}
+
+/* === Código o comandos === */
+.reveal code {
+    background: #eee;
+    color: #d63384;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 90%;
+}
+
+/* === Listas === */
+.reveal ul {
+    margin-left: 1.5em;
+}
+.reveal ul li {
+    margin-bottom: 0.4em;
+}
+
+/* === Tabla === */
+.reveal table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.reveal th, .reveal td {
+    border: 1px solid #ccc;
+    padding: 0.5em;
+}
+.reveal th {
+    background-color: #004080;
+    color: white;
+}
+
+/* === Pie de página o info menor === */
+.reveal .footer {
+    font-size: 18px;
+    color: #666;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
