@@ -1,9 +1,10 @@
 ---
 created: 2025-03-29T07:44:59-06:00
-modified: 2025-04-12T11:20:49-06:00
+modified: 2025-04-12T11:20:39-06:00
 title: Proyecto Final - Fundamentos de Modelado y Simulación
+draft: true
 ---
-
+\begin{center}
 Escuela de Estudios de Postgrado
 
 Facultad de Ingeniería
@@ -15,7 +16,7 @@ Maestría en Ingeniería para la Industria con Especialidad en Telecomunicacione
 Curso: Fundamentos de Modelado y Simulación
 
 Catedrático: Ing MSc. Carlos Leonel Ramírez
-
+\end{center}
 
 
 # Proyecto Final de Curso
