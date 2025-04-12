@@ -1,22 +1,31 @@
 ---
 created: 2025-03-29T07:44:59-06:00
-modified: 2025-04-12T10:57:19-06:00
+modified: 2025-04-12T11:16:21-06:00
 title: Proyecto Final - Fundamentos de Modelado y Simulación
 ---
-!<div align="center">
-    <h1>Escuela de Estudios de Postgrado</h1>
-    <h2>Facultad de Ingeniería</h2>
-    <h3>Universidad de San Carlos de Guatemala</h3>
-    <h1>Maestría en Ingeniería para la Industria con Especialidad en Telecomunicaciones</h1>
-    <h2>Curso: Fundamentos de Modelado y Simulación</h2>
-    <h3>Catedrático: Ing MSc. Carlos Leonel Ramírez</h3>
-</div>
+\begin{center}
+Escuela de Estudios de Postgrado
+
+Facultad de Ingeniería
+
+Universidad de San Carlos de Guatemala
+
+Maestría en Ingeniería para la Industria con Especialidad en Telecomunicaciones
+
+Curso: Fundamentos de Modelado y Simulación
+
+Catedrático: Ing MSc. Carlos Leonel Ramírez
+\end{center}
+
+
+# Proyecto Final de Curso
+
 
 ## Objetivo
 
 El propósito de este proyecto es que los estudiantes apliquen los conceptos aprendidos a lo largo del curso para resolver un problema de simulación utilizando herramientas informáticas. Esto incluye la construcción de un modelo de eventos discretos, la ejecución de múltiples simulaciones, el análisis estadístico de resultados, la estimación de parámetros, y la comparación de diferentes políticas o configuraciones mediante técnicas estadísticas.
 
----
+
 ## Instrucciones Generales
 
 Cada grupo de estudiantes deberá seleccionar un problema que será abordado mediante simulación por computadora. Los pasos a seguir son los siguientes:
@@ -50,17 +59,17 @@ Cada grupo de estudiantes deberá seleccionar un problema que será abordado med
 - Calcular intervalos de confianza para las medidas de desempeño clave del sistema simulado (por ejemplo, tiempo promedio en cola, tasa de pérdida de paquetes, utilización de recursos, etc.).
 - Realizar una estimación comparativa de proporciones o medias para evaluar el desempeño de dos o más políticas dentro del mismo escenario de simulación.
 - Incluir gráficos estadísticos, gráficos comparativos u otro tipo de visualizaciones de resultados que consideren pertinentes para mejorar la comprensión y presentación del análisis realizado.
+
 ### 7. Reporte de Resultados y Conclusiones
 
 Elaborar un informe escrito que incluya:
+
 - Descripción clara del problema y justificación.
 - Identificación detallada de los componentes del sistema.
 - Explicación del modelo implementado y sus configuraciones.
 - Resultados detallados de las simulaciones, incluyendo visualizaciones gráficas relevantes.
 - Análisis estadístico con intervalos de confianza y comparación entre políticas.
 - Conclusiones fundamentadas y recomendaciones prácticas.
-
----
 
 ## Formato de Entrega
 
@@ -69,7 +78,7 @@ Elaborar un informe escrito que incluya:
 - Adjuntar los archivos generados durante la simulación (.sca, .vec, .ini, .ned, .py, etc.).
 - Cada grupo hará una presentación breve del proyecto en un tiempo máximo de 20 minutos.
 
----
+
 ## Criterios de Evaluación
 
 | Criterio de evaluación                         | Puntaje |
@@ -83,3 +92,5 @@ Elaborar un informe escrito que incluya:
 | Calidad y claridad de la presentación oral     | 5       |
 | **Total**                                      | **100** |
 
+---
+Guatemala, Abril de 2025

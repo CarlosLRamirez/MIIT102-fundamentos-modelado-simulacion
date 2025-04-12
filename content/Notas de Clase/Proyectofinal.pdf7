@@ -1,0 +1,145 @@
+<p>Escuela de Estudios de Postgrado | Facultad de Ingeniería</p>
+<p>Universidad de San Carlos de Guatemala</p>
+<p>Maestría en Ingeniería para la Industria con Especialidad en
+Telecomunicaciones</p>
+<p>Curso: Fundamentos de Modelado y Simulación</p>
+<p>Catedrático: Ing MSc. Carlos Leonel Ramírez</p>
+<h1 id="proyecto-final-de-curso">Proyecto Final de Curso</h1>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>## Objetivo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>## Instrucciones Generales</td>
+</tr>
+<tr class="even">
+<td>Cada grupo de estudiantes deberá seleccionar un problema que será
+abordado mediante simulación por computadora. Los pasos a seguir son los
+siguientes:</td>
+</tr>
+<tr class="odd">
+<td>### 1. Descripción del Problema</td>
+</tr>
+<tr class="even">
+<td>- Definir claramente el problema que se desea resolver mediante
+simulación. - Describir el objetivo del ejercicio de simulación. -
+Justificar por qué una solución analítica no es aplicable o por qué es
+preferible utilizar simulación. ### 2. Identificación de Componentes del
+Sistema</td>
+</tr>
+<tr class="odd">
+<td>- Identificar y describir claramente
+las <strong>entidades</strong>, <strong>eventos</strong>, <strong>actividades</strong>, <strong>variables
+de estado</strong>, y cualquier otro componente relevante del sistema a
+simular. - Establecer las relaciones entre estos componentes.</td>
+</tr>
+<tr class="even">
+<td>### 3. Generación de Números Aleatorios</td>
+</tr>
+<tr class="odd">
+<td>- Investigar y describir el método de generación de números
+pseudoaleatorios que utiliza la herramienta de simulación seleccionada
+(por ejemplo, SimPy, CloudDES, OMNeT++ u otra de su preferencia). -
+Identificar sus características principales, incluyendo período y método
+de generación.</td>
+</tr>
+<tr class="even">
+<td>### 4. Implementación del Modelo</td>
+</tr>
+<tr class="odd">
+<td>- Crear los scripts o archivos de configuración necesarios para
+ejecutar la simulación. - Explicar detalladamente cómo se implementa el
+modelo de simulación en la herramienta elegida.</td>
+</tr>
+<tr class="even">
+<td>### 5. Ejecución de Simulaciones</td>
+</tr>
+<tr class="odd">
+<td>- Realizar múltiples corridas de la simulación (mínimo 5
+repeticiones por configuración). - Registrar los resultados de las
+simulaciones en archivos <code>.sca</code> o <code>.vec</code> (para
+OMNeT++), o su equivalente en otras herramientas para la colección de
+estadísticas. ### 6. Análisis Estadístico</td>
+</tr>
+<tr class="even">
+<td>- Calcular intervalos de confianza para las medidas de desempeño
+clave del sistema simulado (por ejemplo, tiempo promedio en cola, tasa
+de pérdida de paquetes, utilización de recursos, etc.). - Realizar una
+estimación comparativa de proporciones o medias para evaluar el
+desempeño de dos o más políticas dentro del mismo escenario de
+simulación. - Incluir gráficos estadísticos, gráficos comparativos u
+otro tipo de visualizaciones de resultados que consideren pertinentes
+para mejorar la comprensión y presentación del análisis realizado. ###
+7. Reporte de Resultados y Conclusiones</td>
+</tr>
+<tr class="odd">
+<td>Elaborar un informe escrito que incluya: - Descripción clara del
+problema y justificación. - Identificación detallada de los componentes
+del sistema. - Explicación del modelo implementado y sus
+configuraciones. - Resultados detallados de las simulaciones, incluyendo
+visualizaciones gráficas relevantes. - Análisis estadístico con
+intervalos de confianza y comparación entre políticas. - Conclusiones
+fundamentadas y recomendaciones prácticas.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formato-de-entrega">Formato de Entrega</h2>
+<ul>
+<li>El proyecto se trabajará en los grupos definidos en clase.</li>
+<li>El informe debe ser entregado en formato PDF o presentación con
+diapositivas.</li>
+<li>Adjuntar los archivos generados durante la simulación (.sca, .vec,
+.ini, .ned, .py, etc.).</li>
+<li>Cada grupo hará una presentación breve del proyecto en un tiempo
+máximo de 20 minutos.</li>
+</ul>
+<hr />
+<h2 id="criterios-de-evaluación">Criterios de Evaluación</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Criterio de evaluación</th>
+<th>Puntaje</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Descripción clara del problema y justificación</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>Identificación detallada de componentes</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>Implementación correcta del modelo</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>Ejecución adecuada de simulaciones</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Calidad del análisis estadístico y comparativo</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>Claridad, organización y calidad del informe</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Calidad y claridad de la presentación oral</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
