@@ -1,73 +1,85 @@
 ---
 created: 2025-03-29T07:44:59-06:00
-modified: 2025-03-29T07:52:41-06:00
+modified: 2025-04-12T10:57:19-06:00
+title: Proyecto Final - Fundamentos de Modelado y Simulación
 ---
+!<div align="center">
+    <h1>Escuela de Estudios de Postgrado</h1>
+    <h2>Facultad de Ingeniería</h2>
+    <h3>Universidad de San Carlos de Guatemala</h3>
+    <h1>Maestría en Ingeniería para la Industria con Especialidad en Telecomunicaciones</h1>
+    <h2>Curso: Fundamentos de Modelado y Simulación</h2>
+    <h3>Catedrático: Ing MSc. Carlos Leonel Ramírez</h3>
+</div>
+
 ## Objetivo
 
-El propósito de este proyecto es que los estudiantes apliquen los conceptos aprendidos a lo largo del curso para resolver un problema de simulación utilizando herramientas informáticas. Esto incluye la construcción de un modelo de eventos discretos, la ejecución de múltiples simulaciones, el análisis estadístico de resultados, la estimación de parámetros y la validación de hipótesis mediante pruebas estadísticas.
+El propósito de este proyecto es que los estudiantes apliquen los conceptos aprendidos a lo largo del curso para resolver un problema de simulación utilizando herramientas informáticas. Esto incluye la construcción de un modelo de eventos discretos, la ejecución de múltiples simulaciones, el análisis estadístico de resultados, la estimación de parámetros, y la comparación de diferentes políticas o configuraciones mediante técnicas estadísticas.
 
 ---
-
 ## Instrucciones Generales
 
-Cada grupo de estudiantes deberá seleccionar un problema que será abordado mediante simulación por computadora. Los pasos a seguir son los siguientes
+Cada grupo de estudiantes deberá seleccionar un problema que será abordado mediante simulación por computadora. Los pasos a seguir son los siguientes:
   
 ### 1. Descripción del Problema
+
 - Definir claramente el problema que se desea resolver mediante simulación.
 - Describir el objetivo del ejercicio de simulación.
-- Justificar por qué una solución analítica no es aplicable o es preferible una simulación.
+- Justificar por qué una solución analítica no es aplicable o por qué es preferible utilizar simulación.
+### 2. Identificación de Componentes del Sistema
 
-## 2. Identificación de Componentes del Sistema
-
-- Identificar y describir las **entidades**, **eventos**, **actividades**, **variables de estado**, y cualquier otro componente relevante del sistema a simular.
+- Identificar y describir claramente las **entidades**, **eventos**, **actividades**, **variables de estado**, y cualquier otro componente relevante del sistema a simular.
 - Establecer las relaciones entre estos componentes.
 
-## 3. Generación de Números Aleatorios
+### 3. Generación de Números Aleatorios
 
-- Investigar y describir el método de generación de números pseudoaleatorios que utiliza la herramienta de simulación seleccionada (por ejemplo, Simpy, CloudDES, OMNeT++).
-- Identificar sus características principales, incluyendo su período y método de generación.
+- Investigar y describir el método de generación de números pseudoaleatorios que utiliza la herramienta de simulación seleccionada (por ejemplo, SimPy, CloudDES, OMNeT++ u otra de su preferencia).
+- Identificar sus características principales, incluyendo período y método de generación.
 
 ### 4. Implementación del Modelo
 
 - Crear los scripts o archivos de configuración necesarios para ejecutar la simulación.
 - Explicar detalladamente cómo se implementa el modelo de simulación en la herramienta elegida.
 
-## 5. Ejecución de Simulaciones
+### 5. Ejecución de Simulaciones
 
-- Realizar múltiples corridas de la simulación (mínimo 5 repeticiones por configuración).-  Registrar los resultados de las simulaciones en archivos .sca o .vec (para OMNeT++), o su equivalente en otras herramientas.
+-  Realizar múltiples corridas de la simulación (mínimo 5 repeticiones por configuración).
+- Registrar los resultados de las simulaciones en archivos `.sca` o `.vec` (para OMNeT++), o su equivalente en otras herramientas para la colección de estadísticas.
+### 6. Análisis Estadístico
 
-## 6. Análisis Estadístico
-
-- Calcular intervalos de confianza para los parámetros de interés (por ejemplo, tiempo de espera promedio, pérdida de paquetes, etc.).
-- Realizar pruebas de hipótesis mediante **Chi-cuadrado** o algún otro método apropiado.
-
-## 7. Reporte de Resultados y Conclusiones
+- Calcular intervalos de confianza para las medidas de desempeño clave del sistema simulado (por ejemplo, tiempo promedio en cola, tasa de pérdida de paquetes, utilización de recursos, etc.).
+- Realizar una estimación comparativa de proporciones o medias para evaluar el desempeño de dos o más políticas dentro del mismo escenario de simulación.
+- Incluir gráficos estadísticos, gráficos comparativos u otro tipo de visualizaciones de resultados que consideren pertinentes para mejorar la comprensión y presentación del análisis realizado.
+### 7. Reporte de Resultados y Conclusiones
 
 Elaborar un informe escrito que incluya:
-- Descripción del problema y su justificación.
-- dentificación de componentes del sistema.
+- Descripción clara del problema y justificación.
+- Identificación detallada de los componentes del sistema.
 - Explicación del modelo implementado y sus configuraciones.
-- Resultados de las simulaciones.
-- Análisis estadístico y pruebas de hipótesis.
-- Conclusiones y recomendaciones.
+- Resultados detallados de las simulaciones, incluyendo visualizaciones gráficas relevantes.
+- Análisis estadístico con intervalos de confianza y comparación entre políticas.
+- Conclusiones fundamentadas y recomendaciones prácticas.
 
 ---
 
 ## Formato de Entrega
 
-- El proyecto se trabajará en los grupos definidos en clase
-- El informe debe ser entregado en formato PDF o Presentación con Diapositivas
-- Adjuntar los archivos de simulación generados (.sca, .vec, .ini, .ned, .py, etc.).
-- El grupo debe hacer una presentación de su informe en un tiempo máximo de 20 minutos.
+- El proyecto se trabajará en los grupos definidos en clase.
+- El informe debe ser entregado en formato PDF o presentación con diapositivas.
+- Adjuntar los archivos generados durante la simulación (.sca, .vec, .ini, .ned, .py, etc.).
+- Cada grupo hará una presentación breve del proyecto en un tiempo máximo de 20 minutos.
 
 ---
-
 ## Criterios de Evaluación
 
-1. Claridad en la descripción del problema y justificación.
-2. Correcta identificación de componentes del sistema.
-3. Calidad de la implementación del modelo.
-4. Rigor en el análisis estadístico y las pruebas de hipótesis.
-5. Presentación adecuada del informe final.
+| Criterio de evaluación                         | Puntaje |
+| ---------------------------------------------- | ------- |
+| Descripción clara del problema y justificación | 20      |
+| Identificación detallada de componentes        | 15      |
+| Implementación correcta del modelo             | 20      |
+| Ejecución adecuada de simulaciones             | 10      |
+| Calidad del análisis estadístico y comparativo | 20      |
+| Claridad, organización y calidad del informe   | 10      |
+| Calidad y claridad de la presentación oral     | 5       |
+| **Total**                                      | **100** |
 
----

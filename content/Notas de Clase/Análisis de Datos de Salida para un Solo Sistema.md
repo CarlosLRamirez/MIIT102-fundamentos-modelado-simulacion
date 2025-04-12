@@ -231,7 +231,7 @@ La **media muestral** se define como:
 $$\bar{X}(n) = \frac{1}{n} \sum_{j=1}^{n} X_j$$
 
 
-Este valor es un **estimador insesgado** del valor esperado $\mu = E(X)$.
+Este valor es un **estimador insesgado** del valor esperado $\m$ = E(X)$.
 
 ---
 **📐 Intervalo de confianza para** $\mu$ **:**
@@ -306,7 +306,7 @@ $$
   t_{9, 0.95} \approx 1.833
   $$
 
-[Tabas de t-student](https://verso.mat.uam.es/~pablo.fernandez/Tablas-chi-t-F-IQ-14-15.pdf)
+[Tablas de t-student](https://verso.mat.uam.es/~pablo.fernandez/Tablas-chi-t-F-IQ-14-15.pdf)
 
 ---
 
