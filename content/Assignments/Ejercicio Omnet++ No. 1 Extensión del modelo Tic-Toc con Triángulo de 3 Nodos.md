@@ -40,4 +40,4 @@ Modificar y extender el modelo Tic-Toc para:
 - ¿Cómo se modificaría el comportamiento si el retardo de las conexiones es diferente entre cada nodo?
 
 ## Solución Propuesta
-[[Solucion - Ejercicio Omnet++  No. 1 ]]
+[Solucion - Ejercicio Omnet++  No. 1](Solucion%20-%20Ejercicio%20Omnet++%20%20No.%201.md)

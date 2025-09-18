@@ -84,9 +84,9 @@ network = Tictoc2
 ### 3.2.1 Archivos con Código Fuente
 
 Los nuevos archivos con código fuente que debería tener en este punto son:
-- [[tictoc2_ned|tictoc2.ned]]
-- [[txc2_cc|txc2.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc2.ned](tictoc2_ned.md)
+- [txc2.cc](txc2_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 ### 3.2.2 Ejecución de la simulación
 
 Ejecutamos nuevamente la simulación, guardando previamente los cambios. Al inicio de la simulación nos saldrá un cuadro de diálogo para especificar el nombre de la *configuración* que vamos a simular, seleccionamos `Tictoc2`y damos click en OK.
@@ -149,9 +149,9 @@ Genere un nuevo archivo `tictoc3.ned` para que sea consistente con el módulo `t
 ### 3.3.1 Código Fuente
 
 Los archivos con código fuente que debería tener en este punto son:
-- [[tictoc3_ned|tictoc3.ned]]
-- [[txc3_cc|txc3.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc3.ned](tictoc3_ned.md)
+- [txc3.cc](txc3_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ### 3.3.2 Ejecución de la simulación
 
@@ -243,9 +243,9 @@ Genere nuevos archivos `txc4.cc`y `tictoc4.ned`con los cambios indicados. Actual
 ### 3.4.1 Código Fuente
 
 Los archivos con código fuente para este paso son los siguientes:
-- [[txc4_cc|txc4.cc]]
-- [[tictoc4_ned|tictoc4.ned]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [txc4.cc](txc4_cc.md)
+- [tictoc4.ned](tictoc4_ned.md)
+- [omnetpp.ini](omnetpp_ini.md)
 ### 3.4.2 Ejecución de la Simulación
 
 En el entorno gráfico de ejecución, puede inspeccionar los parámetros de los módulos en el árbol de objetos situado a la izquierda de la ventana principal o en la página Parámetros del inspector de módulos (la información se muestra en la esquina inferior izquierda de la ventana principal tras hacer clic en un módulo).
@@ -321,13 +321,13 @@ Genere nuevos archivos `txc5.cc`y `tictoc5.ned`con los cambios indicados. Actual
 ### 3.5.1 Código Fuente
 
 Los archivos con código fuente que debería tener en este punto son:
-- [[tictoc5_ned|tictoc5.ned]]
-- [[txc5_cc|txc5.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc5.ned](tictoc5_ned.md)
+- [txc5.cc](txc5_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ## 3.6 Ejercicio de Comprobación 1
 
-Realice el siguiente ejercicio: [[Ejercicio Omnet++ No. 1 Extensión del modelo Tic-Toc con Triángulo de 3 Nodos|Ejercicio Omnet++ No. 1: Extensión del modelo Tic-Toc con Triángulo de 3 Nodos]]
+Realice el siguiente ejercicio: [Ejercicio Omnet++ No. 1: Extensión del modelo Tic-Toc con Triángulo de 3 Nodos](Ejercicio%20Omnet++%20No.%201%20Extensión%20del%20modelo%20Tic-Toc%20con%20Triángulo%20de%203%20Nodos.md)
 
 ## 3.7 Modelando el retardo en el proceso
 
@@ -409,9 +409,9 @@ En este ejemplo no se dejó por fuera el contador de mensajes para mantener el c
 
 ### 3.7.6 Código Fuente
 
-- [[tictoc6_ned|tictoc6.ned]]
-- [[txc6_cc|txc6.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc6.ned](tictoc6_ned.md)
+- [txc6.cc](txc6_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ## 3.8 Números aleatorios y parámetros
 
@@ -492,9 +492,9 @@ seed-0-mt=532569  # or any other 32-bit value
 
 ### 3.8.6 Código Fuente
 
-- [[tictoc7_ned|tictoc7.ned]]
-- [[txc7_cc|txc7.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc7.ned](tictoc7_ned.md)
+- [txc7.cc](txc7_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 
 ## 3.9 Simulación Stop-and-Wait  (Timeout y Cancelación de temporizadores)
@@ -579,9 +579,9 @@ Esto es especialmente útil en simulaciones complejas donde hay que manejar múl
 
 ### 3.9.8 Código Fuente
 
-- [[tictoc8_ned|tictoc8.ned]]
-- [[txc8_cc|txc8.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc8.ned](tictoc8_ned.md)
+- [txc8.cc](txc8_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ## 3.10 Retransmisión del mismo mensaje
 
@@ -658,9 +658,9 @@ void Tic9::sendCopyOf(cMessage *msg)
 
 ### 3.10.4 Código Fuente
 
-- [[tictoc9_ned|tictoc9.ned]]
-- [[txc9_cc|txc9.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc9.ned](tictoc9_ned.md)
+- [txc9.cc](txc9_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ---
 **Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)

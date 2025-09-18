@@ -48,10 +48,10 @@ void Txc14::refreshDisplay() const
 
 ### 5.1.1 Código Fuente
 
-- [[tictoc14_msg|tictoc14.msg]]
-- [[tictoc14_ned|tictoc14.ned]]
-- [[txc14_cc|txc14.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc14.msg](tictoc14_msg.md)
+- [tictoc14.ned](tictoc14_ned.md)
+- [txc14.cc](txc14_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ---
 
@@ -136,10 +136,10 @@ Cuando crea que se han recogido suficientes datos, puede detener la simulación 
 ![[Pasted image 20250322100341.png]]
 ### 5.2.4 Código Fuente
 
-- [[tictoc15_msg|tictoc15.msg]]
-- [[tictoc15_ned|tictoc15.ned]]
-- [[txc15_cc|txc15.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc15.msg](tictoc15_msg.md)
+- [tictoc15.ned](tictoc15_ned.md)
+- [txc15.cc](txc15_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ## 5.3 Recolección de estadísticas sin modificar tu modelo
 
@@ -220,10 +220,10 @@ Los resultados de la simulación se guardan en estos archivos en `/results`, tan
 
 ### 5.3.5 Código Fuente
 
-- [[tictoc16_msg|tictoc16.msg]]
-- [[tictoc16_ned|tictoc16.ned]]
-- [[txc16_cc|txc16.cc]]
-- [[omnetpp_ini]]
+- [tictoc16.msg](tictoc16_msg.md)
+- [tictoc16.ned](tictoc16_ned.md)
+- [txc16.cc](txc16_cc.md)
+- [omnetpp\_ini](omnetpp_ini.md)
 
 ---
 
@@ -263,8 +263,8 @@ if (hasGUI()) {
 
 ### 5.4.3 Código Fuente
 
-- [[tictoc17_msg|tictoc17.msg]]
-- [[tictoc17_ned|tictoc17.ned]]
-- [[txc17_cc|txc17.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc17.msg](tictoc17_msg.md)
+- [tictoc17.ned](tictoc17_ned.md)
+- [txc17.cc](txc17_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 

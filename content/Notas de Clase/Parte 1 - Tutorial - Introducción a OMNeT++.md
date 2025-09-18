@@ -275,14 +275,14 @@ Ha finalizado con la creación del primer modelo, y ahora si esta listo para com
 ## Código Fuente
 
 Los archivos que debería tener al final de esta parte son los siguientes:
-- [[tictoc1_ned|tictoc1.ned]]
-- [[txc1_cc|txc1.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc1.ned](tictoc1_ned.md)
+- [txc1.cc](txc1_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 > El archivo `omnet.ini` sera el mismo que se utilizará durante todo el tutorial, por lo que es posible que contenga cosas que no le hagan sentido en este punto.
 
 
-Continue con:  [[Parte 2  - Tutorial - Introducción a OMNeT++|Tutorial TicToc: Introducción a OMNeT++  - Parte 2: Ejecución de la Simulación]]
+Continue con:  [Tutorial TicToc: Introducción a OMNeT++  - Parte 2: Ejecución de la Simulación](Parte%202%20%20-%20Tutorial%20-%20Introducción%20a%20OMNeT++.md)
 
 ---
 **Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)

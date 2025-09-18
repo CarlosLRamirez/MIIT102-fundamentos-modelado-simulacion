@@ -231,7 +231,7 @@ Un sistema **continuo** es aquel en el que las variables de estado cambian conti
 - **Ejemplo del nivel de agua en una presa:** El nivel de agua detrás de una presa cambia continuamente debido a la lluvia, la evaporación, la descarga para control de inundaciones y la generación de electricidad.
 - **Temperatura de una habitación:** La temperatura cambia gradualmente a lo largo del tiempo en respuesta a la calefacción, la refrigeración y las condiciones externas.
 
-![[Pasted image 20250201093210.png]]
+![[2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Notas de Clase/_attachments/Pasted image 20250201093210.png|0 Inbox/lost attachments/Pasted image 20250201093210.png]]
 
 
 

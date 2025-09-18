@@ -12,7 +12,7 @@ La simulación es utilizada frecuentemente para el análisis de modelos de colas
 
 En un simple pero común modelo de colas como el de la figura, los clientes llegan cada cierto tiempo y se unen a una *cola* (linea de espera), eventualmente son servidos, y finalmente se van del sistema.
 
-![[Pasted image 20250220041248.png]]
+![[Pasted image 20250220041248 1.png|2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/_attachments/Pasted image 20250220041248.png]]
 
 El termino cliente puede referirse a cualquier tipo de entidad que pueda ser vista como solicitante de un servicio, por lo tanto muchas instalaciones de servicios, sistemas de producción, instalaciones de reparación y mantenimiento, sistemas de comunicaciones e informáticos y sistemas de transporte y manipulación de materiales pueden considerarse sistemas de colas.
 
@@ -61,11 +61,11 @@ Supongamos que en una central de llamadas de soporte técnico, los clientes lleg
 
 1. El **tiempo entre llegadas** (IAT = inter-arrival time) de los clientes sigue una distribución exponencial con media $60/5$ minutos = $12$ minutos.
 
-![[Distribución Exponencial del Tiempo entre Llegadas.png]]
+![[Distribución Exponencial del Tiempo entre Llegadas 1.png|2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/_attachments/Distribución Exponencial del Tiempo entre Llegadas.png]]
 
 1. La cantidad de llamadas que llegan en **2 horas** sigue una distribución de Poisson con media  $5 \times 2 = 10$  llamadas.
 
-![[Distribución de Poisson para la Cantidad de Llamadas en 2 Horas.png]]
+![[Distribución de Poisson para la Cantidad de Llamadas en 2 Horas 1.png|2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/_attachments/Distribución de Poisson para la Cantidad de Llamadas en 2 Horas.png]]
 
 Esto significa que, en promedio, en un intervalo de **2 horas**, se pueden recibir **10 llamadas**, aunque la cantidad exacta variará debido a la naturaleza aleatoria del proceso.
 
@@ -198,7 +198,7 @@ En un modelo básico de cola con un solo servidor asumimos:
 - 1 servidor ($s=1$)
 - Espacio en cola infinito ($q=\infty$)
 
-![picture 0](8479ae13630f1a3716b26eacdd3f6505d6aa6d316059818a1fe816044a670d49.png)  
+![picture 0](2%20Areas/204%20Trabajo/206.01%20USAC%20Fundamentos%20de%20MyS/published/Notas%20de%20Clase/_attachments/8479ae13630f1a3716b26eacdd3f6505d6aa6d316059818a1fe816044a670d49.png)  
 ### Medidas de desempeño para una cola M/M/1
 
 $$\rho=\frac{\lambda}{\mu}$$
@@ -210,7 +210,7 @@ $$W=\frac{1}{\mu-\lambda}$$
 
 ## Medidas de Desempeño en Estado Estable para colas M/M/s
 
-![[Pasted image 20250221171349.png]]
+![[Pasted image 20250221171349 1.png|2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/_attachments/Pasted image 20250221171349.png]]
 
 $P_n\equiv$ Probabilidad que $n$ clientes estén en el sistema
 $P_0\equiv$ Probabilidad que no existan clientes en el sistema

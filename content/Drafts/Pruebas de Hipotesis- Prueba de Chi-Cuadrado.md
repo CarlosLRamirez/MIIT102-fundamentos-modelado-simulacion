@@ -136,7 +136,7 @@ el número de columnas de la tabla menos uno multiplicado por el número de fila
 
 Por último, comparamos el estadístico obtenido con el estadístico crítico que se encuentra en la [tabla chi-cuadrado](https://estdg.blogs.upv.es/files/2018/04/Tabla-Chi2_cola-derecha.pdf).  Como puede ver, para un nivel *alfa* de 0.05 y 2 grados de libertad, el estadístico crítico es 5.991, que es menor que nuestro estadístico obtenido de 8.50. 
 
-![](Pasted%20image%2020240413103909.png)
+![](2%20Areas/204%20Trabajo/206.01%20USAC%20Fundamentos%20de%20MyS/published/Drafts/_attachments/Pasted%20image%2020240413103909%201.png)
 
 Puede rechazar nuestra hipótesis nula porque el estadístico crítico es mayor que el estadístico obtenido.
 
@@ -217,7 +217,7 @@ Hay dos tipos de errores asociados a las pruebas de hipótesis:
 - Error de tipo I: es el tipo de error que implica el rechazo de una hipótesis nula que en realidad es cierta (es decir, un falso positivo).    
 - Error de tipo II: es el tipo de error que se produce cuando no rechazamos una hipótesis nula que es falsa (es decir, un falso negativo).  
 - 
-![](Pasted%20image%2020240413093209.png)
+![](Pasted%20image%2020240413093209%201.png)
 
 
 Estos errores no pueden eliminarse; pueden minimizarse, pero minimizar un tipo de error aumentará la probabilidad de cometer el otro.  

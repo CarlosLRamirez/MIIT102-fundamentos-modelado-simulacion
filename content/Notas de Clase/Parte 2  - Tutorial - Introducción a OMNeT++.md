@@ -143,7 +143,7 @@ Abre el archivo .elog desde el directorio de resultados del proyecto.
 
 Este gráfico es muy útil para **entender, depurar y documentar** modelos complejos.
 
-Continúe con  [[Parte 3 - Tutorial - Introducción a OMNeT++|Tutorial TicToc: Introducción a OMNeT++  - Parte 3: Mejorando el TicToc de 2 nodos]]
+Continúe con  [Tutorial TicToc: Introducción a OMNeT++  - Parte 3: Mejorando el TicToc de 2 nodos](Parte%203%20-%20Tutorial%20-%20Introducción%20a%20OMNeT++.md)
 
 ---
 **Fuente**:  [Tic Toc Tutorial](https://docs.omnetpp.org/tutorials/tictoc/part1/)

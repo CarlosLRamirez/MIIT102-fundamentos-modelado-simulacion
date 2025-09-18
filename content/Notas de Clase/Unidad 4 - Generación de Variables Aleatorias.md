@@ -30,7 +30,7 @@ $$f(x)=\begin{cases}
 
 La función de densidad se muestra en la siguiente figura:
 
-![[Pasted image 20250307124443.png#center|450]]
+![[Pasted image 20250307124443 1.png#center|450]]
 
 
 El valor esperade para cada $R_{i}$ está dado por:

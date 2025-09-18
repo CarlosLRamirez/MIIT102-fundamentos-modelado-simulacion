@@ -144,9 +144,9 @@ Cuando un mensaje llega al módulo `tic[3]`, se elimina, lo cual simula que ha l
 
 ### 4.1.5 Código Fuente
 
-- [[tictoc10_ned|tictoc10.ned]]
-- [[txc10_cc|txc10.cc]] 
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc10.ned](tictoc10_ned.md)
+- [txc10.cc](txc10_cc.md) 
+- [omnetpp.ini](omnetpp_ini.md)
 
 
 ## 4.2 Canales y definiciones de tipo interno
@@ -195,9 +195,9 @@ network Tictoc11
 
 ### 4.2.3 Código Fuente
 
-- [[tictoc11_ned|tictoc11.ned]]
-- [[txc11_cc|txc11.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc11.ned](tictoc11_ned.md)
+- [txc11.cc](txc11_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ---
 ## 4.3 Uso de conexiones bidireccionales
@@ -259,9 +259,9 @@ void Txc12::forwardMessage(cMessage *msg)
 
 ### 4.3.6 Código Fuente
 
-- [[tictoc12_ned|tictoc12.ned]]
-- [[txc12_cc|txc12.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc12.ned](tictoc12_ned.md)
+- [txc12.cc](txc12_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ## 4.4 Definición de nuestra propia clase de mensaje
 
@@ -352,10 +352,10 @@ Al hacer click en el mensaje es posible ver el contenido en la ventana de inspec
 ![[Pasted image 20250322022147.png]]
 
 ### 4.4.6 Código Fuente
-- [[tictoc13_msg|tictoc13.msg]]
-- [[tictoc13_ned|tictoc13.ned]]
-- [[txc13_cc|txc13.cc]]
-- [[omnetpp_ini|omnetpp.ini]]
+- [tictoc13.msg](tictoc13_msg.md)
+- [tictoc13.ned](tictoc13_ned.md)
+- [txc13.cc](txc13_cc.md)
+- [omnetpp.ini](omnetpp_ini.md)
 
 ### 4.5 Ejercicio sugerido
 

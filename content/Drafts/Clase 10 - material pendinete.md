@@ -83,10 +83,10 @@ Bajo este escenario se comparan dos políticas de atención a clientes:
 Al realizar una simulación de ambas políticas, se observa que **el tiempo de espera promedio diario de los clientes (es decir, la media)** es muy similar en ambos casos. Sin embargo, al analizar con más detalle los resultados, se descubre que en la **Política A** hay una mayor proporción de clientes que experimentan **tiempos de espera excesivos**, lo cual no se refleja en la media.
 
 
-![[Pasted image 20250403174936.png]]
+![[2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Drafts/_attachments/Pasted image 20250403174936.png|Pasted image 20250403174936.png]]
 
 
-![[Pasted image 20250403175839.png]]
+![[2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Drafts/_attachments/Pasted image 20250403175839.png|Pasted image 20250403175839.png]]
 
 
 ---

@@ -7,29 +7,29 @@ aliases:
 ---
 ## Contenido
 
-- [Introducción](#introducci%C3%B3n)
+- [Introducción](#introducción)
 - [Objetivo](#objetivo)
-- [Instalación del INET Framework](#instalaci%C3%B3n-del-inet-framework)
-- [Creación y configuración del proyecto](#creaci%C3%B3n-y-configuraci%C3%B3n-del-proyecto)
-- [Definición de la topología de red](#definici%C3%B3n-de-la-topolog%C3%ADa-de-red)
+- [Instalación del INET Framework](#instalación-del-inet-framework)
+- [Creación y configuración del proyecto](#creación-y-configuración-del-proyecto)
+- [Definición de la topología de red](#definición-de-la-topología-de-red)
 	- [Archivo NED](#archivo-ned)
-	- [Adición de la Red](#adici%C3%B3n-de-la-red)
-	- [Adición de los Hosts](#adici%C3%B3n-de-los-hosts)
-	- [Adición del Configurador de Red](#adici%C3%B3n-del-configurador-de-red)
-	- [Conexión de Hosts](#conexi%C3%B3n-de-hosts)
-	- [Resultado Final en `lab1.ned`](#resultado-final-en-lab1ned)
-- [Generación del archivo `omnetpp.ini`](#generaci%C3%B3n-del-archivo-omnetppini)
-- [Ejecución de la simulación](#ejecuci%C3%B3n-de-la-simulaci%C3%B3n)
-- [Visualización de estadísticas](#visualizaci%C3%B3n-de-estad%C3%ADsticas)
-	- [Entendiendo las Estadísticas en OMNeT++](#entendiendo-las-estad%C3%ADsticas-en-omnet)
-	- [Visualización de estadísticas en OMNeT++](#visualizaci%C3%B3n-de-estad%C3%ADsticas-en-omnet)
-	- [Estadísticas de tipo escalar (`numLost`)](#estad%C3%ADsticas-de-tipo-escalar-numlost)
-	- [Multiples estadisticas tipo escalar (`TxPk`)](#multiples-estadisticas-tipo-escalar-txpk)
-	- [Estadísticas tipo vector (`pingTxSeq`)](#estad%C3%ADsticas-tipo-vector-pingtxseq)
-	- [Estadísticas tipo histograma (`rtt`)](#estad%C3%ADsticas-tipo-histograma-rtt)
-- [Exportación de Datos a CSV o Excel](#exportaci%C3%B3n-de-datos-a-csv-o-excel)
-- [Búsqueda de Documentación en INET Framework](#b%C3%BAsqueda-de-documentaci%C3%B3n-en-inet-framework)
-- [Módulos utilizados en esta simulación](#m%C3%B3dulos-utilizados-en-esta-simulaci%C3%B3n)
+	- [Adición de la Red](#adición-de-la-red)
+	- [Adición de los Hosts](#adición-de-los-hosts)
+	- [Adición del Configurador de Red](#adición-del-configurador-de-red)
+	- [Conexión de Hosts](#conexión-de-hosts)
+	- [Resultado Final en lab1.ned](#resultado-final-en-lab1ned)
+- [Generación del archivo omnetpp.ini](#generación-del-archivo-omnetppini)
+- [Ejecución de la simulación](#ejecución-de-la-simulación)
+- [Visualización de estadísticas](#visualización-de-estadísticas)
+	- [Entendiendo las Estadísticas en OMNeT++](#entendiendo-las-estadísticas-en-omnet)
+	- [Visualización de estadísticas en OMNeT++](#visualización-de-estadísticas-en-omnet)
+	- [Estadísticas de tipo escalar (numLost)](#estadísticas-de-tipo-escalar-numlost)
+	- [Multiples estadisticas tipo escalar (TxPk)](#multiples-estadisticas-tipo-escalar-txpk)
+	- [Estadísticas tipo vector (pingTxSeq)](#estadísticas-tipo-vector-pingtxseq)
+	- [Estadísticas tipo histograma (rtt)](#estadísticas-tipo-histograma-rtt)
+- [Exportación de Datos a CSV o Excel](#exportación-de-datos-a-csv-o-excel)
+- [Búsqueda de Documentación en INET Framework](#búsqueda-de-documentación-en-inet-framework)
+- [Módulos utilizados en esta simulación](#módulos-utilizados-en-esta-simulación)
 	- [StandardHost](#standardhost)
 	- [PingApp](#pingapp)
 	- [Eth100M](#eth100m)
@@ -67,15 +67,15 @@ Hay varias maneras de instalar el INET Framework:
 
 
 
-![[fd692b26c943f41da45ad107c05dd555238492ad056c09a75faa769c0867bd1b.png]]
+![[02 Areas/24 Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/fd692b26c943f41da45ad107c05dd555238492ad056c09a75faa769c0867bd1b.png]]
 
 - Haz clic derecho sobre el proyecto `lab1Ping` en el explorador de proyectos y selecciona *Properties*.
 
-![[2024-03-12-22-46-11.png]]
+![[2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Notas de Clase/_attachments/2024-03-12-22-46-11.png]]
 
 - En la sección *Project References*, marca la casilla correspondiente a `inet4.5`. Luego, selecciona *Apply and Close* para cerrar la ventana.  
 
-![[2024-03-12-22-47-24.png]]
+![[02 Areas/24 Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/2024-03-12-22-47-24.png]]
 
 ---
 ## Definición de la topología de red
@@ -100,14 +100,14 @@ Hay varias maneras de instalar el INET Framework:
 
 - Añade dos hosts al diseño de la red, utilizando el módulo `StandardHost`.
 
-![[2024-03-12-23-05-44.png]]
+![[2 Areas/26 Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/2024-03-12-23-05-44.png]]
 
 ---
 ### Adición del Configurador de Red  
 
 - Inserta un elemento `ipv4NetworkConfigurator` en la red.
 
-![[2024-03-12-23-08-43.png]]
+![[2 Areas/02.05 Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/2024-03-12-23-08-43.png]]
 
 - Renombra este módulo a `configurator` para simplificar su identificación.
 
@@ -119,11 +119,11 @@ Hay varias maneras de instalar el INET Framework:
 
 - Utilizando la herramienta `Connection`, selecciona `Eth100M`.  
 
-![[Eth100M.jpg]]
+![[2 Areas/02.05 Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/Eth100M.jpg]]
 
 - Conecta los dos host haciendo click en el primero y luego en el segundo, seleccionando la interfaz `ethg[0]`. 
 
-![[d3ca65c835e79adf40e4071d434cdb0609de43ae535f8c82be974bedacb1c505.png]]
+![[2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Notas de Clase/_attachments/d3ca65c835e79adf40e4071d434cdb0609de43ae535f8c82be974bedacb1c505.png]]
 
 - Renombra el nombre de los host por `HostA`y `HostB`respectivamente
 
@@ -390,5 +390,5 @@ Conexión que representa un enlace Ethernet de 100Mb/s, en los enlaces tipo Ethe
 
 ---
 
-Ahora que te has familiarizado con la ejecución de simulaciones con el INET Framework y la visualización de estadísticas, intenta realizar este [[INET Framework - Laboratorio 1  Modificación de Parámetros en PingApp]]
+Ahora que te has familiarizado con la ejecución de simulaciones con el INET Framework y la visualización de estadísticas, intenta realizar este [INET Framework - Laboratorio 1  Modificación de Parámetros en PingApp](INET%20Framework%20-%20Laboratorio%201%20%20Modificación%20de%20Parámetros%20en%20PingApp.md)
 

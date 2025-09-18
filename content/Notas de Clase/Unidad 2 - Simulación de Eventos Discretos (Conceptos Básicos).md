@@ -266,7 +266,7 @@ Una vez que generamos estos tiempos, nuestro problema se reduce a **un ejercicio
 A continuación, se muestra un **ejemplo de simulación** con 20 clientes. (Se asume que la simulación comienza en el momento en que llega el primer cliente al sistema).
 
 
-![[Pasted image 20250215045530.png]]
+![[2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Notas de Clase/_attachments/Pasted image 20250215045530 1.png]]
 
 #### Métricas del sistema
 

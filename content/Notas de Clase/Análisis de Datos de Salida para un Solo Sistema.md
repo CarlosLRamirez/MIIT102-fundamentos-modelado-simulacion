@@ -559,11 +559,11 @@ Al realizar una simulación de ambas políticas, se observa que **el tiempo de e
 
 ---
 
-![[Pasted image 20250403174936.png]]
+![[Pasted image 20250403174936 1.png|2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Drafts/_attachments/Pasted image 20250403174936.png]]
 
 ---
 
-![[Pasted image 20250403175839.png]]
+![[Pasted image 20250403175839 1.png|2 Areas/204 Trabajo/206.01 USAC Fundamentos de MyS/published/Drafts/_attachments/Pasted image 20250403175839.png]]
 
 ---
 

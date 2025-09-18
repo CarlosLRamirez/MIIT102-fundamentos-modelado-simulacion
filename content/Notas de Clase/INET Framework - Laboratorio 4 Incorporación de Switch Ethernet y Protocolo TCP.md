@@ -7,23 +7,23 @@ aliases:
 ---
 ## Tabla de Contenidos
 
-- [Introducción](#introducci%C3%B3n)
+- [Introducción](#introducción)
 - [Objetivos](#objetivos)
-- [1. Creación del Proyecto](#1-creaci%C3%B3n-del-proyecto)
-- [2. Configuración de la Red](#2-configuraci%C3%B3n-de-la-red)
-- [3. Configuración del Canal Personalizado](#3-configuraci%C3%B3n-del-canal-personalizado)
-- [4. Generación del Archivo .ini](#4-generaci%C3%B3n-del-archivo-ini)
-- [5. Ejecución de la Simulación](#5-ejecuci%C3%B3n-de-la-simulaci%C3%B3n)
-- [6. Módulos Utilizados en Este Laboratorio](#6-m%C3%B3dulos-utilizados-en-este-laboratorio)
+- [1. Creación del Proyecto](#1-creación-del-proyecto)
+- [2. Configuración de la Red](#2-configuración-de-la-red)
+- [3. Configuración del Canal Personalizado](#3-configuración-del-canal-personalizado)
+- [4. Generación del Archivo .ini](#4-generación-del-archivo-ini)
+- [5. Ejecución de la Simulación](#5-ejecución-de-la-simulación)
+- [6. Módulos Utilizados en Este Laboratorio](#6-módulos-utilizados-en-este-laboratorio)
 	- [DatarateChannel](#dataratechannel)
 	- [EthernetSwitch](#ethernetswitch)
 	- [TcpBasicClientApp](#tcpbasicclientapp)
 	- [TcpGenericServerApp](#tcpgenericserverapp)
 - [7. Preguntas y Actividades Adicionales](#7-preguntas-y-actividades-adicionales)
-- [8. Implementación de Aplicación UDP](#8-implementaci%C3%B3n-de-aplicaci%C3%B3n-udp)
+- [8. Implementación de Aplicación UDP](#8-implementación-de-aplicación-udp)
 	- [Instrucciones](#instrucciones)
 - [9. Referencias](#9-referencias)
-- [10. Ejecución de Múltiples Simulaciones](#10-ejecuci%C3%B3n-de-m%C3%BAltiples-simulaciones)
+- [10. Ejecución de Múltiples Simulaciones](#10-ejecución-de-múltiples-simulaciones)
 
 ## Introducción
 
@@ -47,18 +47,18 @@ En este laboratorio, los estudiantes aprenderán a incorporar un Switch Ethernet
 - Renombrar el `ipv4NetworkConfigurator` a `configurator` y los dos hosts a `client` y `server` respectivamente.
 - Insertar un elemento `ethernetSwitch` entre los dos hosts.
 
-![picture 12](be28ce0a41758649faf751601bf61130bd157077fbbbba4627b3eef92c0c105f.png)
+![picture 12](2%20Areas/204%20Trabajo/206.01%20USAC%20Fundamentos%20de%20MyS/published/Notas%20de%20Clase/_attachments/be28ce0a41758649faf751601bf61130bd157077fbbbba4627b3eef92c0c105f.png)
 
 ## 3. Configuración del Canal Personalizado
 
 - Agregar un canal personalizado seleccionando `Channel` y luego haciendo clic en cualquier parte del lienzo.
 
-![picture 13](24f89dacb491e5cdb959f279db8b4522ca100c9b0dea25dc6dd6ba6be02c0528.png)
+![picture 13](2%20Areas/204%20Trabajo/206.01%20USAC%20Fundamentos%20de%20MyS/published/Notas%20de%20Clase/_attachments/24f89dacb491e5cdb959f279db8b4522ca100c9b0dea25dc6dd6ba6be02c0528.png)
 
 - Renombrar el canal como `GigabitEthernet`.
 - Utilizar la conexión recién creada para conectar los dos hosts al Switch Ethernet.
 
-![picture 14](5ccfa08bd8998e86a15a532221f383aa76ee12d1d0db499a599502479d841b47.png)
+![picture 14](02%20Areas/02.05%20Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/5ccfa08bd8998e86a15a532221f383aa76ee12d1d0db499a599502479d841b47.png)
 
 - Modificar el canal `GigabitEthernet` en el código del archivo NED para que esté basado en `DataRateChannel`, con los siguientes parámetros: 
 
@@ -133,7 +133,7 @@ sim-time-limit = 600s
 
 - Correr la simulación en OMNeT++. Podrás ver los mensajes de las sesiones TCP que se establecen entre el cliente y el servidor.
 
-![picture 15](437edae506bee23b084348d1be6444422043af9827664addd78c17999a23f33c.png)
+![picture 15](02%20Areas/24%20Teaching/Curso-Fundamentos-de-Modelado-y-simulacion/images/437edae506bee23b084348d1be6444422043af9827664addd78c17999a23f33c.png)
 
 ## 6. Módulos Utilizados en Este Laboratorio
 
